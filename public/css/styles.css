@@ -1,0 +1,607 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+/* @import "theme-variants"; */
+/* line 5, ../../src/scss/title-bar.scss */
+.title-bar {
+  grid-area: titlebar;
+  display: flex;
+  position: fixed;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  width: 100%;
+  height: 70px !important;
+  background: #234;
+  color: #abc;
+  font-size: 4vw;
+  font-family: "Montserrat", sans-serif;
+}
+/* line 20, ../../src/scss/title-bar.scss */
+.title-bar--darkmode-button {
+  display: none;
+  margin-left: 15px;
+  border: 1px white solid;
+  padding: 5px;
+  font-size: 1.5vw;
+}
+
+/* @import "theme-variants"; */
+/* line 5, ../../src/scss/intro.scss */
+.sign-in {
+  display: block;
+  margin-top: 125px;
+  padding: 30px 0;
+  width: 98%;
+  background: transparent;
+  /*darken($color2, 0.75);*/
+  position: fixed;
+  color: #abc;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  user-select: none;
+  border: 1px solid white;
+}
+
+/* line 19, ../../src/scss/intro.scss */
+.name-section {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  margin: auto 0px;
+  width: 100%;
+  height: 350px;
+  background: #10151b;
+  top: 45px;
+}
+/* line 29, ../../src/scss/intro.scss */
+.name-section--name-input {
+  position: relative;
+  color: #ccd9e6;
+  border-bottom: 2px rgba(170, 187, 204, 0.55) solid;
+  box-shadow: inset 0px 8px 6px rgba(170, 187, 204, 0.35);
+  background: transparent;
+  margin: auto;
+  min-width: 20% !important;
+  max-width: 35% !important;
+  max-height: 50px !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 5px 0px;
+}
+/* line 45, ../../src/scss/intro.scss */
+.name-section--name-input::placeholder {
+  opacity: 0.25;
+}
+
+/* line 51, ../../src/scss/intro.scss */
+.bottom-half {
+  display: block;
+  position: absolute;
+  top: 296px;
+  width: 100%;
+  height: 500px;
+  z-index: 500;
+}
+/* line 59, ../../src/scss/intro.scss */
+.input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  background: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  max-height: 70px;
+  z-index: 500px;
+}
+/* line 70, ../../src/scss/intro.scss */
+.input-section--initial-input {
+  display: block;
+  position: relative;
+  top: 0px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin: 15px;
+  width: 35%;
+  border-bottom: 2px rgba(170, 187, 204, 0.55) solid;
+  box-shadow: inset 0px 8px 6px rgba(170, 187, 204, 0.35);
+  color: #ccd9e6;
+  background: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  padding: 5px 0px;
+}
+/* line 88, ../../src/scss/intro.scss */
+.input-section--initial-input::placeholder {
+  opacity: 0.25;
+}
+/* line 96, ../../src/scss/intro.scss */
+.join-chat-row {
+  display: flex;
+  position: relative;
+  left: 50%;
+  margin-top: 40px;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+  height: 150px;
+}
+/* line 107, ../../src/scss/intro.scss */
+.join-chat-row--link {
+  color: white;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+}
+/* line 113, ../../src/scss/intro.scss */
+.join-chat-row--button {
+  position: relative;
+  bottom: 20px;
+  border: 2px red solid;
+  border-radius: 50px;
+  background: #abc;
+  padding: 15px;
+}
+
+/* @import "theme-variants"; */
+/* LEFT RIGHT GRID */
+/* line 7, ../../src/scss/chat-window.scss */
+.chat-area-grid {
+  position: absolute;
+  top: 80px !important;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Roboto Slab", serif;
+  display: grid;
+  width: 98%;
+  height: calc((75vh -114px) - 10px);
+  grid-template-columns: 99.9% .1%;
+  grid-template-rows: 100%;
+  grid-template-areas: "mainchat sidechat";
+}
+/* line 16, ../../src/scss/chat-window.scss */
+.chat-area-grid--main-chat-window {
+  display: inline;
+  grid-area: mainchat;
+  position: absolute;
+  overflow-x: hidden;
+  background: green .chat-area-grid--main-chat-window _main-room-title;
+  background-display: none;
+  background-margin: 0px;
+  background-width: 100%;
+  background-background: #213242;
+  background-position: fixed;
+  background-color: #abc;
+  background-text-align: center;
+  background-font-size: 2em;
+  background-top: 0px;
+  background-box-shadow: inset -5px 0px 8px rgba(92, 123, 154, 0.35);
+  background-border-bottom: 1px solid rgba(170, 187, 204, 0.5);
+  background-z-index: 1500;
+}
+/* line 45, ../../src/scss/chat-window.scss */
+.chat-area-grid--main-chat-window_output {
+  display: table;
+  position: absolute;
+  padding: 14px 0px;
+  width: 100%;
+  color: #555;
+  z-index: 1000;
+}
+/* line 54, ../../src/scss/chat-window.scss */
+.chat-area-grid--main-chat-window_output > div {
+  background: transparent;
+  box-shadow: inset -5px 0px 8px rgba(92, 123, 154, 0.35);
+  padding-left: 5px;
+  margin-bottom: 0px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* SIDE CHAT AREA */
+/* line 65, ../../src/scss/chat-window.scss */
+.side-chat-window-grid {
+  grid-area: sidechat;
+  display: grid;
+  width: 100%;
+  height: calc((75vh -114px) - 10px);
+  grid-template-columns: 100%;
+  grid-template-rows: 99.9% .1%;
+  grid-template-areas: "sidechat1" "sidechat2";
+  background: transparent;
+  border-left: 2px #abc solid;
+  overflow: hidden;
+}
+/* line 75, ../../src/scss/chat-window.scss */
+.side-chat-window-grid--side-chat_top {
+  grid-area: sidechat1;
+  display: block;
+  width: 100%;
+  background: transparent;
+  border-bottom: 2px #abc solid;
+}
+/* line 82, ../../src/scss/chat-window.scss */
+.side-chat_room-title-bar {
+  margin: 0px;
+  width: 100%;
+  background: #213242;
+  position: relative;
+  color: #abc;
+  text-align: left;
+  padding-left: 10px;
+  top: 0px;
+  box-shadow: inset -5px 0px 8px rgba(92, 123, 154, 0.35);
+  border-bottom: 1px solid rgba(170, 187, 204, 0.5);
+}
+/* line 87, ../../src/scss/chat-window.scss */
+.side-chat-window-grid--side-chat_bottom {
+  grid-area: sidechat2;
+  display: block;
+  background: transparent;
+}
+/* line 92, ../../src/scss/chat-window.scss */
+.side-chat_room-title-bar {
+  margin: 0px;
+  width: 100%;
+  background: #213242;
+  position: relative;
+  color: #abc;
+  text-align: left;
+  padding-left: 10px;
+  top: 0px;
+  box-shadow: inset -5px 0px 8px rgba(92, 123, 154, 0.35);
+  border-bottom: 1px solid rgba(170, 187, 204, 0.5);
+}
+
+/* line 98, ../../src/scss/chat-window.scss */
+.chatting-with {
+  background: #213242;
+  font-size: 2em;
+}
+
+/* @import "theme-variants"; */
+/* MESSAGES */
+/* line 7, ../../src/scss/messages.scss */
+.user-entry-container {
+  display: table;
+  margin: 5px 0px;
+  padding: 5px 10px;
+  background: transparent;
+  border-right: 1px solid #abc;
+  box-shadow: inset -8px 0px 8px rgba(170, 187, 204, 0.35);
+}
+/* line 14, ../../src/scss/messages.scss */
+.user-entry-container--screen-name {
+  background: transparent;
+  color: #abc;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-left: 5px;
+  text-decoration: none;
+}
+/* line 22, ../../src/scss/messages.scss */
+.user-entry-container--message-output {
+  color: white;
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+/* line 29, ../../src/scss/messages.scss */
+.feedback p {
+  color: #aaa;
+  padding: 10px 40px;
+  margin: 0 20px;
+}
+
+/* line 35, ../../src/scss/messages.scss */
+label {
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 20px;
+}
+
+/* line 41, ../../src/scss/messages.scss */
+input {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 0;
+  display: block;
+  position: fixed;
+  /* bottom: 115px; */
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  font-family: Nunito;
+  font-size: 16px;
+}
+
+/* line 54, ../../src/scss/messages.scss */
+.message-send-container {
+  margin: 0px;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 110px;
+}
+/* line 60, ../../src/scss/messages.scss */
+.message-send-container--message-input {
+  display: block;
+  height: 58px;
+  width: 100%;
+  background: #bbccdd;
+}
+/* line 66, ../../src/scss/messages.scss */
+.message-send-container--send {
+  display: block;
+  position: relative;
+  bottom: -44px;
+  /* bottom: 70px; */
+  background: #446688;
+  color: #446688;
+  font-size: 18px;
+  border: 0;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+  z-index: 500;
+}
+
+/* width */
+/* line 3, ../../src/scss/scroll-component.scss */
+::-webkit-scrollbar {
+  margin-left: 5px;
+  width: 15px;
+}
+
+/* Track */
+/* line 9, ../../src/scss/scroll-component.scss */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 15px;
+}
+
+/* Handle */
+/* line 15, ../../src/scss/scroll-component.scss */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 15px;
+  box-shadow: inset 2px 0px 2px #abc;
+}
+
+/* Handle on hover */
+/* line 22, ../../src/scss/scroll-component.scss */
+::-webkit-scrollbar-thumb:hover {
+  background: #5c7b9a;
+}
+
+/* @import "theme-variants"; */
+/* line 6, ../../src/scss/animations.scss */
+.side-chat-grid-split {
+  animation: 225ms sidechatSplit linear 1 forwards;
+}
+
+/* line 9, ../../src/scss/animations.scss */
+.side-chat-main-title-shrink {
+  animation: 225ms mainTitleShrink linear 1 forwards;
+}
+
+/* SIDE CHAT AREA */
+@keyframes sidechatSplit {
+  0% {
+    grid-template-columns: 99.9% 0.1%;
+  }
+  10% {
+    grid-template-columns: 95% 5%;
+  }
+  20% {
+    grid-template-columns: 90% 10%;
+  }
+  40% {
+    grid-template-columns: 85% 15%;
+  }
+  60% {
+    grid-template-columns: 80% 20%;
+  }
+  80% {
+    grid-template-columns: 75% 25%;
+  }
+  90% {
+    grid-template-columns: 65% 35%;
+  }
+  92% {
+    grid-template-columns: 55% 45%;
+  }
+  94% {
+    grid-template-columns: 50% 50%;
+  }
+  96% {
+    grid-template-columns: 45% 55%;
+  }
+  98% {
+    grid-template-columns: 47.5% 52.5%;
+  }
+  100% {
+    grid-template-columns: 50% 50%;
+  }
+}
+@keyframes mainTitleShrink {
+  0% {
+    width: 100%;
+  }
+  10% {
+    width: 95%;
+  }
+  20% {
+    width: 90%;
+  }
+  40% {
+    width: 85%;
+  }
+  60% {
+    width: 80%;
+  }
+  80% {
+    width: 75%;
+  }
+  90% {
+    width: 65%;
+  }
+  92% {
+    width: 55%;
+  }
+  94% {
+    width: 50%;
+  }
+  96% {
+    width: 45%;
+  }
+  98% {
+    width: 47.5%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+/* line 89, ../../src/scss/animations.scss */
+.side-chat-grid-two-window-split {
+  animation: 225ms sidechatTwoWindowSplit linear 1 forwards;
+}
+
+@keyframes sidechatTwoWindowSplit {
+  0% {
+    grid-template-rows: 99.9% 0.1%;
+  }
+  10% {
+    grid-template-rows: 95% 5%;
+  }
+  20% {
+    grid-template-rows: 90% 10%;
+  }
+  40% {
+    grid-template-rows: 85% 15%;
+  }
+  60% {
+    grid-template-rows: 80% 20%;
+  }
+  80% {
+    grid-template-rows: 75% 25%;
+  }
+  90% {
+    grid-template-rows: 65% 35%;
+  }
+  92% {
+    grid-template-rows: 55% 45%;
+  }
+  94% {
+    grid-template-rows: 50% 50%;
+  }
+  96% {
+    grid-template-rows: 45% 55%;
+  }
+  98% {
+    grid-template-rows: 47.5% 52.5%;
+  }
+  100% {
+    grid-template-rows: 50% 50%;
+  }
+}
+/* line 130, ../../src/scss/animations.scss */
+.side-chat-grid-two-window-split-b2-one {
+  animation: 225ms sidechatTwoWindowSplitB2One linear 1 forwards;
+}
+
+@keyframes sidechatTwoWindowSplitB2One {
+  0% {
+    grid-template-rows: 50% 50%;
+  }
+  10% {
+    grid-template-rows: 47.5% 52.5%;
+  }
+  20% {
+    grid-template-rows: 45% 55%;
+  }
+  40% {
+    grid-template-rows: 50% 50%;
+  }
+  60% {
+    grid-template-rows: 55% 45%;
+  }
+  80% {
+    grid-template-rows: 65% 35%;
+  }
+  90% {
+    grid-template-rows: 75% 25%;
+  }
+  92% {
+    grid-template-rows: 80% 20%;
+  }
+  94% {
+    grid-template-rows: 85% 15%;
+  }
+  96% {
+    grid-template-rows: 90% 10%;
+  }
+  98% {
+    grid-template-rows: 95% 5%;
+  }
+  100% {
+    grid-template-rows: 99.9% 0.1%;
+  }
+}
+/* line 4, ../../src/scss/footer.scss */
+.footer-bar {
+  grid-area: footer;
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  padding: 8px 0px;
+  width: 100%;
+  background: #234;
+  color: #abc;
+  font-size: 2.5vw;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* line 13, ../../src/scss/styles.scss */
+* {
+  background: #10151b;
+  margin: 0px;
+  box-sizing: border-box;
+  /* border: 2px red solid !important; */
+}
+
+/* line 20, ../../src/scss/styles.scss */
+.b {
+  border: 1px red solid;
+}
+
+/* line 23, ../../src/scss/styles.scss */
+.hide {
+  display: none;
+}
+
+/* line 26, ../../src/scss/styles.scss */
+.prime-container {
+  resize: none;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 70px auto 110px;
+  grid-template-areas: "titlebar maincontainer footer";
+}
+
+/* line 33, ../../src/scss/styles.scss */
+.main-container {
+  grid-area: maincontainer;
+  overflow: hidden;
+  width: 100%;
+  background: #10151b;
+}

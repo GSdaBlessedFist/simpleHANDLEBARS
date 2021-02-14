@@ -1,0 +1,18 @@
+@import "variables";
+@import "font";
+
+.footer-bar {
+   grid-area: footer;
+   display: flex;
+   position: fixed;
+   bottom: 0px;
+   justify-content: center;
+   align-items: center;
+   height: $titlebarHeight ;
+   padding: 8px 0px;
+   width: 100%;
+   background: #234;
+   color: $color1;
+   font-size: 2.5vw;
+   @include siteFont;
+}

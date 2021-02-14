@@ -1,0 +1,109 @@
+/* @import "theme-variants"; */
+@import "variables";
+@import "font";
+@import "compass";
+
+/* LEFT RIGHT GRID */
+.chat-area-grid {
+  position: absolute;
+  top: $titlebarHeight + 10 !important;
+  left: 50%;
+  transform: translateX(-50%);
+  @include minorFont;
+  @include grid(98%, calc((75vh -114px) - 10px), "99.9% .1%", "100%");
+  grid-template-areas: "mainchat sidechat";
+
+  &--main-chat-window {
+    display: inline;
+    grid-area: mainchat;
+    position: absolute;
+    overflow-x: hidden;
+    background: green/*darken($color1, 65%);
+    padding-top: 30px;
+    padding-bottom: 10px;
+    top: 0px;
+    width: 100%;
+    height: 700px;
+    word-break: break-word;
+    overflow-y: auto;
+
+    /* scroll-snap-align: start; */
+    &_main-room-title {
+      display: none;
+      margin: 0px;
+      width: 100%;
+      background: darken($color2, 0.5);
+      position: fixed;
+      color: $color1;
+      text-align: center;
+      font-size: 2em;
+      top: 0px;
+      box-shadow: inset -5px 0px 8px darken(rgba($color1, 0.35), 25%);
+      border-bottom: 1px solid rgba($color1, 0.5);
+      z-index: 1500;
+    }
+    &_output {
+      display: table;
+      position: absolute;
+      padding: 14px 0px;
+      width: 100%;
+
+      // border-bottom: 1px solid #455678;
+      color: #555;
+      z-index: 1000;
+      & > div {
+        background: transparent;
+        box-shadow: inset -5px 0px 8px darken(rgba($color1, 0.35), 25%);
+        padding-left: 5px;
+        margin-bottom: 0px;
+        @include siteFont;
+      }
+    }
+  }
+}
+/* SIDE CHAT AREA */
+.side-chat-window-grid {
+  grid-area: sidechat;
+    @include grid(100%, calc((75vh -114px) - 10px), "100%", "99.9% .1%");
+  grid-template-areas:
+    "sidechat1"
+    "sidechat2";
+  background: transparent;
+  border-left: 2px $color1 solid;
+  overflow: hidden;
+
+  &--side-chat_top {
+    grid-area: sidechat1;
+    display: block;
+    width: 100%;
+    background: transparent;
+    border-bottom: 2px $color1 solid;
+    @at-root {
+      .side-chat_room-title-bar {
+        @include sidechatWindow;
+      }
+    }
+  }
+  &--side-chat_bottom {
+    grid-area: sidechat2;
+    display: block;
+    background: transparent;
+    @at-root {
+      .side-chat_room-title-bar {
+        @include sidechatWindow;
+      }
+    }
+  }
+}
+.chatting-with {
+  background: darken($color2, 0.5);
+  font-size: 2em;
+}
+
+
+
+
+
+
+
+

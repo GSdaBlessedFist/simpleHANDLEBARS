@@ -1,0 +1,125 @@
+/* @import "theme-variants"; */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+/* line 5, ../../src/scss/intro.scss */
+.sign-in {
+  display: block;
+  margin-top: 125px;
+  padding: 30px 0;
+  width: 98%;
+  background: transparent;
+  /*darken($color2, 0.75);*/
+  position: fixed;
+  color: #abc;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  user-select: none;
+  border: 1px solid white;
+}
+
+/* line 19, ../../src/scss/intro.scss */
+.name-section {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  margin: auto 0px;
+  width: 100%;
+  height: 350px;
+  background: #10151b;
+  top: 45px;
+}
+/* line 29, ../../src/scss/intro.scss */
+.name-section--name-input {
+  position: relative;
+  color: #ccd9e6;
+  border-bottom: 2px rgba(170, 187, 204, 0.55) solid;
+  box-shadow: inset 0px 8px 6px rgba(170, 187, 204, 0.35);
+  background: transparent;
+  margin: auto;
+  min-width: 20% !important;
+  max-width: 35% !important;
+  max-height: 50px !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 5px 0px;
+}
+/* line 45, ../../src/scss/intro.scss */
+.name-section--name-input::placeholder {
+  opacity: 0.25;
+}
+
+/* line 51, ../../src/scss/intro.scss */
+.bottom-half {
+  display: block;
+  position: absolute;
+  top: 296px;
+  width: 100%;
+  height: 500px;
+  z-index: 500;
+}
+/* line 59, ../../src/scss/intro.scss */
+.input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  background: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  max-height: 70px;
+  z-index: 500px;
+}
+/* line 70, ../../src/scss/intro.scss */
+.input-section--initial-input {
+  display: block;
+  position: relative;
+  top: 0px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin: 15px;
+  width: 35%;
+  border-bottom: 2px rgba(170, 187, 204, 0.55) solid;
+  box-shadow: inset 0px 8px 6px rgba(170, 187, 204, 0.35);
+  color: #ccd9e6;
+  background: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  padding: 5px 0px;
+}
+/* line 88, ../../src/scss/intro.scss */
+.input-section--initial-input::placeholder {
+  opacity: 0.25;
+}
+/* line 96, ../../src/scss/intro.scss */
+.join-chat-row {
+  display: flex;
+  position: relative;
+  left: 50%;
+  margin-top: 40px;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+  height: 150px;
+}
+/* line 107, ../../src/scss/intro.scss */
+.join-chat-row--link {
+  color: white;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+}
+/* line 113, ../../src/scss/intro.scss */
+.join-chat-row--button {
+  position: relative;
+  bottom: 20px;
+  border: 2px red solid;
+  border-radius: 50px;
+  background: #abc;
+  padding: 15px;
+}

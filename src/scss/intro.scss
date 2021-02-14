@@ -1,0 +1,126 @@
+/* @import "theme-variants"; */
+@import "variables";
+@import "font";
+
+.sign-in{
+   display: block;
+   margin-top: 125px;
+   padding: 30px 0;
+   width: 98%;
+   background: transparent;/*darken($color2, 0.75);*/
+   position: fixed;
+   color: $color1;
+   text-align: center;
+   @include siteFont;
+   font-size: 3rem;
+   user-select: none;
+   border: 1px solid white;
+}
+.name-section {
+   display: flex;
+   position: absolute;
+   justify-content: center;
+   margin: auto 0px;
+   width: 100%;
+   height: 350px;
+   background: darken($color1,65%);
+   top: 45px;
+   
+   &--name-input {
+      position: relative;
+      color: lighten($color2,65%);
+      border-bottom: 2px rgba($color1, 0.55) solid;
+      box-shadow: inset 0px 8px 6px rgba($color1, 0.35);
+      background: transparent;
+      // border-top-right-radius:25px;
+      // border-top-left-radius:25px;
+      margin: auto;
+      min-width: 20% !important;
+      max-width: 35% !important;
+      max-height: 50px !important;
+      @include siteFont;
+      font-size: 1.5em;
+      text-align: center;
+      padding: 5px 0px;
+      &::placeholder {
+         opacity: 0.25;
+      }
+   }
+}
+
+.bottom-half {
+   display: block;
+   position: absolute;
+   top: 296px;
+   width: 100%;
+   height: 500px;
+   z-index: 500;
+   @at-root {
+      .input-section {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding-top: 35px;
+         padding-bottom: 35px;
+         background: transparent;
+         @include siteFont;
+         font-size: 1em;
+         max-height: 70px;
+         z-index: 500px;
+         &--initial-input {
+            display: block;
+            position: relative;
+            top: 0px;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            margin: 15px;
+            width: 35%;
+            border-bottom: 2px rgba($color1, 0.55) solid;
+            box-shadow: inset 0px 8px 6px rgba($color1, 0.35);
+            color: lighten($color2,65%);
+            background: transparent;
+            // border-bottom-right-radius:25px;
+            // border-bottom-left-radius:25px;
+            @include siteFont;
+            font-size: 2em;
+            text-align: center;
+            padding: 5px 0px;
+            &::placeholder {
+               opacity: 0.25;
+            }
+         }
+      }
+   }
+   
+   @at-root {
+      .join-chat-row {
+         display: flex;
+         position: relative;
+         left: 50%;
+         margin-top: 40px;
+         transform: translateX(-50%);
+         justify-content: center;
+         align-items: center;
+         flex-direction: row;
+         width: 50%;
+         height: 150px;
+         &--link {
+            color: white;
+            text-decoration: none;
+            @include siteFont;
+            font-size: 1.5em;
+         }
+         &--button {
+            position: relative;
+            bottom: 20px;
+            // font-size: 2em;
+            border: 2px red solid;
+            border-radius: 50px;
+            background: $color1;
+            padding: 15px;
+         }
+      }
+   }
+}
+
+

@@ -1,0 +1,87 @@
+/* @import "theme-variants"; */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+/* MESSAGES */
+/* line 7, ../../src/scss/messages.scss */
+.user-entry-container {
+  display: table;
+  margin: 5px 0px;
+  padding: 5px 10px;
+  background: transparent;
+  border-right: 1px solid #abc;
+  box-shadow: inset -8px 0px 8px rgba(170, 187, 204, 0.35);
+}
+/* line 14, ../../src/scss/messages.scss */
+.user-entry-container--screen-name {
+  background: transparent;
+  color: #abc;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-left: 5px;
+  text-decoration: none;
+}
+/* line 22, ../../src/scss/messages.scss */
+.user-entry-container--message-output {
+  color: white;
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+/* line 29, ../../src/scss/messages.scss */
+.feedback p {
+  color: #aaa;
+  padding: 10px 40px;
+  margin: 0 20px;
+}
+
+/* line 35, ../../src/scss/messages.scss */
+label {
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 20px;
+}
+
+/* line 41, ../../src/scss/messages.scss */
+input {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 0;
+  display: block;
+  position: fixed;
+  /* bottom: 115px; */
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  font-family: Nunito;
+  font-size: 16px;
+}
+
+/* line 54, ../../src/scss/messages.scss */
+.message-send-container {
+  margin: 0px;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 110px;
+}
+/* line 60, ../../src/scss/messages.scss */
+.message-send-container--message-input {
+  display: block;
+  height: 58px;
+  width: 100%;
+  background: #bbccdd;
+}
+/* line 66, ../../src/scss/messages.scss */
+.message-send-container--send {
+  display: block;
+  position: relative;
+  bottom: -44px;
+  /* bottom: 70px; */
+  background: #446688;
+  color: #446688;
+  font-size: 18px;
+  border: 0;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+  z-index: 500;
+}

@@ -1,0 +1,29 @@
+ {
+  "name": "simplechat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js -e js,hbs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "socket.io": "^3.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSdaBlessedFist/simple-chat-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GSdaBlessedFist/simple-chat-app/issues"
+  },
+  "homepage": "https://github.com/GSdaBlessedFist/simple-chat-app#readme"
+}

@@ -1,0 +1,27 @@
+//Titlebar
+$titlebarHeight: 70px; //also footer height
+//Colors
+$color1: #abc;
+$color2: #234;
+
+// MIXIN's
+@mixin grid($w, $h, $colQUOTES, $rQUOTES) {
+  display: grid;
+  width: $w;
+  height: $h;
+  grid-template-columns: unquote($colQUOTES);
+  grid-template-rows: unquote($rQUOTES);
+}
+
+@mixin sidechatWindow {
+  margin: 0px;
+  width: 100%;
+  background: darken($color2, 0.5);
+  position: relative;
+  color: $color1;
+  text-align: left;
+  padding-left: 10px;
+  top: 0px;
+  box-shadow: inset -5px 0px 8px darken(rgba($color1, 0.35), 25%);
+  border-bottom: 1px solid rgba($color1, 0.5);
+}

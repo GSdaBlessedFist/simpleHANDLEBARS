@@ -1,0 +1,32 @@
+/* @import "theme-variants"; */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+/* line 6, ../../src/scss/close-button.scss */
+.close-button-container {
+  display: none;
+  position: relative;
+  top: -43px;
+  font-size: 2em;
+  width: 1.15em;
+  max-height: 1.15em;
+  height: 1.15em;
+  border-radius: 50px;
+  text-align: center;
+  padding-bottom: 15px;
+  margin: 2px;
+  float: right;
+  border: 2px #abc solid;
+  transition: all .5s;
+}
+/* line 21, ../../src/scss/close-button.scss */
+.close-button-container:hover {
+  border: 2px #5c7b9a solid;
+  color: #5c7b9a;
+}
+/* line 25, ../../src/scss/close-button.scss */
+.close-button-container--span {
+  position: relative;
+  top: -6px;
+  background: transparent;
+  font-family: "Montserrat", sans-serif;
+}
