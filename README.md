@@ -1,2 +1,2 @@
 # simple-chat-app
-# simpleHANDLEBARS
+# using HANDLEBARS + SOCKET.io
