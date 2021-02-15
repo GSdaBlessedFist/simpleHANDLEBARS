@@ -25,3 +25,9 @@ $color2: #234;
   box-shadow: inset -5px 0px 8px darken(rgba($color1, 0.35), 25%);
   border-bottom: 1px solid rgba($color1, 0.5);
 }
+
+@mixin lrcenter {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}

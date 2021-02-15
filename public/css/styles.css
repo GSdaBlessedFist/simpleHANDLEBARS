@@ -4,6 +4,8 @@
 /* line 5, ../../src/scss/title-bar.scss */
 .title-bar {
   display: grid;
+  position: sticky;
+  top: 0;
   grid-template-rows: 1;
   grid-template-columns: 15;
   width: 100vw;
@@ -11,14 +13,14 @@
   border-bottom: 2px solid  white;
   background: #234;
 }
-/* line 13, ../../src/scss/title-bar.scss */
+/* line 15, ../../src/scss/title-bar.scss */
 .title-bar > * {
   display: flex;
   justify-content: center;
   align-items: center;
   background: inherit;
 }
-/* line 19, ../../src/scss/title-bar.scss */
+/* line 21, ../../src/scss/title-bar.scss */
 .title-bar--site-title {
   grid-area: title;
   grid-column-start: 1;
@@ -30,11 +32,11 @@
   font-size: 3rem;
   padding-left: -5px;
 }
-/* line 29, ../../src/scss/title-bar.scss */
+/* line 31, ../../src/scss/title-bar.scss */
 .title-bar--site-title > div {
   background: inherit;
 }
-/* line 33, ../../src/scss/title-bar.scss */
+/* line 35, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button {
   grid-area: dark;
   grid-column-start: 2;
@@ -48,7 +50,7 @@
   font-size: 1.25rem;
   color: white;
 }
-/* line 45, ../../src/scss/title-bar.scss */
+/* line 47, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button > a {
   display: flex;
   justify-content: center;
@@ -62,7 +64,7 @@
   text-decoration: none;
   color: #49627a;
 }
-/* line 57, ../../src/scss/title-bar.scss */
+/* line 59, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button > a:hover {
   border: 2px solid white;
   color: white;
@@ -87,62 +89,61 @@
 
 /* line 6, ../../src/scss/styles.scss */
 * {
+  margin: 0;
   background: #10151b;
   margin: 0px;
   box-sizing: border-box;
 }
 
-/* line 11, ../../src/scss/styles.scss */
+/* line 12, ../../src/scss/styles.scss */
 .b {
   border: 1px red solid;
 }
 
-/* line 14, ../../src/scss/styles.scss */
+/* line 15, ../../src/scss/styles.scss */
 .hide {
   display: none;
 }
 
-/* line 17, ../../src/scss/styles.scss */
+/* line 18, ../../src/scss/styles.scss */
 .prime-container {
   resize: none;
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 70px auto 110px;
-  grid-template-areas: "titlebar maincontainer footer";
+  grid-template-rows: 70px 1fr 110px;
+  grid-template-areas: "titlebar" "maincontainer"  "footer";
 }
 
-/* line 25, ../../src/scss/styles.scss */
+/* line 28, ../../src/scss/styles.scss */
 .main-container {
   grid-area: maincontainer;
   overflow: hidden;
+  position: absolute;
   background: black;
+  top: 73px;
+  margin: auto;
   display: grid;
   width: 100%;
-  height: 100px;
+  height: calc(100% - 145px);
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
   grid-template-areas: "mainchat sidechat_1" "mainchat sidechat_2";
+  color: white;
 }
-/* line 33, ../../src/scss/styles.scss */
-.chat-area-grid {
-  width: 100%;
-  height: 500px;
-}
-/* line 36, ../../src/scss/styles.scss */
-.chat-area-grid--mainchat {
+/* line 39, ../../src/scss/styles.scss */
+.main-container--mainchat {
   grid-area: mainchat;
-  background: red;
-  border: 1px red solid;
   width: 100%;
+  border: 1px solid white;
 }
-/* line 42, ../../src/scss/styles.scss */
-.chat-area-grid--sidechat_1 {
+/* line 44, ../../src/scss/styles.scss */
+.main-container--sidechat_1 {
   grid-area: sidechat_1;
   width: 100%;
 }
-/* line 46, ../../src/scss/styles.scss */
-.chat-area-grid--sidechat_2 {
+/* line 48, ../../src/scss/styles.scss */
+.main-container--sidechat_2 {
   grid-area: sidechat_2;
   width: 100%;
 }

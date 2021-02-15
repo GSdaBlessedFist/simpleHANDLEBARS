@@ -4,6 +4,7 @@
 @import "footer";
 
 * {
+   margin: 0;
 	background: darken($color1,65%);
    margin: 0px;
    box-sizing: border-box;
@@ -19,35 +20,33 @@
 	height: 100%;
    width: 100%;
 	display: grid;
-	grid-template-rows: $titlebarHeight auto 110px;
-	grid-template-areas: "titlebar maincontainer footer";
+	grid-template-rows: $titlebarHeight 1fr 110px;
+	grid-template-areas: "titlebar"
+                        "maincontainer" 
+                        "footer";
 }
 .main-container {
    grid-area: maincontainer;
    overflow: hidden;
+   position: absolute;
    background: darken($color1,75%);
-   @include grid(100%,100px,"50% 50%","50% 50%");
+   top: $titlebarHeight+3px;
+   margin: auto;
+   @include grid(100%,calc(100% - 145px),"50% 50%","50% 50%");
    grid-template-areas: "mainchat sidechat_1"
                         "mainchat sidechat_2";
-   @at-root{
-      .chat-area-grid{
-         width: 100%;
-         height: 500px;
-         &--mainchat{
-            grid-area: mainchat;
-            background: red;
-            border: 1px red solid;
-            width: 100%;
-         }
-         &--sidechat_1{
-            grid-area: sidechat_1;
-            width: 100%;
-         }
-         &--sidechat_2{
-            grid-area: sidechat_2;
-            width: 100%;
-         }
-            }
-         }
-   
+   color: white;
+   &--mainchat{
+      grid-area: mainchat;
+      width: 100%;
+      border: 1px solid white;
+   }
+   &--sidechat_1{
+      grid-area: sidechat_1;
+      width: 100%;
+   }
+   &--sidechat_2{
+      grid-area: sidechat_2;
+      width: 100%;
+   }
 }

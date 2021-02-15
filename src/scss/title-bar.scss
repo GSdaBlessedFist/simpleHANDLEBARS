@@ -4,6 +4,8 @@
 
 .title-bar {
    display: grid;
+   position: sticky;
+   top: 0;
    grid-template-rows: 1;
    grid-template-columns: 15;
    width: 100vw;
