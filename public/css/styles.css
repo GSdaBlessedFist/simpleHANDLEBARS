@@ -81,7 +81,7 @@
   width: 100%;
   background: #234;
   color: white;
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -116,6 +116,33 @@
 .main-container {
   grid-area: maincontainer;
   overflow: hidden;
-  width: 100vw;
   background: black;
+  display: grid;
+  width: 100%;
+  height: 100px;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas: "mainchat sidechat_1" "mainchat sidechat_2";
+}
+/* line 33, ../../src/scss/styles.scss */
+.chat-area-grid {
+  width: 100%;
+  height: 500px;
+}
+/* line 36, ../../src/scss/styles.scss */
+.chat-area-grid--mainchat {
+  grid-area: mainchat;
+  background: red;
+  border: 1px red solid;
+  width: 100%;
+}
+/* line 42, ../../src/scss/styles.scss */
+.chat-area-grid--sidechat_1 {
+  grid-area: sidechat_1;
+  width: 100%;
+}
+/* line 46, ../../src/scss/styles.scss */
+.chat-area-grid--sidechat_2 {
+  grid-area: sidechat_2;
+  width: 100%;
 }

@@ -25,6 +25,29 @@
 .main-container {
    grid-area: maincontainer;
    overflow: hidden;
-   width: 100vw;
    background: darken($color1,75%);
+   @include grid(100%,100px,"50% 50%","50% 50%");
+   grid-template-areas: "mainchat sidechat_1"
+                        "mainchat sidechat_2";
+   @at-root{
+      .chat-area-grid{
+         width: 100%;
+         height: 500px;
+         &--mainchat{
+            grid-area: mainchat;
+            background: red;
+            border: 1px red solid;
+            width: 100%;
+         }
+         &--sidechat_1{
+            grid-area: sidechat_1;
+            width: 100%;
+         }
+         &--sidechat_2{
+            grid-area: sidechat_2;
+            width: 100%;
+         }
+            }
+         }
+   
 }
