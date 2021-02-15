@@ -10,7 +10,7 @@ const server = app.listen(port,function(){
 	console.log(`listening on port ${port}`);
 })
 
-// app.use(express.static('public'))
+app.use(express.static('public'))
 
 // Express config
 const publicDirectory = path.join(__dirname, "/public");
@@ -22,7 +22,8 @@ app.set("view engine", "hbs");
 app.set("views", viewsPath);
 hbs.registerPartials(partialsPath);
 
-const nameofApp = "chipsNmore";
+const nameofApp = "chatty app";
+
 
 app.get("",(req,res)=>{
         res.render("index",{

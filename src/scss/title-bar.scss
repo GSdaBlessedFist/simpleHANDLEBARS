@@ -3,5 +3,61 @@
 @import "font";
 
 .title-bar {
-   
+   display: grid;
+   grid-template-rows: 1;
+   grid-template-columns: 15;
+   width: 100vw;
+   grid-template-areas: "title dark . . . . . . . . . . . . . ";
+   border-bottom: 2px solid  white;
+   background: #234;
+   &>*{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background: inherit;
+      }
+   &--site-title{
+      grid-area: title;
+      grid-column-start: 1;
+      grid-column-end: 1;
+      @include siteFont;
+      background: #234;
+      color: white;
+      user-select: none;
+      font-size: 3rem;
+      padding-left: -5px;
+      &>div{
+         background: inherit;
+      }
+   }
+   &--darkmode-button{
+      grid-area: dark;
+      grid-column-start: 2;
+      grid-column-end: 2;
+      display: inline;
+      position: relative;
+      background: transparent;
+      top: 17px;
+      left:-17px;
+      @include siteFont;
+      font-size: 1.25rem;
+      color: white;
+      &>a{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 35px;
+         height: 35px;
+         background: inherit;
+         border: 2px solid darken($color1,35%);
+         border-radius: 25px;
+         left: 50px;
+         text-decoration: none;
+         color: darken($color1,35%);
+         &:hover{
+            border: 2px solid white;
+            color:white;
+         };
+      }
+   }
 }

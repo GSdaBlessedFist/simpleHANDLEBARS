@@ -1,15 +1,12 @@
 @import "variables";
 @import "font";
 @import "title-bar";
-
 @import "footer";
 
 * {
 	background: darken($color1,65%);
    margin: 0px;
    box-sizing: border-box;
-   // background: white !important; 
-   /* border: 2px red solid !important; */
 }
 .b {
    border: 1px red solid;
@@ -20,6 +17,7 @@
 .prime-container{
    resize:none;
 	height: 100%;
+   width: 100%;
 	display: grid;
 	grid-template-rows: $titlebarHeight auto 110px;
 	grid-template-areas: "titlebar maincontainer footer";
@@ -27,6 +25,6 @@
 .main-container {
    grid-area: maincontainer;
    overflow: hidden;
-   width: 100%;
-   background: darken($color1,65%);
+   width: 100vw;
+   background: darken($color1,75%);
 }
