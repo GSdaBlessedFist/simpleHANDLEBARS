@@ -11,7 +11,7 @@
    width: 100vw;
    grid-template-areas: "title dark . . . . . . . . . . . . . ";
    border-bottom: 2px solid  white;
-   background: #234;
+   background: $color2;
    &>*{
          display: flex;
          justify-content: center;
@@ -24,12 +24,13 @@
       grid-column-end: 1;
       @include siteFont;
       background: #234;
-      color: white;
+      
       user-select: none;
       font-size: 3rem;
       padding-left: -5px;
       &>div{
          background: inherit;
+         color: $color1;
       }
    }
    &--darkmode-button{
@@ -43,7 +44,6 @@
       left:-17px;
       @include siteFont;
       font-size: 1.25rem;
-      color: white;
       &>a{
          display: flex;
          justify-content: center;
@@ -53,12 +53,13 @@
          background: inherit;
          border: 2px solid darken($color1,35%);
          border-radius: 25px;
+         margin: 0px 10px;
          left: 50px;
          text-decoration: none;
          color: darken($color1,35%);
          &:hover{
-            border: 2px solid white;
-            color:white;
+            border: 2px solid $color1;
+            color: $color1;
          };
       }
    }

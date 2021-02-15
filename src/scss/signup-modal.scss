@@ -1,0 +1,47 @@
+@import "variables";
+@import "font";
+
+.signup-modal{
+   display: block;
+   position: relative;
+   margin: auto;
+   width:60%;
+   height: clamp(400px,70%,70%);
+   top: $titlebarHeight;
+   background: $color2;
+   border: .5px solid $color1;
+   color: $color1;
+   &--grid{
+      margin: auto auto;
+      @include grid(95%,100%,"1fr","20% 60%");
+      grid-template-areas: "intro"
+                           "inputs";
+   }
+   @at-root{
+      .mdl-signin-section{
+         grid-area: intro;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         @include siteFont;
+         font-size: clamp(1.5rem,3rem,3.5vw);
+         color: $color1;
+         background: $color2;
+      }
+      .mdl-inputs-section{
+         grid-area: inputs;
+         background: $color2;
+      }
+      .mdl-input{
+         display: block;
+         width: 65%;
+         margin: 20px auto;
+         font-size: clamp(1.5rem,3rem,3vw);
+         text-align: center;
+         background: darken($color1,35%);
+      }
+      .mdl-join-button{
+         background: $color2;
+      }
+   }
+}

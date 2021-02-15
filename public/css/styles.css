@@ -27,7 +27,6 @@
   grid-column-end: 1;
   font-family: "Montserrat", sans-serif;
   background: #234;
-  color: white;
   user-select: none;
   font-size: 3rem;
   padding-left: -5px;
@@ -35,8 +34,9 @@
 /* line 31, ../../src/scss/title-bar.scss */
 .title-bar--site-title > div {
   background: inherit;
+  color: #abc;
 }
-/* line 35, ../../src/scss/title-bar.scss */
+/* line 36, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button {
   grid-area: dark;
   grid-column-start: 2;
@@ -48,7 +48,6 @@
   left: -17px;
   font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
-  color: white;
 }
 /* line 47, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button > a {
@@ -60,14 +59,70 @@
   background: inherit;
   border: 2px solid #49627a;
   border-radius: 25px;
+  margin: 0px 10px;
   left: 50px;
   text-decoration: none;
   color: #49627a;
 }
-/* line 59, ../../src/scss/title-bar.scss */
+/* line 60, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button > a:hover {
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #abc;
+  color: #abc;
+}
+
+/* line 4, ../../src/scss/signup-modal.scss */
+.signup-modal {
+  display: block;
+  position: relative;
+  margin: auto;
+  width: 60%;
+  height: clamp(400px, 70%, 70%);
+  top: 70px;
+  background: #234;
+  border: 0.5px solid #abc;
+  color: #abc;
+}
+/* line 14, ../../src/scss/signup-modal.scss */
+.signup-modal--grid {
+  margin: auto auto;
+  display: grid;
+  width: 95%;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 60%;
+  grid-template-areas: "intro" "inputs";
+}
+/* line 21, ../../src/scss/signup-modal.scss */
+.mdl-signin-section {
+  grid-area: intro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.5rem, 3rem, 3.5vw);
+  color: #abc;
+  background: #234;
+}
+
+/* line 31, ../../src/scss/signup-modal.scss */
+.mdl-inputs-section {
+  grid-area: inputs;
+  background: #234;
+}
+
+/* line 35, ../../src/scss/signup-modal.scss */
+.mdl-input {
+  display: block;
+  width: 65%;
+  margin: 20px auto;
+  font-size: clamp(1.5rem, 3rem, 3vw);
+  text-align: center;
+  background: #49627a;
+}
+
+/* line 43, ../../src/scss/signup-modal.scss */
+.mdl-join-button {
+  background: #234;
 }
 
 /* line 4, ../../src/scss/footer.scss */
@@ -87,25 +142,26 @@
   font-family: "Montserrat", sans-serif;
 }
 
-/* line 6, ../../src/scss/styles.scss */
+/* line 7, ../../src/scss/styles.scss */
 * {
   margin: 0;
-  background: #10151b;
   margin: 0px;
   box-sizing: border-box;
+  color: white;
+  background: #10151b;
 }
 
-/* line 12, ../../src/scss/styles.scss */
+/* line 14, ../../src/scss/styles.scss */
 .b {
   border: 1px red solid;
 }
 
-/* line 15, ../../src/scss/styles.scss */
+/* line 17, ../../src/scss/styles.scss */
 .hide {
   display: none;
 }
 
-/* line 18, ../../src/scss/styles.scss */
+/* line 21, ../../src/scss/styles.scss */
 .prime-container {
   resize: none;
   height: 100%;
@@ -115,7 +171,7 @@
   grid-template-areas: "titlebar" "maincontainer"  "footer";
 }
 
-/* line 28, ../../src/scss/styles.scss */
+/* line 31, ../../src/scss/styles.scss */
 .main-container {
   grid-area: maincontainer;
   overflow: hidden;
@@ -125,25 +181,23 @@
   margin: auto;
   display: grid;
   width: 100%;
-  height: calc(100% - 145px);
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  height: calc(100% - 144px);
+  grid-template-columns: 99.9% .1%;
+  grid-template-rows: 99.9% .1%;
   grid-template-areas: "mainchat sidechat_1" "mainchat sidechat_2";
   color: white;
+  animation: change 5s ease infinite both;
 }
-/* line 39, ../../src/scss/styles.scss */
+/* line 43, ../../src/scss/styles.scss */
 .main-container--mainchat {
   grid-area: mainchat;
-  width: 100%;
   border: 1px solid white;
 }
-/* line 44, ../../src/scss/styles.scss */
+/* line 48, ../../src/scss/styles.scss */
 .main-container--sidechat_1 {
   grid-area: sidechat_1;
-  width: 100%;
 }
-/* line 48, ../../src/scss/styles.scss */
+/* line 52, ../../src/scss/styles.scss */
 .main-container--sidechat_2 {
   grid-area: sidechat_2;
-  width: 100%;
 }

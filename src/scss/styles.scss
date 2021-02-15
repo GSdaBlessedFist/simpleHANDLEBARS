@@ -1,13 +1,15 @@
 @import "variables";
 @import "font";
 @import "title-bar";
+@import "signup-modal";
 @import "footer";
 
 * {
    margin: 0;
-	background: darken($color1,65%);
    margin: 0px;
    box-sizing: border-box;
+   color: white;
+   background: darken($color1,65%);
 }
 .b {
    border: 1px red solid;
@@ -15,6 +17,7 @@
 .hide {
    display: none;
 }
+
 .prime-container{
    resize:none;
 	height: 100%;
@@ -32,21 +35,22 @@
    background: darken($color1,75%);
    top: $titlebarHeight+3px;
    margin: auto;
-   @include grid(100%,calc(100% - 145px),"50% 50%","50% 50%");
+   @include grid(100%,calc(100% - 144px),"99.9% .1%","99.9% .1%");
    grid-template-areas: "mainchat sidechat_1"
                         "mainchat sidechat_2";
    color: white;
+   animation: change 5s ease infinite both;
    &--mainchat{
       grid-area: mainchat;
-      width: 100%;
+      
       border: 1px solid white;
    }
    &--sidechat_1{
       grid-area: sidechat_1;
-      width: 100%;
+      
    }
    &--sidechat_2{
       grid-area: sidechat_2;
-      width: 100%;
+      
    }
 }
