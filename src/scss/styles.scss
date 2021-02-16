@@ -2,6 +2,7 @@
 @import "font";
 @import "title-bar";
 @import "signup-modal";
+@import "send-component";
 @import "footer";
 
 * {
@@ -21,6 +22,7 @@
 .prime-container{
    resize:none;
 	height: 100%;
+   min-width: 400px;
    width: 100%;
 	display: grid;
 	grid-template-rows: $titlebarHeight 1fr 110px;

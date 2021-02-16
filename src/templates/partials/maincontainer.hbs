@@ -1,7 +1,7 @@
 <div class="main-container" id="main-container">
 	<div class="main-container--mainchat b">
 
-		<div class="signup-modal" id="signup-modal">
+		<div class="signup-modal hide" id="signup-modal">
 			<div class="signup-modal--grid ">
 				<div class="mdl-signin-section" id="signin">introduce yourself</div>
 				<div class="mdl-inputs-section">
@@ -13,9 +13,15 @@
 			</div>
 		</div><!---- class="signup-modal" -->
 
-		
+		<div class="send-component b" id="mainchat-send-component">
+			<div class="send-component--grid">
+				
+				<input type="text" name="message" class="sc-message-input" id="message-input" placeholder="what's up?"/>
+				<div class="sc-send-button" id="sc-send-button">SEND</div>
+			</div>
+		</div>
 
-		
+
 	</div><!---- main-container--mainchat -->
 
 	<div class="main-container--sidechat_1 b">SIDE1</div>
@@ -26,5 +32,6 @@
 <!-- VARIABLES::
 mainContainer,
 mainChatSection,sideChat_1Section,sideChat_2Section,
-signupModal,mdlUserNameInput,mdlMessageInput,joinChatButton 
+signupModal,mdlUserNameInput,mdlMessageInput,joinChatButton
+mainChatSendComponent 
 -->

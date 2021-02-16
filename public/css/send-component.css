@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+/* line 4, ../../src/scss/send-component.scss */
+.send-component {
+  display: block;
+  position: relative;
+  top: calc(100% - 100px);
+}
+/* line 8, ../../src/scss/send-component.scss */
+.send-component--grid {
+  display: grid;
+  width: 100%;
+  height: 100px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50% 50%;
+  grid-template-areas: "message" "send";
+}
+/* line 13, ../../src/scss/send-component.scss */
+.sc-message-input {
+  display: block;
+  width: 100%;
+  grid-area: message;
+  background: #abc;
+  color: #234;
+  font-size: clamp(1.65rem, 3rem, 3.5vw);
+  padding-left: 10px;
+}
+
+/* line 22, ../../src/scss/send-component.scss */
+.sc-send-button {
+  display: block;
+  grid-area: send;
+  background: #668cb3;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+}
