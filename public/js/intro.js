@@ -8,11 +8,7 @@ const mainContainer = document.getElementById("main-container"),
     joinChat = document.getElementById("join-chat"),
     chatAreaGrid = document.getElementById("chat-area-grid");
 
-const inputRowY = inputRow.getBoundingClientRect().y,
-    footerSection = document.querySelector(".footer-bar"),
-    footerSectionHeight = footerSection.getBoundingClientRect().height,
-    documentHeight = document.documentElement.clientHeight,
-    footerY = (documentHeight - inputRowY) - (footerSectionHeight * 2);
+
 
 
 

@@ -46,10 +46,11 @@
   background: transparent;
   top: 17px;
   left: -17px;
+  padding-left: 17px;
   font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
 }
-/* line 47, ../../src/scss/title-bar.scss */
+/* line 49, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button > a {
   display: flex;
   justify-content: center;
@@ -62,10 +63,13 @@
   margin: 0px 10px;
   left: 50px;
   text-decoration: none;
+  font-weight: 900;
   color: #49627a;
+  transition: all 250ms ease;
 }
-/* line 60, ../../src/scss/title-bar.scss */
+/* line 64, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button > a:hover {
   border: 2px solid #abc;
   color: #abc;
+  box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
 }
