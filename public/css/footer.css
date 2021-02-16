@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+/* line 7, ../../src/scss/variables.scss */
+:root {
+  --fadeOutTime: 1500;
+  --fadeInTime: 500;
+}
+
 /* line 4, ../../src/scss/footer.scss */
 .footer-bar {
   grid-area: footer;

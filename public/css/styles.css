@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+/* line 7, ../../src/scss/variables.scss */
+:root {
+  --fadeOutTime: 1500;
+  --fadeInTime: 500;
+}
+
 /* @import "theme-variants"; */
 /* line 5, ../../src/scss/title-bar.scss */
 .title-bar {
@@ -155,7 +161,7 @@
 
 /* line 67, ../../src/scss/signup-modal.scss */
 .goAway {
-  animation: fadeout var(--fadeOutTime) linear forwards;
+  animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
 }
 
 @keyframes fadeout {
@@ -170,13 +176,13 @@
 .send-component {
   display: block;
   position: relative;
-  top: calc(100% - 100px);
+  top: calc(100% - 75px);
 }
 /* line 8, ../../src/scss/send-component.scss */
 .send-component--grid {
   display: grid;
   width: 100%;
-  height: 100px;
+  height: 75px;
   grid-template-columns: 1fr;
   grid-template-rows: 50% 50%;
   grid-template-areas: "message" "send";
@@ -188,11 +194,14 @@
   grid-area: message;
   background: #abc;
   color: #234;
-  font-size: clamp(1.65rem, 3rem, 3.5vw);
+  /*font-size: clamp(1.65rem, 3rem, 3.5vw);*/
+  font-size: clamp(1rem, 1.5rem, 2vw);
+  /*font-family: "Roboto Slab", serif;*/
+  font-family: 'Merienda', cursive;
   padding-left: 10px;
 }
 
-/* line 22, ../../src/scss/send-component.scss */
+/* line 24, ../../src/scss/send-component.scss */
 .sc-send-button {
   display: block;
   grid-area: send;
@@ -203,6 +212,19 @@
   font-size: 2rem;
 }
 
+/* line 37, ../../src/scss/send-component.scss */
+.comingIn {
+  animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* line 4, ../../src/scss/footer.scss */
 .footer-bar {
   grid-area: footer;
@@ -222,11 +244,6 @@
 }
 
 /* line 8, ../../src/scss/styles.scss */
-:root {
-  --fadeOutTime: 500ms;
-}
-
-/* line 11, ../../src/scss/styles.scss */
 * {
   margin: 0;
   margin: 0px;
@@ -235,17 +252,17 @@
   background: #10151b;
 }
 
-/* line 18, ../../src/scss/styles.scss */
+/* line 15, ../../src/scss/styles.scss */
 .b {
   border: 1px red solid;
 }
 
-/* line 21, ../../src/scss/styles.scss */
+/* line 18, ../../src/scss/styles.scss */
 .hide {
   display: none;
 }
 
-/* line 25, ../../src/scss/styles.scss */
+/* line 22, ../../src/scss/styles.scss */
 .prime-container {
   resize: none;
   height: 100%;
@@ -256,7 +273,7 @@
   grid-template-areas: "titlebar" "maincontainer"  "footer";
 }
 
-/* line 36, ../../src/scss/styles.scss */
+/* line 33, ../../src/scss/styles.scss */
 .main-container {
   grid-area: maincontainer;
   overflow: hidden;
@@ -273,16 +290,16 @@
   color: white;
   animation: change 5s ease infinite both;
 }
-/* line 48, ../../src/scss/styles.scss */
+/* line 45, ../../src/scss/styles.scss */
 .main-container--mainchat {
   grid-area: mainchat;
   border: 1px solid white;
 }
-/* line 53, ../../src/scss/styles.scss */
+/* line 50, ../../src/scss/styles.scss */
 .main-container--sidechat_1 {
   grid-area: sidechat_1;
 }
-/* line 57, ../../src/scss/styles.scss */
+/* line 54, ../../src/scss/styles.scss */
 .main-container--sidechat_2 {
   grid-area: sidechat_2;
 }

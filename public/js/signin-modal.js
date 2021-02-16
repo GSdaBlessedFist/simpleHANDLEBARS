@@ -12,6 +12,7 @@ const signupModal= document.getElementById("signup-modal"),
       mdlMessageInput= document.getElementById("mdl-message-input"),
       mdlJoinChatButton= document.getElementById("mdl-join-button");
       mdlScreenNameInput.value ="";
+      mdlMessageInput.value = "";
 
 // sc = send-component
 const mainChatSendComponent= document.getElementById("mainchat-send-component"),
@@ -47,7 +48,11 @@ document.body.addEventListener("keyup", (e) => {
        
 
         signupModal.classList.add("goAway");
-        // message.value = "";
+        setTimeout(function(){
+            signupModal.classList.add("hide");
+            mainChatSendComponent.classList.add("comingIn");
+        },fadeOutTime)
+        scMessageInput.value = "";
         // signIn.style.display = "none";
 
         // delete this.keysPressed[e.key];

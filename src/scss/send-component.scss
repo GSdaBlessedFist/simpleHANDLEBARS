@@ -4,9 +4,9 @@
 .send-component{
 	display:block;
 	position:relative;
-	top: calc(100% - 100px);
+	top: calc(100% - 75px);
 	&--grid{
-		@include grid(100%,100px,"1fr","50% 50%");
+		@include grid(100%,75px,"1fr","50% 50%");
 		grid-template-areas: "message"
 							 "send";
 		@at-root{
@@ -16,7 +16,9 @@
 				grid-area: message;
 				background: $color1;
 				color: $color2;
-				font-size: clamp(1.65rem, 3rem, 3.5vw);
+				/*font-size: clamp(1.65rem, 3rem, 3.5vw);*/
+				font-size: clamp(1rem,1.5rem,2vw);
+				@include minorFont;
 				padding-left: 10px;
 			}
 			.sc-send-button{
@@ -30,4 +32,13 @@
 		}
 	}
 
+}
+
+.comingIn{
+   animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
+}
+
+@keyframes fadein{
+   from{ opacity: 0; }
+   to{ opacity: 1; }
 }

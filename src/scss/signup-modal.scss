@@ -65,7 +65,7 @@
 }
 
 .goAway{
-   animation: fadeout var(--fadeOutTime) linear forwards;
+   animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
 }
 
 @keyframes fadeout{
