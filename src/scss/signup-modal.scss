@@ -6,7 +6,7 @@
    position: relative;
    margin: auto;
    width:clamp(380px,600px,40%);
-   height: clamp(300px,480px,50%);
+   height: clamp(300px,480px,40%);
    top: $titlebarHeight;
    background: $color2;
    border: .5px solid $color1;
@@ -37,10 +37,11 @@
          display: block;
          width: 65%;
          margin: 20px auto;
-         font-size: clamp(1.65rem,3rem,3vw);
+         font-size: clamp(1rem,1.5rem,2vw);
          text-align: center;
          color: $color2;
          background: $color1;
+         @include minorFont;
       }
       .mdl-join-button{
          width: 25%;
@@ -61,4 +62,13 @@
          }
       }
    }
+}
+
+.goAway{
+   animation: fadeout var(--fadeOutTime) linear forwards;
+}
+
+@keyframes fadeout{
+   from{ opacity: 1; }
+   to{ opacity: 0; }
 }

@@ -5,6 +5,9 @@
 @import "send-component";
 @import "footer";
 
+:root{
+   --fadeOutTime : 500ms;
+}
 * {
    margin: 0;
    margin: 0px;

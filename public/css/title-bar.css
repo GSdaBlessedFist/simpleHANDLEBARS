@@ -26,6 +26,7 @@
   grid-column-start: 1;
   grid-column-end: 1;
   font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
   background: #234;
   user-select: none;
   font-size: 3rem;
@@ -48,6 +49,7 @@
   left: -17px;
   padding-left: 17px;
   font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
   font-size: 1.25rem;
 }
 /* line 49, ../../src/scss/title-bar.scss */

@@ -1,11 +1,11 @@
 <div class="main-container" id="main-container">
-	<div class="main-container--mainchat b">
+	<div class="main-container--mainchat b" id="main-chat-section">
 
-		<div class="signup-modal hide" id="signup-modal">
+		<div class="signup-modal " id="signup-modal">
 			<div class="signup-modal--grid ">
 				<div class="mdl-signin-section" id="signin">introduce yourself</div>
 				<div class="mdl-inputs-section">
-					<input type="text" name="username" class="mdl-input" id="mdl-username-input" placeholder="name">
+					<input type="text" name="screenname" class="mdl-input" id="mdl-screenname-input" placeholder="">
 					<input type="text" name="message" class="mdl-input" id="mdl-message-input" placeholder="what's up">
 					<div class="mdl-join-button" id="mdl-join-button">Join Chat</div>
 				</div>
@@ -13,25 +13,26 @@
 			</div>
 		</div><!---- class="signup-modal" -->
 
-		<div class="send-component b" id="mainchat-send-component">
+		<div class="send-component" id="mainchat-send-component">
 			<div class="send-component--grid">
 				
 				<input type="text" name="message" class="sc-message-input" id="message-input" placeholder="what's up?"/>
 				<div class="sc-send-button" id="sc-send-button">SEND</div>
 			</div>
-		</div>
+		</div><!------------------- class="send-component" -->
 
 
 	</div><!---- main-container--mainchat -->
 
-	<div class="main-container--sidechat_1 b">SIDE1</div>
-	<div class="main-container--side-chat_2 b">SIDE2</div>
+	<div class="main-container--sidechat_1 b" id="side-Chat_1-Section">SIDE1</div>
+	<div class="main-container--side-chat_2 b" id="side-Chat_2-Section">SIDE2</div>
 </div>
 
 
 <!-- VARIABLES::
 mainContainer,
 mainChatSection,sideChat_1Section,sideChat_2Section,
-signupModal,mdlUserNameInput,mdlMessageInput,joinChatButton
-mainChatSendComponent 
+signupModal,mdlScreenNameInput,mdlMessageInput,mdlJoinChatButton
+mainChatSendComponent,scMessageInput,scSendButton
 -->
+

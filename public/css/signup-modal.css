@@ -6,7 +6,7 @@
   position: relative;
   margin: auto;
   width: clamp(380px, 600px, 40%);
-  height: clamp(300px, 480px, 50%);
+  height: clamp(300px, 480px, 40%);
   top: 70px;
   background: #234;
   border: 0.5px solid #abc;
@@ -30,6 +30,7 @@
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
   font-size: clamp(1.65rem, 3rem, 3.5vw);
   color: #abc;
   background: #234;
@@ -46,13 +47,15 @@
   display: block;
   width: 65%;
   margin: 20px auto;
-  font-size: clamp(1.65rem, 3rem, 3vw);
+  font-size: clamp(1rem, 1.5rem, 2vw);
   text-align: center;
   color: #234;
   background: #abc;
+  /*font-family: "Roboto Slab", serif;*/
+  font-family: 'Merienda', cursive;
 }
 
-/* line 45, ../../src/scss/signup-modal.scss */
+/* line 46, ../../src/scss/signup-modal.scss */
 .mdl-join-button {
   width: 25%;
   position: relative;
@@ -62,13 +65,28 @@
   background: #234;
   text-align: center;
   font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
   border: 1px solid white;
   border-radius: 50px;
   box-shadow: none;
   transition: all 250ms ease;
 }
-/* line 58, ../../src/scss/signup-modal.scss */
+/* line 59, ../../src/scss/signup-modal.scss */
 .mdl-join-button:hover {
   background: #49627a;
   box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
+}
+
+/* line 67, ../../src/scss/signup-modal.scss */
+.goAway {
+  animation: fadeout var(--fadeOutTime) linear forwards;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

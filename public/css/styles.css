@@ -26,6 +26,7 @@
   grid-column-start: 1;
   grid-column-end: 1;
   font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
   background: #234;
   user-select: none;
   font-size: 3rem;
@@ -48,6 +49,7 @@
   left: -17px;
   padding-left: 17px;
   font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
   font-size: 1.25rem;
 }
 /* line 49, ../../src/scss/title-bar.scss */
@@ -80,7 +82,7 @@
   position: relative;
   margin: auto;
   width: clamp(380px, 600px, 40%);
-  height: clamp(300px, 480px, 50%);
+  height: clamp(300px, 480px, 40%);
   top: 70px;
   background: #234;
   border: 0.5px solid #abc;
@@ -104,6 +106,7 @@
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
   font-size: clamp(1.65rem, 3rem, 3.5vw);
   color: #abc;
   background: #234;
@@ -120,13 +123,15 @@
   display: block;
   width: 65%;
   margin: 20px auto;
-  font-size: clamp(1.65rem, 3rem, 3vw);
+  font-size: clamp(1rem, 1.5rem, 2vw);
   text-align: center;
   color: #234;
   background: #abc;
+  /*font-family: "Roboto Slab", serif;*/
+  font-family: 'Merienda', cursive;
 }
 
-/* line 45, ../../src/scss/signup-modal.scss */
+/* line 46, ../../src/scss/signup-modal.scss */
 .mdl-join-button {
   width: 25%;
   position: relative;
@@ -136,17 +141,31 @@
   background: #234;
   text-align: center;
   font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
   border: 1px solid white;
   border-radius: 50px;
   box-shadow: none;
   transition: all 250ms ease;
 }
-/* line 58, ../../src/scss/signup-modal.scss */
+/* line 59, ../../src/scss/signup-modal.scss */
 .mdl-join-button:hover {
   background: #49627a;
   box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
 }
 
+/* line 67, ../../src/scss/signup-modal.scss */
+.goAway {
+  animation: fadeout var(--fadeOutTime) linear forwards;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 /* line 4, ../../src/scss/send-component.scss */
 .send-component {
   display: block;
@@ -180,6 +199,7 @@
   background: #668cb3;
   text-align: center;
   font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
   font-size: 2rem;
 }
 
@@ -198,9 +218,15 @@
   color: white;
   font-size: 2.5vw;
   font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
 }
 
 /* line 8, ../../src/scss/styles.scss */
+:root {
+  --fadeOutTime: 500ms;
+}
+
+/* line 11, ../../src/scss/styles.scss */
 * {
   margin: 0;
   margin: 0px;
@@ -209,17 +235,17 @@
   background: #10151b;
 }
 
-/* line 15, ../../src/scss/styles.scss */
+/* line 18, ../../src/scss/styles.scss */
 .b {
   border: 1px red solid;
 }
 
-/* line 18, ../../src/scss/styles.scss */
+/* line 21, ../../src/scss/styles.scss */
 .hide {
   display: none;
 }
 
-/* line 22, ../../src/scss/styles.scss */
+/* line 25, ../../src/scss/styles.scss */
 .prime-container {
   resize: none;
   height: 100%;
@@ -230,7 +256,7 @@
   grid-template-areas: "titlebar" "maincontainer"  "footer";
 }
 
-/* line 33, ../../src/scss/styles.scss */
+/* line 36, ../../src/scss/styles.scss */
 .main-container {
   grid-area: maincontainer;
   overflow: hidden;
@@ -247,16 +273,16 @@
   color: white;
   animation: change 5s ease infinite both;
 }
-/* line 45, ../../src/scss/styles.scss */
+/* line 48, ../../src/scss/styles.scss */
 .main-container--mainchat {
   grid-area: mainchat;
   border: 1px solid white;
 }
-/* line 50, ../../src/scss/styles.scss */
+/* line 53, ../../src/scss/styles.scss */
 .main-container--sidechat_1 {
   grid-area: sidechat_1;
 }
-/* line 54, ../../src/scss/styles.scss */
+/* line 57, ../../src/scss/styles.scss */
 .main-container--sidechat_2 {
   grid-area: sidechat_2;
 }
