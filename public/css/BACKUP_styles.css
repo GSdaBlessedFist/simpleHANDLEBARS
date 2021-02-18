@@ -259,7 +259,7 @@
   /*font-family: 'Merienda', cursive;*/
 }
 
-/* line 9, ../../src/scss/styles.scss */
+/* line 9, ../../src/scss/BACKUP_styles.scss */
 * {
   margin: 0;
   margin: 0px;
@@ -268,30 +268,30 @@
   background: #10151b;
 }
 
-/* line 16, ../../src/scss/styles.scss */
+/* line 16, ../../src/scss/BACKUP_styles.scss */
 .b {
   border: 1px red solid;
 }
 
-/* line 19, ../../src/scss/styles.scss */
+/* line 19, ../../src/scss/BACKUP_styles.scss */
 .hide {
   display: none;
 }
 
-/* line 23, ../../src/scss/styles.scss */
+/* line 23, ../../src/scss/BACKUP_styles.scss */
 .prime-container {
   resize: none;
   /*height: 100%;*/
   height: clamp(400px, 50vh, 100%);
   /*min-width: 400px;
   width: 100%;*/
-  width: clamp(500px, 52vw, 100%);
+  width: clamp(500px, 50vw, 100%);
   display: grid;
   grid-template-rows: 70px 1fr 110px;
   grid-template-areas: "titlebar" "maincontainer"  "footer";
 }
 
-/* line 36, ../../src/scss/styles.scss */
+/* line 36, ../../src/scss/BACKUP_styles.scss */
 .main-container {
   grid-area: maincontainer;
   overflow: hidden;
@@ -308,23 +308,16 @@
   color: white;
   animation: change 5s ease infinite both;
 }
-/* line 48, ../../src/scss/styles.scss */
+/* line 48, ../../src/scss/BACKUP_styles.scss */
 .main-container--mainchat {
   grid-area: mainchat;
   border: 1px solid white;
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto,75px;
-  grid-template-areas: "messageOutput" "sendcomp";
-  /*.mainchat-message-output.scss*/
 }
-/* line 56, ../../src/scss/styles.scss */
+/* line 53, ../../src/scss/BACKUP_styles.scss */
 .main-container--sidechat_1 {
   grid-area: sidechat_1;
 }
-/* line 60, ../../src/scss/styles.scss */
+/* line 57, ../../src/scss/BACKUP_styles.scss */
 .main-container--sidechat_2 {
   grid-area: sidechat_2;
 }

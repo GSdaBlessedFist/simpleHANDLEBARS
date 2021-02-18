@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+/* line 7, ../../src/scss/variables.scss */
+:root {
+  --fadeOutTime: 1500;
+  --fadeInTime: 500;
+}
+
+/* line 4, ../../src/scss/mainchat-message-output.scss */
+.mainchat-message-output {
+  grid-area: messageOutput;
+  display: block;
+  position: relative;
+  width: 99%;
+  height: calc(100% - 5px);
+  top: 10px;
+  margin: 0 auto;
+}

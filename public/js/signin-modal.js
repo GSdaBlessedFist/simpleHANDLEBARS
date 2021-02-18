@@ -32,9 +32,9 @@ const randomNameSelection = function() {
 
 mdlScreenNameInput.placeholder = randomNameSelection();
 
-document.body.addEventListener("keyup", (e) => {
+/*document.body.addEventListener("keyup", (e) => {
     if (e.keyCode === 13) {
-        if(mdlMessageInput.value.length<2){
+        if(!mdlMessageInput.value){
             alert("Please introduce yourself");
             return;
         }else{
@@ -46,15 +46,32 @@ document.body.addEventListener("keyup", (e) => {
         console.log(mdlMessageInput.value);
         }
        
-
         signupModal.classList.add("goAway");
         setTimeout(function(){
             signupModal.classList.add("hide");
             mainChatSendComponent.classList.add("comingIn");
         },fadeOutTime)
-        scMessageInput.value = "";
-        // signIn.style.display = "none";
 
         // delete this.keysPressed[e.key];
     }
+})
+*/
+mdlJoinChatButton.addEventListener("click",function(){
+    if(!mdlMessageInput.value){
+            alert("Please introduce yourself");
+            return;
+        }else{
+           socket.emit("chat", {
+                screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+                message: mdlMessageInput.value
+        })
+        
+    }
+       
+        signupModal.classList.add("goAway");
+        setTimeout(function(){
+            signupModal.classList.add("hide");
+            mainChatSendComponent.classList.add("comingIn");
+        },fadeOutTime)
+    
 })

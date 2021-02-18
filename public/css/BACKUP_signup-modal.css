@@ -6,21 +6,19 @@
   --fadeInTime: 500;
 }
 
-/* line 4, ../../src/scss/signup-modal.scss */
+/* line 4, ../../src/scss/BACKUP_signup-modal.scss */
 .signup-modal {
   display: block;
-  position: absolute;
-  margin: 0px auto;
+  position: relative;
+  margin: auto;
   width: clamp(380px, 600px, 40%);
   height: clamp(300px, 480px, 40%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -80%);
+  top: 70px;
   background: #234;
   border: 0.5px solid #abc;
   color: #abc;
 }
-/* line 16, ../../src/scss/signup-modal.scss */
+/* line 14, ../../src/scss/BACKUP_signup-modal.scss */
 .signup-modal--grid {
   margin: auto auto;
   display: grid;
@@ -31,7 +29,7 @@
   grid-template-areas: "intro" "inputs";
   background: #234;
 }
-/* line 24, ../../src/scss/signup-modal.scss */
+/* line 22, ../../src/scss/BACKUP_signup-modal.scss */
 .mdl-signin-section {
   grid-area: intro;
   display: flex;
@@ -44,13 +42,13 @@
   background: #234;
 }
 
-/* line 34, ../../src/scss/signup-modal.scss */
+/* line 32, ../../src/scss/BACKUP_signup-modal.scss */
 .mdl-inputs-section {
   grid-area: inputs;
   background: #234;
 }
 
-/* line 38, ../../src/scss/signup-modal.scss */
+/* line 36, ../../src/scss/BACKUP_signup-modal.scss */
 .mdl-input {
   display: block;
   width: 65%;
@@ -63,7 +61,7 @@
   font-family: 'Merienda', cursive;
 }
 
-/* line 48, ../../src/scss/signup-modal.scss */
+/* line 46, ../../src/scss/BACKUP_signup-modal.scss */
 .mdl-join-button {
   width: 25%;
   position: relative;
@@ -79,13 +77,13 @@
   box-shadow: none;
   transition: all 250ms ease;
 }
-/* line 61, ../../src/scss/signup-modal.scss */
+/* line 59, ../../src/scss/BACKUP_signup-modal.scss */
 .mdl-join-button:hover {
   background: #49627a;
   box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
 }
 
-/* line 69, ../../src/scss/signup-modal.scss */
+/* line 67, ../../src/scss/BACKUP_signup-modal.scss */
 .goAway {
   animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
 }

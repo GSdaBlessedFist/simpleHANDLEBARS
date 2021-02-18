@@ -1,0 +1,13 @@
+@import "variables";
+@import "font";
+
+.mainchat-message-output{
+	grid-area: messageOutput;
+	display: block;
+	position: relative;
+	width: 99%;
+	height: calc(100% - 5px)	;
+	top: 10px;
+	margin: 0 auto;
+	
+}
