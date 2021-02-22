@@ -12,10 +12,8 @@
   display: block;
   position: relative;
   top: calc(100% - 75px);
-  height: 75px;
-  min-height: 75px;
 }
-/* line 11, ../../src/scss/send-component.scss */
+/* line 9, ../../src/scss/send-component.scss */
 .send-component--grid {
   display: grid;
   width: 100%;
@@ -24,7 +22,7 @@
   grid-template-rows: 50% 50%;
   grid-template-areas: "message" "send";
 }
-/* line 16, ../../src/scss/send-component.scss */
+/* line 14, ../../src/scss/send-component.scss */
 .sc-message-input {
   display: block;
   width: 100%;
@@ -38,7 +36,7 @@
   padding-left: 10px;
 }
 
-/* line 27, ../../src/scss/send-component.scss */
+/* line 25, ../../src/scss/send-component.scss */
 .sc-send-button {
   display: block;
   grid-area: send;
@@ -49,7 +47,7 @@
   font-size: 2rem;
 }
 
-/* line 40, ../../src/scss/send-component.scss */
+/* line 38, ../../src/scss/send-component.scss */
 .comingIn {
   animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
 }

@@ -26,7 +26,7 @@
    height: clamp(400px,50vh,100%);
    /*min-width: 400px;
    width: 100%;*/
-   width: clamp(500px,52vw,100%);
+   width: clamp(500px,50vw,100%);
 	display: grid;
 	grid-template-rows: $titlebarHeight 1fr 110px;
 	grid-template-areas: "titlebar"
@@ -47,11 +47,8 @@
    animation: change 5s ease infinite both;
    &--mainchat{
       grid-area: mainchat;
+      
       border: 1px solid white;
-      @include grid(100%,100%,"1fr","auto,75px");
-      grid-template-areas: "messageOutput"
-                           "sendcomp";
-         /*.mainchat-message-output.scss*/
    }
    &--sidechat_1{
       grid-area: sidechat_1;

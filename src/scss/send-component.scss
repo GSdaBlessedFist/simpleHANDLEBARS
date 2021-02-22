@@ -6,8 +6,6 @@
 	display:block;
 	position:relative;
 	top: calc(100% - 75px);
-	height: 75px;
-	min-height: 75px;
 	&--grid{
 		@include grid(100%,75px,"1fr","50% 50%");
 		grid-template-areas: "message"

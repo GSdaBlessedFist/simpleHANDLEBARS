@@ -10,9 +10,10 @@
 .mainchat-message-output {
   grid-area: messageOutput;
   display: block;
+  overflow: hidden;
   position: relative;
-  width: 99%;
-  height: calc(100% - 5px);
+  width: 100%;
+  height: calc(100vh - 245px);
   top: 10px;
   margin: 0 auto;
 }

@@ -3,13 +3,11 @@
 
 .signup-modal{
    display: block;
-   position: absolute;
-   margin: 0px auto;
+   position: relative;
+   margin: auto;
    width:clamp(380px,600px,40%);
    height: clamp(300px,480px,40%);
-   top: 50%;
-    left: 50%;
-    transform: translate(-50%, -80%);
+   top: $titlebarHeight;
    background: $color2;
    border: .5px solid $color1;
    color: $color1;

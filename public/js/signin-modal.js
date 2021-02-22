@@ -32,7 +32,7 @@ const randomNameSelection = function() {
 
 mdlScreenNameInput.placeholder = randomNameSelection();
 
-/*document.body.addEventListener("keyup", (e) => {
+document.body.addEventListener("keyup", (e) => {
     if (e.keyCode === 13) {
         if(!mdlMessageInput.value){
             alert("Please introduce yourself");
@@ -42,8 +42,7 @@ mdlScreenNameInput.placeholder = randomNameSelection();
                 screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
                 message: mdlMessageInput.value
         })
-        console.log(mdlScreenNameInput.value || mdlScreenNameInput.placeholder) 
-        console.log(mdlMessageInput.value);
+        
         }
        
         signupModal.classList.add("goAway");
@@ -52,10 +51,10 @@ mdlScreenNameInput.placeholder = randomNameSelection();
             mainChatSendComponent.classList.add("comingIn");
         },fadeOutTime)
 
-        // delete this.keysPressed[e.key];
+        //delete this.keysPressed[e.key];
     }
 })
-*/
+
 mdlJoinChatButton.addEventListener("click",function(){
     if(!mdlMessageInput.value){
             alert("Please introduce yourself");
@@ -73,5 +72,10 @@ mdlJoinChatButton.addEventListener("click",function(){
             signupModal.classList.add("hide");
             mainChatSendComponent.classList.add("comingIn");
         },fadeOutTime)
+
+
     
 })
+
+
+export {socket,scMessageInput, scSendButton};
