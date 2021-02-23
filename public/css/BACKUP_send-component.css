@@ -6,23 +6,23 @@
   --fadeInTime: 500;
 }
 
-/* line 4, ../../src/scss/send-component.scss */
+/* line 4, ../../src/scss/BACKUP_send-component.scss */
 .send-component {
   grid-area: sendcomp;
   display: block;
-  position: absolute;
+  position: relative;
   top: calc(100% - 75px);
 }
-/* line 9, ../../src/scss/send-component.scss */
+/* line 9, ../../src/scss/BACKUP_send-component.scss */
 .send-component--grid {
   display: grid;
-  width: 100vw;
+  width: 100%;
   height: 75px;
   grid-template-columns: 1fr;
   grid-template-rows: 50% 50%;
   grid-template-areas: "message" "send";
 }
-/* line 14, ../../src/scss/send-component.scss */
+/* line 14, ../../src/scss/BACKUP_send-component.scss */
 .sc-message-input {
   display: block;
   width: 100%;
@@ -36,7 +36,7 @@
   padding-left: 10px;
 }
 
-/* line 25, ../../src/scss/send-component.scss */
+/* line 25, ../../src/scss/BACKUP_send-component.scss */
 .sc-send-button {
   display: block;
   grid-area: send;
@@ -47,7 +47,7 @@
   font-size: 2rem;
 }
 
-/* line 38, ../../src/scss/send-component.scss */
+/* line 38, ../../src/scss/BACKUP_send-component.scss */
 .comingIn {
   animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
 }

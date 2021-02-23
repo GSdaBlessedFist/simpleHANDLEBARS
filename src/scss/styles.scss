@@ -2,7 +2,7 @@
 @import "font";
 @import "title-bar";
 @import "signup-modal";
-@import "mainchat-message-output";
+@import "mainchat-message-area";
 @import "send-component";
 @import "footer";
 
@@ -41,6 +41,8 @@
    top: $titlebarHeight+3px;
    margin: auto;
    @include grid(100%,calc(100% - 144px),"99.9% .1%","99.9% .1%");
+   /*@include grid(100%,calc(100% - 144px),"50% 50%","99.9% .1%");*/
+   /*@include grid(100%,calc(100% - 144px),"50% 50%","50% 50%");*/
    grid-template-areas: "mainchat sidechat_1"
                         "mainchat sidechat_2";
    color: white;

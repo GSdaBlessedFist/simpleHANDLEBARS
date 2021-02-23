@@ -6,14 +6,15 @@
   --fadeInTime: 500;
 }
 
-/* line 4, ../../src/scss/mainchat-message-output.scss */
-.mainchat-message-output {
+/* line 4, ../../src/scss/mainchat-message-area.scss */
+.mainchat-message-area {
   grid-area: messageOutput;
   display: block;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   width: 100%;
   height: calc(100vh - 245px);
-  top: 10px;
-  margin: 0 auto;
+  top: 0px;
+  margin: 10px auto;
+  padding: 5px;
 }

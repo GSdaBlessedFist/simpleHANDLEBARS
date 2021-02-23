@@ -172,29 +172,30 @@
     opacity: 0;
   }
 }
-/* line 4, ../../src/scss/mainchat-message-output.scss */
-.mainchat-message-output {
+/* line 4, ../../src/scss/mainchat-message-area.scss */
+.mainchat-message-area {
   grid-area: messageOutput;
   display: block;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   width: 100%;
   height: calc(100vh - 245px);
-  top: 10px;
-  margin: 0 auto;
+  top: 0px;
+  margin: 10px auto;
+  padding: 5px;
 }
 
 /* line 4, ../../src/scss/send-component.scss */
 .send-component {
   grid-area: sendcomp;
   display: block;
-  position: relative;
+  position: absolute;
   top: calc(100% - 75px);
 }
 /* line 9, ../../src/scss/send-component.scss */
 .send-component--grid {
   display: grid;
-  width: 100%;
+  width: 100vw;
   height: 75px;
   grid-template-columns: 1fr;
   grid-template-rows: 50% 50%;
@@ -301,20 +302,22 @@
   height: calc(100% - 144px);
   grid-template-columns: 99.9% .1%;
   grid-template-rows: 99.9% .1%;
+  /*@include grid(100%,calc(100% - 144px),"50% 50%","99.9% .1%");*/
+  /*@include grid(100%,calc(100% - 144px),"50% 50%","50% 50%");*/
   grid-template-areas: "mainchat sidechat_1" "mainchat sidechat_2";
   color: white;
   animation: change 5s ease infinite both;
 }
-/* line 48, ../../src/scss/styles.scss */
+/* line 50, ../../src/scss/styles.scss */
 .main-container--mainchat {
   grid-area: mainchat;
   border: 1px solid white;
 }
-/* line 53, ../../src/scss/styles.scss */
+/* line 55, ../../src/scss/styles.scss */
 .main-container--sidechat_1 {
   grid-area: sidechat_1;
 }
-/* line 57, ../../src/scss/styles.scss */
+/* line 59, ../../src/scss/styles.scss */
 .main-container--sidechat_2 {
   grid-area: sidechat_2;
 }
