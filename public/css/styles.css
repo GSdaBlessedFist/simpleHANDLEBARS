@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
 /* line 7, ../../src/scss/variables.scss */
 :root {
-  --fadeOutTime: 1500;
+  --fadeOutTime: 250;
   --fadeInTime: 500;
 }
 
@@ -181,21 +181,45 @@
     opacity: 0;
   }
 }
-/* line 4, ../../src/scss/mainchat-message-area.scss */
-.mainchat-message-area {
+/* line 5, ../../src/scss/mainchat-message-area.scss */
+.mainchat--message-area {
   grid-area: messageOutput;
-  display: none;
+  display: block;
   overflow: hidden;
-  position: absolute;
-  width: 99%;
+  position: relative;
+  width: 100%;
   height: calc(100vh - 245px);
   top: 0px;
-  margin: 5px;
-  /*padding: 5px; removing*/
+  margin: 0px auto;
+  /*padding: 5px;*/
 }
-/* line 15, ../../src/scss/mainchat-message-area.scss */
+/* line 16, ../../src/scss/mainchat-message-area.scss */
 .message-output-container {
   background: yellow;
+}
+
+/* line 19, ../../src/scss/mainchat-message-area.scss */
+.user-link {
+  background: orange;
+}
+/* line 23, ../../src/scss/mainchat-message-area.scss */
+.mainchat--message-area--titlebar {
+  display: block;
+  position: relative;
+  /*margin: 5px;*/
+  background: #2b4055;
+  color: #abc;
+  font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
+  font-size: 2vw;
+  text-align: center;
+  padding: 0px;
+}
+/* line 34, ../../src/scss/mainchat-message-area.scss */
+.mainchat--message-area--output-container {
+  width: 100%;
+  background: purple;
+  overflow: hidden;
 }
 
 /* line 4, ../../src/scss/send-component.scss */
@@ -310,14 +334,15 @@
   position: absolute;
   background: black;
   top: 73px;
+  /*<---*/
   margin: auto;
+  /*@include grid(100%,calc(100% - 220px),"99.9% .1%","99.9% .1%");*/
+  /*@include grid(100%,calc(100% - 220px),"50% 50%","99.9% .1%");*/
   display: grid;
   width: 100%;
-  height: calc(100% - 144px);
-  grid-template-columns: 99.9% .1%;
-  grid-template-rows: 99.9% .1%;
-  /*@include grid(100%,calc(100% - 144px),"50% 50%","99.9% .1%");*/
-  /*@include grid(100%,calc(100% - 219px),"50% 50%","50% 50%");*/
+  height: calc(100% - 220px);
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
   grid-template-areas: "mainchat sidechatTop" "mainchat sidechatBottom";
   color: white;
   animation: change 5s ease infinite both;
@@ -325,7 +350,7 @@
 /* line 51, ../../src/scss/styles.scss */
 .main-container--mainchat {
   grid-area: mainchat;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
 }
 /* line 56, ../../src/scss/styles.scss */
 .main-container--sidechat_1 {

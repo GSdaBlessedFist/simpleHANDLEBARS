@@ -2,23 +2,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
 /* line 7, ../../src/scss/variables.scss */
 :root {
-  --fadeOutTime: 1500;
+  --fadeOutTime: 250;
   --fadeInTime: 500;
 }
 
-/* line 4, ../../src/scss/mainchat-message-area.scss */
-.mainchat-message-area {
+/* line 5, ../../src/scss/mainchat-message-area.scss */
+.mainchat--message-area {
   grid-area: messageOutput;
-  display: none;
+  display: block;
   overflow: hidden;
-  position: absolute;
-  width: 99%;
+  position: relative;
+  width: 100%;
   height: calc(100vh - 245px);
   top: 0px;
-  margin: 5px;
-  /*padding: 5px; removing*/
+  margin: 0px auto;
+  /*padding: 5px;*/
 }
-/* line 15, ../../src/scss/mainchat-message-area.scss */
+/* line 16, ../../src/scss/mainchat-message-area.scss */
 .message-output-container {
   background: yellow;
+}
+
+/* line 19, ../../src/scss/mainchat-message-area.scss */
+.user-link {
+  background: orange;
+}
+/* line 23, ../../src/scss/mainchat-message-area.scss */
+.mainchat--message-area--titlebar {
+  display: block;
+  position: relative;
+  /*margin: 5px;*/
+  background: #2b4055;
+  color: #abc;
+  font-family: "Montserrat", sans-serif;
+  /*font-family: 'Merienda', cursive;*/
+  font-size: 2vw;
+  text-align: center;
+  padding: 0px;
+}
+/* line 34, ../../src/scss/mainchat-message-area.scss */
+.mainchat--message-area--output-container {
+  width: 100%;
+  background: purple;
+  overflow: hidden;
 }

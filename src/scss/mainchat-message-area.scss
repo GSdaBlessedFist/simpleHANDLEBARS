@@ -1,19 +1,40 @@
 @import "variables";
 @import "font";
 
-.mainchat-message-area{
-	grid-area: messageOutput;
-	display: none;
-	overflow: hidden;
-	position: absolute;
-	width: 99%;
-	height: calc(100vh - 245px);
-	top: 0px;
-	margin: 5px;
-	/*padding: 5px; removing*/
-	@at-root{
-		.message-output-container{
-			background: yellow;
+.mainchat {
+	&--message-area {
+		grid-area: messageOutput;
+		display: block;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		height: calc(100vh - 245px);
+		top: 0px;
+		margin: 0px auto;
+		/*padding: 5px;*/
+		@at-root {
+			.message-output-container {
+				background: yellow;
+			}
+			.user-link {
+				background: orange;
+			}
+		}
+		&--titlebar {
+			display: block;
+			position: relative;
+			/*margin: 5px;*/
+			background: lighten($color2,5%);
+			color: $color1;
+			@include siteFont;
+			font-size: 2vw;
+			text-align: center;
+			padding: 0px;
+		}
+		&--output-container{
+			width: 100%;
+			background: purple;
+			overflow: hidden;
 		}
 	}
 }

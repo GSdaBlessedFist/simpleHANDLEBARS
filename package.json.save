@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js -e js,hbs",
-    "scss" : "sudo sass src/scss/styles.scss public/css/styles.css"
+    "scss":"sass source/stylesheets/index.scss build/stylesheets/index.css
   },
   "keywords": [],
   "author": "",

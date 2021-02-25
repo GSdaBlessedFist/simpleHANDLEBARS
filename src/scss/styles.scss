@@ -39,11 +39,11 @@
    overflow: hidden; 
    position: absolute;
    background: darken($color1,75%);
-   top: $titlebarHeight+3px;
+   top: $titlebarHeight+ 3px; /*<---*/
    margin: auto;
-   @include grid(100%,calc(100% - 144px),"99.9% .1%","99.9% .1%");
-   /*@include grid(100%,calc(100% - 144px),"50% 50%","99.9% .1%");*/
-   /*@include grid(100%,calc(100% - 219px),"50% 50%","50% 50%");*/
+   /*@include grid(100%,calc(100% - 220px),"99.9% .1%","99.9% .1%");*/
+   /*@include grid(100%,calc(100% - 220px),"50% 50%","99.9% .1%");*/
+   @include grid(100%,calc(100% - 220px),"50% 50%","50% 50%");
    grid-template-areas: "mainchat sidechatTop"
                         "mainchat sidechatBottom";
    color: white;
@@ -51,7 +51,7 @@
    &--mainchat{
       grid-area: mainchat;
       
-      border: 1px solid white;
+      /*border: 1px solid white;*/
    }
    &--sidechat_1{
       grid-area: sidechatTop;

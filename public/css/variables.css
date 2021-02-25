@@ -1,5 +1,5 @@
 /* line 7, ../../src/scss/variables.scss */
 :root {
-  --fadeOutTime: 1500;
+  --fadeOutTime: 250;
   --fadeInTime: 500;
 }
