@@ -12,9 +12,10 @@
    box-sizing: border-box;
    color: white;
    background: darken($color1,65%);
+
 }
 .b {
-   border: 1px red solid;
+   border: 5px red solid;
 }
 .hide {
    display: none;
@@ -35,16 +36,16 @@
 }
 .main-container {
    grid-area: maincontainer;
-   overflow: hidden;
+   overflow: hidden; 
    position: absolute;
    background: darken($color1,75%);
    top: $titlebarHeight+3px;
    margin: auto;
    @include grid(100%,calc(100% - 144px),"99.9% .1%","99.9% .1%");
    /*@include grid(100%,calc(100% - 144px),"50% 50%","99.9% .1%");*/
-   /*@include grid(100%,calc(100% - 144px),"50% 50%","50% 50%");*/
-   grid-template-areas: "mainchat sidechat_1"
-                        "mainchat sidechat_2";
+   /*@include grid(100%,calc(100% - 219px),"50% 50%","50% 50%");*/
+   grid-template-areas: "mainchat sidechatTop"
+                        "mainchat sidechatBottom";
    color: white;
    animation: change 5s ease infinite both;
    &--mainchat{
@@ -53,11 +54,13 @@
       border: 1px solid white;
    }
    &--sidechat_1{
-      grid-area: sidechat_1;
-      
+      grid-area: sidechatTop;
+      background: orange;
+      border: 5px solid green;
    }
    &--sidechat_2{
-      grid-area: sidechat_2;
-      
+      grid-area: sidechatBottom;
+      background: purple; 
+      /*border: 3px solid yellow; */
    }
 }

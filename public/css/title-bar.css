@@ -12,21 +12,25 @@
   display: grid;
   position: sticky;
   top: 0;
-  grid-template-rows: 1;
-  grid-template-columns: 15;
+  grid-template-rows: 1fr;
+  grid-template-columns: 20vw 5vw repeat(13, fr);
   width: 100vw;
+  /*modified*/
   grid-template-areas: "title dark . . . . . . . . . . . . . ";
   border-bottom: 2px solid  white;
   background: #234;
+  overflow: hidden;
 }
-/* line 15, ../../src/scss/title-bar.scss */
+/* line 16, ../../src/scss/title-bar.scss */
 .title-bar > * {
   display: flex;
   justify-content: center;
   align-items: center;
   background: inherit;
+  width: 100%;
+  /*added*/
 }
-/* line 21, ../../src/scss/title-bar.scss */
+/* line 24, ../../src/scss/title-bar.scss */
 .title-bar--site-title {
   grid-area: title;
   grid-column-start: 1;
@@ -38,12 +42,12 @@
   font-size: 3rem;
   padding-left: -5px;
 }
-/* line 31, ../../src/scss/title-bar.scss */
+/* line 34, ../../src/scss/title-bar.scss */
 .title-bar--site-title > div {
   background: inherit;
   color: #abc;
 }
-/* line 36, ../../src/scss/title-bar.scss */
+/* line 39, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button {
   grid-area: dark;
   grid-column-start: 2;
@@ -58,7 +62,7 @@
   /*font-family: 'Merienda', cursive;*/
   font-size: 1.25rem;
 }
-/* line 49, ../../src/scss/title-bar.scss */
+/* line 52, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button > a {
   display: flex;
   justify-content: center;
@@ -75,9 +79,14 @@
   color: #49627a;
   transition: all 250ms ease;
 }
-/* line 64, ../../src/scss/title-bar.scss */
+/* line 67, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button > a:hover {
   border: 2px solid #abc;
   color: #abc;
   box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
+}
+/* line 73, ../../src/scss/title-bar.scss */
+.title-bar--darkmode-button--space {
+  /*added*/
+  width: calc(100vw/15 + "px");
 }

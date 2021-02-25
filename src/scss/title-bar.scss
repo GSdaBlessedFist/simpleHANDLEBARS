@@ -6,17 +6,20 @@
    display: grid;
    position: sticky;
    top: 0;
-   grid-template-rows: 1;
-   grid-template-columns: 15;
-   width: 100vw;
+   grid-template-rows: 1fr;
+   grid-template-columns: 20vw 5vw repeat(13,fr);
+   width: 100vw;/*modified*/
    grid-template-areas: "title dark . . . . . . . . . . . . . ";
    border-bottom: 2px solid  white;
    background: $color2;
+   overflow: hidden; 
    &>*{
          display: flex;
          justify-content: center;
          align-items: center;
          background: inherit;
+         width: 100%;/*added*/
+         
       }
    &--site-title{
       grid-area: title;
@@ -66,6 +69,9 @@
             color: $color1;
             @include buttonHoverShadow;
          };
+      }
+      &--space{/*added*/
+         width: calc(100vw/15 + "px");
       }
    }
 }

@@ -5,7 +5,8 @@
 	grid-area: sendcomp;
 	display:block;
 	position:absolute;
-	top: calc(100% - 75px);
+	opacity: 0;
+	top: calc(100% - 146px);
 	&--grid{
 		@include grid(100vw,75px,"1fr","50% 50%");
 		grid-template-areas: "message"

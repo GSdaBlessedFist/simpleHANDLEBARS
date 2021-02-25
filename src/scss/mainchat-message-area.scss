@@ -3,12 +3,17 @@
 
 .mainchat-message-area{
 	grid-area: messageOutput;
-	display: block;
+	display: none;
 	overflow: hidden;
 	position: absolute;
-	width: 100%;
+	width: 99%;
 	height: calc(100vh - 245px);
 	top: 0px;
-	margin: 10px auto;
-	padding: 5px;
+	margin: 5px;
+	/*padding: 5px; removing*/
+	@at-root{
+		.message-output-container{
+			background: yellow;
+		}
+	}
 }
