@@ -65,7 +65,7 @@
 }
 
 /* line 26, ../../src/scss/send-component.scss */
-.sc-send-button {
+.send-button {
   display: block;
   grid-area: send;
   background: #668cb3;

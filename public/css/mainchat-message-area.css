@@ -43,7 +43,7 @@
   width: 100%;
   height: calc(100vh - 235px);
   top: 0px;
-  background: rgba(200, 200, 0, 0.55);
+  /*background: rgba(200,200,0,.55);*/
   /*<----*/
   margin: 0px auto;
 }
@@ -60,15 +60,16 @@
 .mainchat--message-area--titlebar {
   display: block;
   position: relative;
-  /*margin: 5px;*/
-  background: #2b4055;
+  top: -2px;
+  background: transparent;
+  box-shadow: inset 0px -1px 8px -1px #abc;
   color: #abc;
   font-family: "Roboto Slab", serif;
   font-size: 2.25vw;
   text-align: center;
-  padding: 0px;
+  padding: 5px 0px;
 }
-/* line 34, ../../src/scss/mainchat-message-area.scss */
+/* line 35, ../../src/scss/mainchat-message-area.scss */
 .mainchat--message-area--output-container {
   width: 100%;
   background: purple;

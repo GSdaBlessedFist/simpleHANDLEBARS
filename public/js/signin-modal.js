@@ -5,11 +5,13 @@ const mainContainer = document.getElementById("main-container"),
     mainChatSection = document.getElementById("main-chat-section"),
     mainChatTitleBar = document.getElementById("mainchat-titlebar"),
     mainChatMessageArea = document.getElementById("mainchat-message-area"),
+    mainchatOutputContainer = document.getElementById("mainchat-output-container"),
     sideChat_1Section = document.getElementById("side-Chat_1-Section"),
     sideChat_2Section = document.getElementById("side-Chat_2-Section");
 // mainChatTitleBar.style.display = "none";
 mainChatTitleBar.style.opacity = 0;
 mainChatMessageArea.style.opacity = 0;
+mainchatOutputContainer.style.opacity = 0;
 
 // mdl = modal
 const signupModal = document.getElementById("signup-modal"),
@@ -22,7 +24,7 @@ mdlMessageInput.value = "";
 // sc = send-component
 const mainChatSendComponent = document.getElementById("mainchat-send-component"),
     scMessageInput = document.getElementById("sc-message-input"),
-    scSendButton = document.getElementById("sc-send-button");
+    sendButton = document.getElementById("sc-send-button");
 
 const styles = getComputedStyle(document.documentElement);
 const fadeOutTime = styles.getPropertyValue('--fadeOutTime');
@@ -62,6 +64,7 @@ document.body.addEventListener("keyup", (e) => {
             mainChatSendComponent.classList.add("comingIn");
             mainChatTitleBar.classList.add("comingIn");
             mainChatMessageArea.classList.add("comingIn");
+            mainchatOutputContainer.classList.add("comingIn");
         }, fadeOutTime)
 
         //delete this.keysPressed[e.key];
@@ -88,13 +91,7 @@ mdlJoinChatButton.addEventListener("click", function() {
         mainChatMessageArea.classList.add("comingIn");
     }, fadeOutTime)
 
-
-
 })
 
 
-export {
-    socket,
-    scMessageInput,
-    scSendButton
-};
+export {socket, url,scMessageInput,mdlScreenNameInput,sendButton};
