@@ -3,8 +3,13 @@ var socket = io.connect();
 
 const mainContainer = document.getElementById("main-container"),
     mainChatSection = document.getElementById("main-chat-section"),
+    mainChatTitleBar = document.getElementById("mainchat-titlebar"),
+    mainChatMessageArea = document.getElementById("mainchat-message-area"),
     sideChat_1Section = document.getElementById("side-Chat_1-Section"),
     sideChat_2Section = document.getElementById("side-Chat_2-Section");
+// mainChatTitleBar.style.display = "none";
+mainChatTitleBar.style.opacity = 0;
+mainChatMessageArea.style.opacity = 0;
 
 // mdl = modal
 const signupModal = document.getElementById("signup-modal"),
@@ -51,14 +56,12 @@ document.body.addEventListener("keyup", (e) => {
                 message: mdlMessageInput.value
             })
 
-        
-
-
-
         signupModal.classList.add("goAway");
         setTimeout(function() {
             signupModal.classList.add("hide");
             mainChatSendComponent.classList.add("comingIn");
+            mainChatTitleBar.classList.add("comingIn");
+            mainChatMessageArea.classList.add("comingIn");
         }, fadeOutTime)
 
         //delete this.keysPressed[e.key];
@@ -81,6 +84,8 @@ mdlJoinChatButton.addEventListener("click", function() {
     setTimeout(function() {
         signupModal.classList.add("hide");
         mainChatSendComponent.classList.add("comingIn");
+        mainChatTitleBar.classList.add("comingIn");
+        mainChatMessageArea.classList.add("comingIn");
     }, fadeOutTime)
 
 

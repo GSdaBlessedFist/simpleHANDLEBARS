@@ -7,6 +7,33 @@
   --fadeInTime: 500;
 }
 
+/**************KEYFRAMES n such*********************/
+/* line 46, ../../src/scss/variables.scss */
+.comingIn {
+  animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* line 54, ../../src/scss/variables.scss */
+.goAway {
+  animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 /* @import "theme-variants"; */
 /* line 5, ../../src/scss/title-bar.scss */
 .title-bar {
@@ -165,19 +192,6 @@
   box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
 }
 
-/* line 67, ../../src/scss/signup-modal.scss */
-.goAway {
-  animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
-}
-
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 /* line 5, ../../src/scss/mainchat-message-area.scss */
 .mainchat--message-area {
   grid-area: messageOutput;
@@ -187,8 +201,9 @@
   width: 100%;
   height: calc(100vh - 235px);
   top: 0px;
+  background: rgba(200, 200, 0, 0.55);
+  /*<----*/
   margin: 0px auto;
-  /*padding: 5px;*/
 }
 /* line 16, ../../src/scss/mainchat-message-area.scss */
 .message-output-container {
@@ -258,19 +273,6 @@
   font-size: 2rem;
 }
 
-/* line 39, ../../src/scss/send-component.scss */
-.comingIn {
-  animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 /* line 4, ../../src/scss/footer.scss */
 .footer-bar {
   grid-area: footer;

@@ -7,6 +7,33 @@
   --fadeInTime: 500;
 }
 
+/**************KEYFRAMES n such*********************/
+/* line 46, ../../src/scss/variables.scss */
+.comingIn {
+  animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* line 54, ../../src/scss/variables.scss */
+.goAway {
+  animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 /* line 4, ../../src/scss/send-component.scss */
 .send-component {
   grid-area: sendcomp;
@@ -45,18 +72,4 @@
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
-}
-
-/* line 39, ../../src/scss/send-component.scss */
-.comingIn {
-  animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }

@@ -10,8 +10,8 @@
 		width: 100%;
 		height: calc(100vh - 235px);
 		top: 0px;
+		background: rgba(200,200,0,.55);/*<----*/
 		margin: 0px auto;
-		/*padding: 5px;*/
 		@at-root {
 			.message-output-container {
 				background: yellow;

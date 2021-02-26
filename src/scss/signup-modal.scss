@@ -64,11 +64,3 @@
    }
 }
 
-.goAway{
-   animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
-}
-
-@keyframes fadeout{
-   from{ opacity: 1; }
-   to{ opacity: 0; }
-}

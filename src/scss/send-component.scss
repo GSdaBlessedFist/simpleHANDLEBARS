@@ -36,11 +36,3 @@
 
 }
 
-.comingIn{
-   animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
-}
-
-@keyframes fadein{
-   from{ opacity: 0; }
-   to{ opacity: 1; }
-}
