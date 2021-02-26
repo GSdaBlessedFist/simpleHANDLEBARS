@@ -41,9 +41,9 @@
    background: darken($color1,75%);
    top: $titlebarHeight+ 3px; /*<---*/
    margin: auto;
-   /*@include grid(100%,calc(100% - 220px),"99.9% .1%","99.9% .1%");*/
+   @include grid(100%,calc(100% - 220px),"99.9% .1%","99.9% .1%");
    /*@include grid(100%,calc(100% - 220px),"50% 50%","99.9% .1%");*/
-   @include grid(100%,calc(100% - 220px),"50% 50%","50% 50%");
+   /*@include grid(100%,calc(100% - 220px),"50% 50%","50% 50%");*/
    grid-template-areas: "mainchat sidechatTop"
                         "mainchat sidechatBottom";
    color: white;

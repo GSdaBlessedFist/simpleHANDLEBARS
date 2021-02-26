@@ -7,7 +7,7 @@
    margin: auto;
    width:clamp(380px,600px,40%);
    height: clamp(300px,480px,40%);
-   top: $titlebarHeight;
+   top: -500px;/*calc(($titlebarHeight + 430px)* -1);*/
    background: $color2;
    border: .5px solid $color1;
    color: $color1;
@@ -41,7 +41,7 @@
          text-align: center;
          color: $color2;
          background: $color1;
-         @include minorFont;
+         @include accentFont;
       }
       .mdl-join-button{
          width: 25%;

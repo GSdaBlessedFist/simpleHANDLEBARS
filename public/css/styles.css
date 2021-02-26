@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 /* line 7, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
@@ -17,7 +18,7 @@
   width: 100vw;
   /*modified*/
   grid-template-areas: "title dark . . . . . . . . . . . . . ";
-  border-bottom: 2px solid  white;
+  border-bottom: 2px solid white;
   background: #234;
   overflow: hidden;
 }
@@ -30,13 +31,12 @@
   width: 100%;
   /*added*/
 }
-/* line 24, ../../src/scss/title-bar.scss */
+/* line 23, ../../src/scss/title-bar.scss */
 .title-bar--site-title {
   grid-area: title;
   grid-column-start: 1;
   grid-column-end: 1;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
   background: #234;
   user-select: none;
   font-size: 3rem;
@@ -59,7 +59,6 @@
   left: -17px;
   padding-left: 17px;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
   font-size: 1.25rem;
 }
 /* line 52, ../../src/scss/title-bar.scss */
@@ -88,7 +87,7 @@
 /* line 73, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button--space {
   /*added*/
-  width: calc(100vw/15 + "px");
+  width: calc(100vw / 15 + "px");
 }
 
 /* line 4, ../../src/scss/signup-modal.scss */
@@ -98,7 +97,8 @@
   margin: auto;
   width: clamp(380px, 600px, 40%);
   height: clamp(300px, 480px, 40%);
-  top: 70px;
+  top: -500px;
+  /*calc(($titlebarHeight + 430px)* -1);*/
   background: #234;
   border: 0.5px solid #abc;
   color: #abc;
@@ -121,7 +121,6 @@
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
   font-size: clamp(1.65rem, 3rem, 3.5vw);
   color: #abc;
   background: #234;
@@ -142,8 +141,7 @@
   text-align: center;
   color: #234;
   background: #abc;
-  /*font-family: "Roboto Slab", serif;*/
-  font-family: 'Merienda', cursive;
+  font-family: "Merienda", cursive;
 }
 
 /* line 46, ../../src/scss/signup-modal.scss */
@@ -156,7 +154,6 @@
   background: #234;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
   border: 1px solid white;
   border-radius: 50px;
   box-shadow: none;
@@ -188,7 +185,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: calc(100vh - 245px);
+  height: calc(100vh - 235px);
   top: 0px;
   margin: 0px auto;
   /*padding: 5px;*/
@@ -209,9 +206,8 @@
   /*margin: 5px;*/
   background: #2b4055;
   color: #abc;
-  font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
-  font-size: 2vw;
+  font-family: "Roboto Slab", serif;
+  font-size: 2.25vw;
   text-align: center;
   padding: 0px;
 }
@@ -248,9 +244,8 @@
   color: #234;
   /*font-size: clamp(1.65rem, 3rem, 3.5vw);*/
   font-size: clamp(1rem, 1.5rem, 2vw);
-  /*font-family: "Roboto Slab", serif;*/
-  font-family: 'Merienda', cursive;
-  padding-left: 10px;
+  font-family: "Merienda", cursive;
+  padding-left: 20px;
 }
 
 /* line 26, ../../src/scss/send-component.scss */
@@ -260,7 +255,6 @@
   background: #668cb3;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
   font-size: 2rem;
 }
 
@@ -292,7 +286,6 @@
   color: white;
   font-size: 2.5vw;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
 }
 
 /* line 9, ../../src/scss/styles.scss */
@@ -336,13 +329,13 @@
   top: 73px;
   /*<---*/
   margin: auto;
-  /*@include grid(100%,calc(100% - 220px),"99.9% .1%","99.9% .1%");*/
-  /*@include grid(100%,calc(100% - 220px),"50% 50%","99.9% .1%");*/
   display: grid;
   width: 100%;
   height: calc(100% - 220px);
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 99.9% .1%;
+  grid-template-rows: 99.9% .1%;
+  /*@include grid(100%,calc(100% - 220px),"50% 50%","99.9% .1%");*/
+  /*@include grid(100%,calc(100% - 220px),"50% 50%","50% 50%");*/
   grid-template-areas: "mainchat sidechatTop" "mainchat sidechatBottom";
   color: white;
   animation: change 5s ease infinite both;

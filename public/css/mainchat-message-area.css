@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 /* line 7, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
@@ -13,7 +14,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: calc(100vh - 245px);
+  height: calc(100vh - 235px);
   top: 0px;
   margin: 0px auto;
   /*padding: 5px;*/
@@ -34,9 +35,8 @@
   /*margin: 5px;*/
   background: #2b4055;
   color: #abc;
-  font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
-  font-size: 2vw;
+  font-family: "Roboto Slab", serif;
+  font-size: 2.25vw;
   text-align: center;
   padding: 0px;
 }

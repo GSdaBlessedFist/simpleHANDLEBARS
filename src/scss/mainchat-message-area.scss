@@ -8,7 +8,7 @@
 		overflow: hidden;
 		position: relative;
 		width: 100%;
-		height: calc(100vh - 245px);
+		height: calc(100vh - 235px);
 		top: 0px;
 		margin: 0px auto;
 		/*padding: 5px;*/
@@ -26,8 +26,8 @@
 			/*margin: 5px;*/
 			background: lighten($color2,5%);
 			color: $color1;
-			@include siteFont;
-			font-size: 2vw;
+			@include minorFont;
+			font-size: 2.25vw;
 			text-align: center;
 			padding: 0px;
 		}

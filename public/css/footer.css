@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 /* line 7, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
@@ -21,5 +22,4 @@
   color: white;
   font-size: 2.5vw;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
 }

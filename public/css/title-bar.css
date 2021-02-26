@@ -1,6 +1,7 @@
 /* @import "theme-variants"; */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 /* line 7, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
@@ -17,7 +18,7 @@
   width: 100vw;
   /*modified*/
   grid-template-areas: "title dark . . . . . . . . . . . . . ";
-  border-bottom: 2px solid  white;
+  border-bottom: 2px solid white;
   background: #234;
   overflow: hidden;
 }
@@ -30,13 +31,12 @@
   width: 100%;
   /*added*/
 }
-/* line 24, ../../src/scss/title-bar.scss */
+/* line 23, ../../src/scss/title-bar.scss */
 .title-bar--site-title {
   grid-area: title;
   grid-column-start: 1;
   grid-column-end: 1;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
   background: #234;
   user-select: none;
   font-size: 3rem;
@@ -59,7 +59,6 @@
   left: -17px;
   padding-left: 17px;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
   font-size: 1.25rem;
 }
 /* line 52, ../../src/scss/title-bar.scss */
@@ -88,5 +87,5 @@
 /* line 73, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button--space {
   /*added*/
-  width: calc(100vw/15 + "px");
+  width: calc(100vw / 15 + "px");
 }

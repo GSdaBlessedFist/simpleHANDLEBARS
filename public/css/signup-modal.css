@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 /* line 7, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
@@ -13,7 +14,8 @@
   margin: auto;
   width: clamp(380px, 600px, 40%);
   height: clamp(300px, 480px, 40%);
-  top: 70px;
+  top: -500px;
+  /*calc(($titlebarHeight + 430px)* -1);*/
   background: #234;
   border: 0.5px solid #abc;
   color: #abc;
@@ -36,7 +38,6 @@
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
   font-size: clamp(1.65rem, 3rem, 3.5vw);
   color: #abc;
   background: #234;
@@ -57,8 +58,7 @@
   text-align: center;
   color: #234;
   background: #abc;
-  /*font-family: "Roboto Slab", serif;*/
-  font-family: 'Merienda', cursive;
+  font-family: "Merienda", cursive;
 }
 
 /* line 46, ../../src/scss/signup-modal.scss */
@@ -71,7 +71,6 @@
   background: #234;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  /*font-family: 'Merienda', cursive;*/
   border: 1px solid white;
   border-radius: 50px;
   box-shadow: none;

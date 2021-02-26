@@ -7,36 +7,36 @@
    position: sticky;
    top: 0;
    grid-template-rows: 1fr;
-   grid-template-columns: 20vw 5vw repeat(13,fr);
-   width: 100vw;/*modified*/
+   grid-template-columns: 20vw 5vw repeat(13, fr);
+   width: 100vw; /*modified*/
    grid-template-areas: "title dark . . . . . . . . . . . . . ";
-   border-bottom: 2px solid  white;
+   border-bottom: 2px solid white;
    background: $color2;
-   overflow: hidden; 
-   &>*{
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         background: inherit;
-         width: 100%;/*added*/
-         
-      }
-   &--site-title{
+   overflow: hidden;
+   & > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: inherit;
+      width: 100%; /*added*/
+   }
+   &--site-title {
       grid-area: title;
       grid-column-start: 1;
       grid-column-end: 1;
       @include siteFont;
+
       background: #234;
-      
+
       user-select: none;
       font-size: 3rem;
       padding-left: -5px;
-      &>div{
+      & > div {
          background: inherit;
          color: $color1;
       }
    }
-   &--darkmode-button{
+   &--darkmode-button {
       grid-area: dark;
       grid-column-start: 2;
       grid-column-end: 2;
@@ -44,34 +44,35 @@
       position: relative;
       background: transparent;
       top: 17px;
-      left:-17px;
+      left: -17px;
       padding-left: 17px;
       @include siteFont;
       font-size: 1.25rem;
 
-      &>a{
+      & > a {
          display: flex;
          justify-content: center;
          align-items: center;
          width: 35px;
          height: 35px;
          background: inherit;
-         border: 2px solid darken($color1,35%);
+         border: 2px solid darken($color1, 35%);
          border-radius: 25px;
          margin: 0px 10px;
          left: 50px;
          text-decoration: none;
          font-weight: 900;
-         color: darken($color1,35%);
+         color: darken($color1, 35%);
          transition: all 250ms ease;
-         &:hover{
+         &:hover {
             border: 2px solid $color1;
             color: $color1;
             @include buttonHoverShadow;
-         };
+         }
       }
-      &--space{/*added*/
-         width: calc(100vw/15 + "px");
+      &--space {
+         /*added*/
+         width: calc(100vw / 15 + "px");
       }
    }
 }

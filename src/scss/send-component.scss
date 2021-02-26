@@ -20,8 +20,8 @@
 				color: $color2;
 				/*font-size: clamp(1.65rem, 3rem, 3.5vw);*/
 				font-size: clamp(1rem,1.5rem,2vw);
-				@include minorFont;
-				padding-left: 10px;
+				@include accentFont;
+				padding-left: 20px;
 			}
 			.sc-send-button{
 				display: block;
