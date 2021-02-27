@@ -31,6 +31,44 @@ app.get("",(req,res)=>{
                 title: nameofApp
         })
 })
- 
-	
-module.exports = {server,port,socket};
+
+// SOCKET SETUP
+var io = socket(server);
+
+var clients = 0;
+////////////////////// DEFAULT NAMESPACE ////////////////////
+io.on('connection',function(socket){
+	console.log("made connection",socket.id)
+	clients = clients +1;
+
+	socket.on('hello',function(data){
+		clients++;
+		console.log(`${data.screenname} adds one more, bringing the count to ${clients}`)
+		
+	})
+
+
+
+
+	socket.on("typing",(data)=>{
+		socket.broadcast.emit("typing",`${data.screenname}is typing...`);
+	})
+
+
+
+
+	socket.on("disconnect",()=>{
+		clients--;
+		let clientStatement="";
+		if(clients>=1){
+			clientStatement = `There are ${clients} people are still connected.` 
+		}else{
+			clientStatement = `Only 1 person is in here...and that's you.`;
+		}
+		io.sockets.emit("broadcast",{
+			numberOfClients: clientStatement
+		})
+	})
+})
+//////////////////// SECOND CHATROOM NAMESPACE //////////////////
+

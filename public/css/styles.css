@@ -117,8 +117,8 @@
   width: calc(100vw / 15 + "px");
 }
 
-/* line 4, ../../src/scss/signup-modal.scss */
-.signup-modal {
+/* line 4, ../../src/scss/signin-modal.scss */
+.signin-modal {
   display: block;
   position: relative;
   margin: auto;
@@ -130,8 +130,8 @@
   border: 0.5px solid #abc;
   color: #abc;
 }
-/* line 14, ../../src/scss/signup-modal.scss */
-.signup-modal--grid {
+/* line 14, ../../src/scss/signin-modal.scss */
+.signin-modal--grid {
   margin: auto auto;
   display: grid;
   width: 95%;
@@ -141,7 +141,7 @@
   grid-template-areas: "intro" "inputs";
   background: #234;
 }
-/* line 22, ../../src/scss/signup-modal.scss */
+/* line 22, ../../src/scss/signin-modal.scss */
 .mdl-signin-section {
   grid-area: intro;
   display: flex;
@@ -153,13 +153,13 @@
   background: #234;
 }
 
-/* line 32, ../../src/scss/signup-modal.scss */
+/* line 32, ../../src/scss/signin-modal.scss */
 .mdl-inputs-section {
   grid-area: inputs;
   background: #234;
 }
 
-/* line 36, ../../src/scss/signup-modal.scss */
+/* line 36, ../../src/scss/signin-modal.scss */
 .mdl-input {
   display: block;
   width: 65%;
@@ -171,7 +171,7 @@
   font-family: "Merienda", cursive;
 }
 
-/* line 46, ../../src/scss/signup-modal.scss */
+/* line 46, ../../src/scss/signin-modal.scss */
 .mdl-join-button {
   width: 25%;
   position: relative;
@@ -186,7 +186,7 @@
   box-shadow: none;
   transition: all 250ms ease;
 }
-/* line 59, ../../src/scss/signup-modal.scss */
+/* line 59, ../../src/scss/signin-modal.scss */
 .mdl-join-button:hover {
   background: #49627a;
   box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
