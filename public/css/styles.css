@@ -1,108 +1,365 @@
-/*
-Error: Undefined variable: "$color3".
-        on line 19 of /home/guyshifty/Desktop/simpleHANDLEBARS/src/scss/mainchat-message-area.scss
-        from line 5 of /home/guyshifty/Desktop/simpleHANDLEBARS/src/scss/styles.scss
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
+/* line 8, ../../src/scss/variables.scss */
+:root {
+  --fadeOutTime: 250;
+  --fadeInTime: 500;
+}
 
-14:    background: darken($color1,65%);
-15: 
-16: }
-17: .b {
-18:    border: 1px red solid;
-19: }
-20: .hide {
-21:    display: none;
-22: }
-23: 
-24: .prime-container{
+/**************KEYFRAMES n such*********************/
+/* line 47, ../../src/scss/variables.scss */
+.comingIn {
+  animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
+}
 
-Backtrace:
-/home/guyshifty/Desktop/simpleHANDLEBARS/src/scss/mainchat-message-area.scss:19
-/home/guyshifty/Desktop/simpleHANDLEBARS/src/scss/styles.scss:5
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/script/tree/variable.rb:49:in `_perform'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/script/tree/node.rb:58:in `perform'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block (2 levels) in visit_rule'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `map'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block in visit_rule'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:432:in `visit_rule'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block (2 levels) in visit_rule'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `map'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block in visit_rule'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:432:in `visit_rule'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block (2 levels) in visit_rule'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `map'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block in visit_rule'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:432:in `visit_rule'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:329:in `map'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:88:in `block in with_import'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:88:in `with_import'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `map'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:36:in `css_tree'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:20:in `render'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/engine.rb:284:in `render'
-/var/lib/gems/2.7.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
-/var/lib/gems/2.7.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
-/var/lib/gems/2.7.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:209:in `each'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:331:in `block in watch'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/var/lib/gems/2.7.0/gems/sass-3.4.25/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$color3\".\A         on line 19 of /home/guyshifty/Desktop/simpleHANDLEBARS/src/scss/mainchat-message-area.scss\A         from line 5 of /home/guyshifty/Desktop/simpleHANDLEBARS/src/scss/styles.scss\A \A 14:    background: darken($color1,65%);\A 15: \A 16: }\A 17: .b {\A 18:    border: 1px red solid;\A 19: }\A 20: .hide {\A 21:    display: none;\A 22: }\A 23: \A 24: .prime-container{"; }
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* line 55, ../../src/scss/variables.scss */
+.goAway {
+  animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* @import "theme-variants"; */
+/* line 5, ../../src/scss/title-bar.scss */
+.title-bar {
+  display: grid;
+  position: sticky;
+  top: 0;
+  grid-template-rows: 1fr;
+  grid-template-columns: 20vw 5vw repeat(13, fr);
+  width: 100vw;
+  /*modified*/
+  grid-template-areas: "title dark . . . . . . . . . . . . . ";
+  border-bottom: 2px solid white;
+  background: #223344;
+  overflow: hidden;
+}
+/* line 16, ../../src/scss/title-bar.scss */
+.title-bar > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: inherit;
+  width: 100%;
+  /*added*/
+}
+/* line 23, ../../src/scss/title-bar.scss */
+.title-bar--site-title {
+  grid-area: title;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  font-family: "Montserrat", sans-serif;
+  background: #234;
+  user-select: none;
+  font-size: 3rem;
+  padding-left: -5px;
+}
+/* line 34, ../../src/scss/title-bar.scss */
+.title-bar--site-title > div {
+  background: inherit;
+  color: #aabbcc;
+}
+/* line 39, ../../src/scss/title-bar.scss */
+.title-bar--darkmode-button {
+  grid-area: dark;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  display: inline;
+  position: relative;
+  background: transparent;
+  top: 17px;
+  left: -17px;
+  padding-left: 17px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+}
+/* line 52, ../../src/scss/title-bar.scss */
+.title-bar--darkmode-button > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background: inherit;
+  border: 2px solid #49627a;
+  border-radius: 25px;
+  margin: 0px 10px;
+  left: 50px;
+  text-decoration: none;
+  font-weight: 900;
+  color: #49627a;
+  transition: all 250ms ease;
+}
+/* line 67, ../../src/scss/title-bar.scss */
+.title-bar--darkmode-button > a:hover {
+  border: 2px solid #aabbcc;
+  color: #aabbcc;
+  box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
+}
+/* line 73, ../../src/scss/title-bar.scss */
+.title-bar--darkmode-button--space {
+  /*added*/
+  width: calc(100vw / 15 + "px");
+}
+
+/* line 4, ../../src/scss/signin-modal.scss */
+.signin-modal {
+  display: block;
+  position: relative;
+  margin: auto;
+  width: clamp(380px, 600px, 40%);
+  height: clamp(300px, 480px, 40%);
+  top: -500px;
+  /*calc(($titlebarHeight + 430px)* -1);*/
+  background: #223344;
+  border: 0.5px solid #aabbcc;
+  color: #aabbcc;
+}
+/* line 14, ../../src/scss/signin-modal.scss */
+.signin-modal--grid {
+  margin: auto auto;
+  display: grid;
+  width: 95%;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 60%;
+  grid-template-areas: "intro" "inputs";
+  background: #223344;
+}
+/* line 22, ../../src/scss/signin-modal.scss */
+.mdl-signin-section {
+  grid-area: intro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.65rem, 3rem, 3.5vw);
+  color: #aabbcc;
+  background: #223344;
+}
+
+/* line 32, ../../src/scss/signin-modal.scss */
+.mdl-inputs-section {
+  grid-area: inputs;
+  background: #223344;
+}
+
+/* line 36, ../../src/scss/signin-modal.scss */
+.mdl-input {
+  display: block;
+  width: 65%;
+  margin: 20px auto;
+  font-size: clamp(1rem, 1.5rem, 2vw);
+  text-align: center;
+  color: #223344;
+  background: #aabbcc;
+  font-family: "Merienda", cursive;
+}
+
+/* line 46, ../../src/scss/signin-modal.scss */
+.mdl-join-button {
+  width: 25%;
+  position: relative;
+  left: 70%;
+  top: -8px;
+  padding: 10px 0;
+  background: #223344;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid white;
+  border-radius: 50px;
+  box-shadow: none;
+  transition: all 250ms ease;
+}
+/* line 59, ../../src/scss/signin-modal.scss */
+.mdl-join-button:hover {
+  /*background: darken($color1,35%);*/
+  background: #668cb3;
+  box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
+}
+
+/* line 5, ../../src/scss/mainchat-message-area.scss */
+.mainchat--message-area {
+  grid-area: messageOutput;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 235px);
+  top: 0px;
+  /*background: rgba(200,200,0,.55);*/
+  /*<----*/
+  margin: 0px auto;
+}
+/* line 15, ../../src/scss/mainchat-message-area.scss */
+.mainchat--message-area--titlebar {
+  display: block;
+  position: relative;
+  top: -2px;
+  background: #668cb3;
+  box-shadow: inset 0px -1px 8px -1px #aabbcc;
+  color: #aabbcc;
+  font-family: "Roboto Slab", serif;
+  font-size: 2.35vw;
+  text-align: center;
+  padding: 5px 0px;
+}
+/* line 27, ../../src/scss/mainchat-message-area.scss */
+.mainchat--message-area--output-container {
+  width: 100%;
+  background: transparent;
+  overflow: hidden;
+}
+/* line 32, ../../src/scss/mainchat-message-area.scss */
+.user-link {
+  margin: 15px;
+  background: orange;
+}
+
+/* line 36, ../../src/scss/mainchat-message-area.scss */
+.message-sent {
+  padding: 10px;
+  background: red;
+}
+
+/* line 4, ../../src/scss/send-component.scss */
+.send-component {
+  grid-area: sendcomp;
+  display: block;
+  position: absolute;
+  opacity: 0;
+  top: calc(100% - 146px);
+}
+/* line 10, ../../src/scss/send-component.scss */
+.send-component--grid {
+  display: grid;
+  width: 100vw;
+  height: 75px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50% 50%;
+  grid-template-areas: "message" "send";
+}
+/* line 15, ../../src/scss/send-component.scss */
+.sc-message-input {
+  display: block;
+  width: 100%;
+  grid-area: message;
+  background: #aabbcc;
+  color: #223344;
+  /*font-size: clamp(1.65rem, 3rem, 3.5vw);*/
+  font-size: clamp(1rem, 1.5rem, 2vw);
+  font-family: "Merienda", cursive;
+  padding-left: 20px;
+}
+
+/* line 26, ../../src/scss/send-component.scss */
+.send-button {
+  display: block;
+  grid-area: send;
+  background: #668cb3;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+}
+
+/* line 4, ../../src/scss/footer.scss */
+.footer-bar {
+  grid-area: footer;
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  padding: 8px 0px;
+  width: 100%;
+  background: #234;
+  color: white;
+  font-size: 2.5vw;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* line 9, ../../src/scss/styles.scss */
+* {
+  margin: 0;
+  margin: 0px;
+  box-sizing: border-box;
+  color: white;
+  background: #10151b;
+}
+
+/* line 17, ../../src/scss/styles.scss */
+.b {
+  border: 1px red solid;
+}
+
+/* line 20, ../../src/scss/styles.scss */
+.hide {
+  display: none;
+}
+
+/* line 24, ../../src/scss/styles.scss */
+.prime-container {
+  resize: none;
+  /*height: 100%;*/
+  height: clamp(400px, 50vh, 100%);
+  /*min-width: 400px;
+  width: 100%;*/
+  width: clamp(500px, 50vw, 100%);
+  display: grid;
+  grid-template-rows: 70px 1fr 110px;
+  grid-template-areas: "titlebar" "maincontainer"  "footer";
+}
+
+/* line 37, ../../src/scss/styles.scss */
+.main-container {
+  grid-area: maincontainer;
+  overflow: hidden;
+  position: absolute;
+  background: black;
+  top: 73px;
+  /*<---*/
+  margin: auto;
+  display: grid;
+  width: 100%;
+  height: calc(100% - 220px);
+  grid-template-columns: 99.9% .1%;
+  grid-template-rows: 99.9% .1%;
+  /*@include grid(100%,calc(100% - 220px),"50% 50%","99.9% .1%");*/
+  /*@include grid(100%,calc(100% - 220px),"50% 50%","50% 50%");*/
+  grid-template-areas: "mainchat sidechatTop" "mainchat sidechatBottom";
+  color: white;
+  animation: change 5s ease infinite both;
+}
+/* line 51, ../../src/scss/styles.scss */
+.main-container--mainchat {
+  grid-area: mainchat;
+  /*border: 1px solid white;*/
+}
+/* line 56, ../../src/scss/styles.scss */
+.main-container--sidechat_1 {
+  grid-area: sidechatTop;
+  background: orange;
+  border: 5px solid green;
+}
+/* line 61, ../../src/scss/styles.scss */
+.main-container--sidechat_2 {
+  grid-area: sidechatBottom;
+  background: purple;
+  /*border: 3px solid yellow; */
+}

@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
-/* line 7, ../../src/scss/variables.scss */
+/* line 8, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
   --fadeInTime: 500;
 }
 
 /**************KEYFRAMES n such*********************/
-/* line 46, ../../src/scss/variables.scss */
+/* line 47, ../../src/scss/variables.scss */
 .comingIn {
   animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
 }
@@ -21,7 +21,7 @@
     opacity: 1;
   }
 }
-/* line 54, ../../src/scss/variables.scss */
+/* line 55, ../../src/scss/variables.scss */
 .goAway {
   animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
 }
@@ -56,8 +56,8 @@
   display: block;
   width: 100%;
   grid-area: message;
-  background: #abc;
-  color: #234;
+  background: #aabbcc;
+  color: #223344;
   /*font-size: clamp(1.65rem, 3rem, 3.5vw);*/
   font-size: clamp(1rem, 1.5rem, 2vw);
   font-family: "Merienda", cursive;

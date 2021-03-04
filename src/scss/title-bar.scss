@@ -11,7 +11,7 @@
    width: 100vw; /*modified*/
    grid-template-areas: "title dark . . . . . . . . . . . . . ";
    border-bottom: 2px solid white;
-   background: $color2;
+   background: $color3;
    overflow: hidden;
    & > * {
       display: flex;

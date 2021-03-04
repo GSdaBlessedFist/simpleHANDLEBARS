@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
-/* line 7, ../../src/scss/variables.scss */
+/* line 8, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
   --fadeInTime: 500;
 }
 
 /**************KEYFRAMES n such*********************/
-/* line 46, ../../src/scss/variables.scss */
+/* line 47, ../../src/scss/variables.scss */
 .comingIn {
   animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
 }
@@ -21,7 +21,7 @@
     opacity: 1;
   }
 }
-/* line 54, ../../src/scss/variables.scss */
+/* line 55, ../../src/scss/variables.scss */
 .goAway {
   animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
 }
@@ -43,9 +43,9 @@
   height: clamp(300px, 480px, 40%);
   top: -500px;
   /*calc(($titlebarHeight + 430px)* -1);*/
-  background: #234;
-  border: 0.5px solid #abc;
-  color: #abc;
+  background: #223344;
+  border: 0.5px solid #aabbcc;
+  color: #aabbcc;
 }
 /* line 14, ../../src/scss/signin-modal.scss */
 .signin-modal--grid {
@@ -56,7 +56,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 20% 60%;
   grid-template-areas: "intro" "inputs";
-  background: #234;
+  background: #223344;
 }
 /* line 22, ../../src/scss/signin-modal.scss */
 .mdl-signin-section {
@@ -66,14 +66,14 @@
   align-items: center;
   font-family: "Montserrat", sans-serif;
   font-size: clamp(1.65rem, 3rem, 3.5vw);
-  color: #abc;
-  background: #234;
+  color: #aabbcc;
+  background: #223344;
 }
 
 /* line 32, ../../src/scss/signin-modal.scss */
 .mdl-inputs-section {
   grid-area: inputs;
-  background: #234;
+  background: #223344;
 }
 
 /* line 36, ../../src/scss/signin-modal.scss */
@@ -83,8 +83,8 @@
   margin: 20px auto;
   font-size: clamp(1rem, 1.5rem, 2vw);
   text-align: center;
-  color: #234;
-  background: #abc;
+  color: #223344;
+  background: #aabbcc;
   font-family: "Merienda", cursive;
 }
 
@@ -95,7 +95,7 @@
   left: 70%;
   top: -8px;
   padding: 10px 0;
-  background: #234;
+  background: #223344;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   border: 1px solid white;
@@ -105,6 +105,7 @@
 }
 /* line 59, ../../src/scss/signin-modal.scss */
 .mdl-join-button:hover {
-  background: #49627a;
+  /*background: darken($color1,35%);*/
+  background: #668cb3;
   box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
 }

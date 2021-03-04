@@ -2,14 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
-/* line 7, ../../src/scss/variables.scss */
+/* line 8, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
   --fadeInTime: 500;
 }
 
 /**************KEYFRAMES n such*********************/
-/* line 46, ../../src/scss/variables.scss */
+/* line 47, ../../src/scss/variables.scss */
 .comingIn {
   animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
 }
@@ -22,7 +22,7 @@
     opacity: 1;
   }
 }
-/* line 54, ../../src/scss/variables.scss */
+/* line 55, ../../src/scss/variables.scss */
 .goAway {
   animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
 }
@@ -46,7 +46,7 @@
   /*modified*/
   grid-template-areas: "title dark . . . . . . . . . . . . . ";
   border-bottom: 2px solid white;
-  background: #234;
+  background: #223344;
   overflow: hidden;
 }
 /* line 16, ../../src/scss/title-bar.scss */
@@ -72,7 +72,7 @@
 /* line 34, ../../src/scss/title-bar.scss */
 .title-bar--site-title > div {
   background: inherit;
-  color: #abc;
+  color: #aabbcc;
 }
 /* line 39, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button {
@@ -107,8 +107,8 @@
 }
 /* line 67, ../../src/scss/title-bar.scss */
 .title-bar--darkmode-button > a:hover {
-  border: 2px solid #abc;
-  color: #abc;
+  border: 2px solid #aabbcc;
+  color: #aabbcc;
   box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
 }
 /* line 73, ../../src/scss/title-bar.scss */

@@ -16,21 +16,21 @@
 			display: block;
 			position: relative;
 			top: -2px;
-			background: $color3;
+			background: $color2;
 			box-shadow: inset 0px -1px 8px -1px $color1;
 			color: $color1;
 			@include minorFont;
-			font-size: 2.25vw;
+			font-size: 2.35vw;
 			text-align: center;
 			padding: 5px 0px;
 		}
 		&--output-container{
 			width: 100%;
-			background: purple;
+			background: transparent;
 			overflow: hidden;
 			@at-root {
 			.user-link {
-				margin: 5px;
+				margin: 15px;
 				background: orange;
 			}
 			.message-sent{

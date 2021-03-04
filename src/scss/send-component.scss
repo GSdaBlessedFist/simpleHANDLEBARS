@@ -17,7 +17,7 @@
 				width: 100%;
 				grid-area: message;
 				background: $color1;
-				color: $color2;
+				color: $color3;
 				/*font-size: clamp(1.65rem, 3rem, 3.5vw);*/
 				font-size: clamp(1rem,1.5rem,2vw);
 				@include accentFont;
@@ -26,7 +26,7 @@
 			.send-button{
 				display: block;
 				grid-area: send;
-				background: lighten($color2,35%);
+				background: $color2;
 				text-align: center;
 				@include siteFont;
 				font-size: 2rem;
