@@ -3,29 +3,27 @@ const url = "http://localhost:4000";
 const socket = io.connect();
 
 const mainContainer = document.getElementById("main-container"),
-    mainChatSection = document.getElementById("main-chat-section"),
-    mainChatTitleBar = document.getElementById("mainchat-titlebar"),
-    mainChatMessageArea = document.getElementById("mainchat-message-area"),
-    mainchatOutputContainer = document.getElementById("mainchat-output-container"),
-    sideChat_1Section = document.getElementById("side-Chat_1-Section"),
-    sideChat_2Section = document.getElementById("side-Chat_2-Section");
-// mainChatTitleBar.style.display = "none";
+      mainChatSection = document.getElementById("main-chat-section"),
+      mainChatTitleBar = document.getElementById("mainchat-titlebar"),
+      mainChatMessageArea = document.getElementById("mainchat-message-area"),
+      mainchatOutputContainer = document.getElementById("mainchat-output-container"),
+      sideChat_1Section = document.getElementById("side-Chat_1-Section"),
+      sideChat_2Section = document.getElementById("side-Chat_2-Section");
+
 mainChatTitleBar.style.opacity = 0;
 mainChatMessageArea.style.opacity = 0;
 mainchatOutputContainer.style.opacity = 0;
 
 // mdl = modal
 const signInModal = document.getElementById("signin-modal"),
-    mdlScreenNameInput = document.getElementById("mdl-screenname-input"),
-    mdlMessageInput = document.getElementById("mdl-message-input"),
-    mdlJoinChatButton = document.getElementById("mdl-join-button");
-// mdlScreenNameInput.value = "";
-// mdlMessageInput.value = "";
+      mdlScreenNameInput = document.getElementById("mdl-screenname-input"),
+      mdlMessageInput = document.getElementById("mdl-message-input"),
+      mdlJoinChatButton = document.getElementById("mdl-join-button");
 
 // sc = send-component
 const mainChatSendComponent = document.getElementById("mainchat-send-component"),
-    scMessageInput = document.getElementById("sc-message-input"),
-    sendButton = document.getElementById("sc-send-button");
+      scMessageInput = document.getElementById("sc-message-input"),
+      sendButton = document.getElementById("sc-send-button");
 
 const styles = getComputedStyle(document.documentElement);
 const fadeOutTime = styles.getPropertyValue('--fadeOutTime');
@@ -44,30 +42,18 @@ mdlScreenNameInput.placeholder = randomNameSelection();
 // signinInfo.screenname = randomNameSelection() || mdlScreenNameInput.value;
 // signinInfo.message = mdlMessageInput.value || "Testing purposes only as requirement will be needed";
 
-function signinToChatInfo(signinInfo){
-    return {
-        "screenname":randomNameSelection() || mdlScreenNameInput.value,
-        "message":mdlMessageInput.value || "Testing purposes only as requirement will be needed"
-    }
-}
-
 document.body.addEventListener("keyup", (e) => {
+    
     if (e.keyCode === 13) {
-        // if (!mdlMessageInput.value) {
-        //     alert("Please introduce yourself");
-        //     return;
-        // } else {
-        //     socket.emit("chat", {
-        //         screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
-        //         message: mdlMessageInput.value
-        //     })
-
-        // }
-          ///////////////////////////////////////////// DEVELOPMENT v.....PRODUCTION ^/////////////////////
-           
-        
-        console.log(signinToChatInfo(signinInfo));
-        // join(chatInfo)
+        if (!mdlMessageInput.value) {
+            alert("Please introduce yourself");
+            return;
+        } else {
+            socket.emit("introduction.chat", {
+                screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+                message: mdlMessageInput.value
+            })
+        }
 
         signInModal.classList.add("goAway");
         setTimeout(function() {
@@ -79,7 +65,6 @@ document.body.addEventListener("keyup", (e) => {
         }, fadeOutTime)
 
         //delete this.keysPressed[e.key];
-
     }
 })
 
@@ -88,7 +73,7 @@ mdlJoinChatButton.addEventListener("click", function() {
         alert("Please introduce yourself");
         return;
     } else {
-        socket.emit("chat", {
+        socket.emit("introduction.chat", {
             screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
             message: mdlMessageInput.value
         })
@@ -101,9 +86,10 @@ mdlJoinChatButton.addEventListener("click", function() {
         mainChatSendComponent.classList.add("comingIn");
         mainChatTitleBar.classList.add("comingIn");
         mainChatMessageArea.classList.add("comingIn");
+        mainchatOutputContainer.classList.add("comingIn");
     }, fadeOutTime)
 
 })
 
 console.log(scMessageInput.value);
-export {socket, url,scMessageInput,mdlScreenNameInput,sendButton,signinInfo};
+export {socket,url,styles,scMessageInput,mdlScreenNameInput,sendButton,signinInfo,mainchatOutputContainer};

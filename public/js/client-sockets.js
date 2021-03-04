@@ -1,5 +1,5 @@
 // client socket emits n such
-import {socket,url,scMessageInput,mdlScreenNameInput,sendButton,signinInfo} from "./signin-modal.js";
+import {socket,url,styles,scMessageInput,mdlScreenNameInput,sendButton,signinInfo,mainchatOutputContainer} from "./signin-modal.js";
 const p = console.log;
 
 
@@ -11,6 +11,13 @@ function join(chatInfo){
 // scMessageInput.addEventListener("keypress", () => {
 // 	socket.emit("typing", chatInfo.screenname);
 // })
+socket.on('introducing...',(data)=>{
+	mainchatOutputContainer.innerHTML = `
+		<a href="#" class="user-link">${data.screenname}</a>
+		<div class="message-sent">${data.message}</div>
+	`
+})
+
 socket.on('typing',(data)=>{
 	p(`${data.screenname} is typing...`);
 })
