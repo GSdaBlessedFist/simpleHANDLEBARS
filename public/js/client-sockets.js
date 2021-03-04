@@ -1,5 +1,5 @@
 // client socket emits n such
-import {socket,url,styles,scMessageInput,mdlScreenNameInput,sendButton,signinInfo} from "./signin-modal.js";
+import {socket,url,styles,scMessageInput,mdlScreenNameInput,sendButton,signinInfo,mainchatOutputContainer} from "./signin-modal.js";
 const p = console.log;
 
 
@@ -12,9 +12,9 @@ function join(chatInfo){
 // 	socket.emit("typing", chatInfo.screenname);
 // })
 socket.on('introducing...',(data)=>{
-	// document.write(`${data.screenname} adds one more, bringing the count to ${clients}`)
-	console.log("test")
-	document.write(data.screenname) ;
+	mainchatOutputContainer.innerHTML = `
+		<a href="#" class="user-link ">${data.screenname}</a>
+	`
 })
 
 socket.on('typing',(data)=>{

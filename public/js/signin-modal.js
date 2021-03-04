@@ -43,18 +43,7 @@ mdlScreenNameInput.placeholder = randomNameSelection();
 // signinInfo.message = mdlMessageInput.value || "Testing purposes only as requirement will be needed";
 
 document.body.addEventListener("keyup", (e) => {
-    // if (e.keyCode === 13) {
-    //     if (!mdlMessageInput.value) {
-    //         alert("Please introduce yourself");
-    //         return;
-    //     } else {
-    //         socket.emit("chat", {
-    //             screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
-    //             message: mdlMessageInput.value
-    //         })
-    //     }
-
-
+    
     if (e.keyCode === 13) {
         if (!mdlMessageInput.value) {
             alert("Please introduce yourself");
@@ -102,4 +91,4 @@ mdlJoinChatButton.addEventListener("click", function() {
 })
 
 console.log(scMessageInput.value);
-export {socket,url,styles,scMessageInput,mdlScreenNameInput,sendButton,signinInfo};
+export {socket,url,styles,scMessageInput,mdlScreenNameInput,sendButton,signinInfo,mainchatOutputContainer};
