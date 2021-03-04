@@ -3,7 +3,6 @@ const express = require('express');
 const path = require("path");
 const hbs = require("hbs");
 const socket = require('socket.io');
-const chalk = require('chalk');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -40,20 +39,15 @@ var clients = 0;
 ////////////////////// DEFAULT NAMESPACE ////////////////////
 io.on('connection',function(socket){
 	console.log("made connection",socket.id)
-	clients++;
+	clients = clients +1;
 
-	socket.on('introduction.chat',function(data){
-		
-		console.log(data)
-		console.log(chalk.cyan.bold(`${data.screenname} `)+ `has just joined.`+
-		chalk.yellow.bold(`Number of clients: ${clients}`));
-		
-		socket.emit('introducing...',data);
-
+	socket.on('hello',function(data){
+		clients++;
+		console.log(`${data.screenname} adds one more, bringing the count to ${clients}`)
 		
 	})
 
-	
+
 
 
 	socket.on("typing",(data)=>{
