@@ -1,6 +1,6 @@
 import {join} from "./client-sockets.js";
 const url = "http://localhost:4000";
-var socket = io.connect();
+const socket = io.connect();
 
 const mainContainer = document.getElementById("main-container"),
     mainChatSection = document.getElementById("main-chat-section"),
@@ -41,15 +41,14 @@ const randomNameSelection = function() {
 
 var signinInfo = {};
 mdlScreenNameInput.placeholder = randomNameSelection();
-signinInfo.screenname = randomNameSelection() || mdlScreenNameInput.value;
-signinInfo.message = mdlMessageInput.value || "Testing purposes only as requirement will be needed";
+// signinInfo.screenname = randomNameSelection() || mdlScreenNameInput.value;
+// signinInfo.message = mdlMessageInput.value || "Testing purposes only as requirement will be needed";
 
 function signinToChatInfo(signinInfo){
-    let chatInfo = {
-        "screenname":signinInfo.screename,
-        "message":signinInfo.message
+    return {
+        "screenname":randomNameSelection() || mdlScreenNameInput.value,
+        "message":mdlMessageInput.value || "Testing purposes only as requirement will be needed"
     }
-    alert(chatInfo)
 }
 
 document.body.addEventListener("keyup", (e) => {
@@ -67,8 +66,8 @@ document.body.addEventListener("keyup", (e) => {
           ///////////////////////////////////////////// DEVELOPMENT v.....PRODUCTION ^/////////////////////
            
         
-        signinToChatInfo(signinInfo);
-        join(chatInfo)
+        console.log(signinToChatInfo(signinInfo));
+        // join(chatInfo)
 
         signInModal.classList.add("goAway");
         setTimeout(function() {
@@ -106,5 +105,5 @@ mdlJoinChatButton.addEventListener("click", function() {
 
 })
 
-console.log(scMessageInput);
+console.log(scMessageInput.value);
 export {socket, url,scMessageInput,mdlScreenNameInput,sendButton,signinInfo};
