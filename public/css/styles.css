@@ -212,9 +212,16 @@
 
 /* line 19, ../../src/scss/mainchat-message-area.scss */
 .user-link {
+  margin: 5px;
   background: orange;
 }
+
 /* line 23, ../../src/scss/mainchat-message-area.scss */
+.message-sent {
+  padding: 10px;
+  background: red;
+}
+/* line 28, ../../src/scss/mainchat-message-area.scss */
 .mainchat--message-area--titlebar {
   display: block;
   position: relative;
@@ -227,7 +234,7 @@
   text-align: center;
   padding: 5px 0px;
 }
-/* line 35, ../../src/scss/mainchat-message-area.scss */
+/* line 40, ../../src/scss/mainchat-message-area.scss */
 .mainchat--message-area--output-container {
   width: 100%;
   background: purple;

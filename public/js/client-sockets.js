@@ -13,7 +13,8 @@ function join(chatInfo){
 // })
 socket.on('introducing...',(data)=>{
 	mainchatOutputContainer.innerHTML = `
-		<a href="#" class="user-link ">${data.screenname}</a>
+		<a href="#" class="user-link">${data.screenname}</a>
+		<div class="message-sent">${data.message}</div>
 	`
 })
 

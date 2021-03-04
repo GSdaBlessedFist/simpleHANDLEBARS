@@ -86,6 +86,7 @@ mdlJoinChatButton.addEventListener("click", function() {
         mainChatSendComponent.classList.add("comingIn");
         mainChatTitleBar.classList.add("comingIn");
         mainChatMessageArea.classList.add("comingIn");
+        mainchatOutputContainer.classList.add("comingIn");
     }, fadeOutTime)
 
 })
