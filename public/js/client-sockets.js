@@ -1,5 +1,5 @@
 // client socket emits n such
-import {socket,url,scMessageInput,mdlScreenNameInput,sendButton,signinInfo} from "./signin-modal.js";
+import {socket,url,styles,scMessageInput,mdlScreenNameInput,sendButton,signinInfo} from "./signin-modal.js";
 const p = console.log;
 
 
