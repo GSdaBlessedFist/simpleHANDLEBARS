@@ -15,7 +15,7 @@
 		&--titlebar {
 			display: block;
 			position: relative;
-			top: -2px;
+			top: -3px;
 			background: $color2;
 			box-shadow: inset 0px -1px 8px -1px $color1;
 			color: $color1;
@@ -30,12 +30,14 @@
 			overflow: hidden;
 			@at-root {
 			.user-link {
-				margin: 15px;
-				background: orange;
+				padding-left: 5px;
+				text-decoration: none;
+				background: transparent;
 			}
 			.message-sent{
 				padding: 10px;
-				background: red;
+				background: transparent;
+				border-bottom: 1px solid $color1;
 			}
 		}
 		}

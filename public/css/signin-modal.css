@@ -106,6 +106,6 @@
 /* line 59, ../../src/scss/signin-modal.scss */
 .mdl-join-button:hover {
   /*background: darken($color1,35%);*/
-  background: #668cb3;
+  background: #557675;
   box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
 }

@@ -189,7 +189,7 @@
 /* line 59, ../../src/scss/signin-modal.scss */
 .mdl-join-button:hover {
   /*background: darken($color1,35%);*/
-  background: #668cb3;
+  background: #557675;
   box-shadow: 5px 8px 15px -1px rgba(0, 0, 0, 0.75);
 }
 
@@ -210,8 +210,8 @@
 .mainchat--message-area--titlebar {
   display: block;
   position: relative;
-  top: -2px;
-  background: #668cb3;
+  top: -3px;
+  background: #557675;
   box-shadow: inset 0px -1px 8px -1px #aabbcc;
   color: #aabbcc;
   font-family: "Roboto Slab", serif;
@@ -227,14 +227,16 @@
 }
 /* line 32, ../../src/scss/mainchat-message-area.scss */
 .user-link {
-  margin: 15px;
-  background: orange;
+  padding-left: 5px;
+  text-decoration: none;
+  background: transparent;
 }
 
-/* line 36, ../../src/scss/mainchat-message-area.scss */
+/* line 37, ../../src/scss/mainchat-message-area.scss */
 .message-sent {
   padding: 10px;
-  background: red;
+  background: transparent;
+  border-bottom: 1px solid #aabbcc;
 }
 
 /* line 4, ../../src/scss/send-component.scss */
@@ -271,7 +273,7 @@
 .send-button {
   display: block;
   grid-area: send;
-  background: #668cb3;
+  background: #557675;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
