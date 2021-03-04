@@ -13,7 +13,8 @@ function join(chatInfo){
 // })
 socket.on('introducing...',(data)=>{
 	// document.write(`${data.screenname} adds one more, bringing the count to ${clients}`)
-	document.write(`${data.screenname}`) ;
+	console.log("test")
+	document.write(data.screenname) ;
 })
 
 socket.on('typing',(data)=>{

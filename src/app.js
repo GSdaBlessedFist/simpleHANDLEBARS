@@ -48,7 +48,7 @@ io.on('connection',function(socket){
 		console.log(chalk.cyan.bold(`${data.screenname} `)+ `has just joined.`+
 		chalk.yellow.bold(`Number of clients: ${clients}`));
 		
-		socket.emit('introducing...',{data});
+		socket.emit('introducing...',data);
 
 		
 	})
