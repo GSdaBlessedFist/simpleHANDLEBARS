@@ -11,6 +11,11 @@ function join(chatInfo){
 // scMessageInput.addEventListener("keypress", () => {
 // 	socket.emit("typing", chatInfo.screenname);
 // })
+socket.on('introducing...',(data)=>{
+	// document.write(`${data.screenname} adds one more, bringing the count to ${clients}`)
+	document.write(`${data.screenname}`) ;
+})
+
 socket.on('typing',(data)=>{
 	p(`${data.screenname} is typing...`);
 })

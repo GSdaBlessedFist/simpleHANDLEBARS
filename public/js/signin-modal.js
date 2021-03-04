@@ -43,26 +43,28 @@ mdlScreenNameInput.placeholder = randomNameSelection();
 // signinInfo.message = mdlMessageInput.value || "Testing purposes only as requirement will be needed";
 
 document.body.addEventListener("keyup", (e) => {
+    // if (e.keyCode === 13) {
+    //     if (!mdlMessageInput.value) {
+    //         alert("Please introduce yourself");
+    //         return;
+    //     } else {
+    //         socket.emit("chat", {
+    //             screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+    //             message: mdlMessageInput.value
+    //         })
+    //     }
+
+
     if (e.keyCode === 13) {
         if (!mdlMessageInput.value) {
             alert("Please introduce yourself");
             return;
         } else {
-            socket.emit("chat", {
+            socket.emit("introduction.chat", {
                 screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
                 message: mdlMessageInput.value
             })
-
         }
-          ///////////////////////////////////////////// DEVELOPMENT v.....PRODUCTION ^/////////////////////
-           
-        let chatInfo = {
-        "screenname":mdlScreenNameInput.value || randomNameSelection(),
-        "message":mdlMessageInput.value || "Testing purposes only as requirement will be needed"
-    }
-
-        //console.log(chatInfo);
-        // join(chatInfo)
 
         signInModal.classList.add("goAway");
         setTimeout(function() {
@@ -74,7 +76,6 @@ document.body.addEventListener("keyup", (e) => {
         }, fadeOutTime)
 
         //delete this.keysPressed[e.key];
-
     }
 })
 
@@ -83,7 +84,7 @@ mdlJoinChatButton.addEventListener("click", function() {
         alert("Please introduce yourself");
         return;
     } else {
-        socket.emit("chat", {
+        socket.emit("introduction.chat", {
             screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
             message: mdlMessageInput.value
         })
