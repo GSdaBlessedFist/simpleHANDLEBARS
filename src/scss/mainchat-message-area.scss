@@ -29,17 +29,31 @@
 			background: transparent;
 			overflow: hidden;
 			@at-root {
+
 			.user-link {
 				padding-left: 10px;
 				text-decoration: none;
 				background: transparent;
+				color: var(--userColor);
 			}
 			.message-sent{
 				margin-bottom: 3px;
-				padding: 10px;
+				padding-top: -5px;
+				padding-left: 20px;
 				background: transparent;
+				border-bottom: 1px solid rgba(200,200,255,.15);				
+			}
+			.intro-message{
+				margin: 0;
+				padding-left: 10px;
+				color: white;
+				font-size: .85rem;
+				/*background: rgba(var(--userColor), 0.5);*/
+				
 				border-bottom: 1px solid rgba(200,200,255,.15);
-
+				&>span{
+					color: var(--userColor);
+				}
 			}
 		}
 		}

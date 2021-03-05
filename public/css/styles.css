@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
-/* line 8, ../../src/scss/variables.scss */
+/* line 2, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
   --fadeInTime: 500;
+  --userColor: green;
 }
 
 /**************KEYFRAMES n such*********************/
-/* line 47, ../../src/scss/variables.scss */
+/* line 49, ../../src/scss/variables.scss */
 .comingIn {
   animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
 }
@@ -21,7 +22,7 @@
     opacity: 1;
   }
 }
-/* line 55, ../../src/scss/variables.scss */
+/* line 57, ../../src/scss/variables.scss */
 .goAway {
   animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
 }
@@ -225,19 +226,35 @@
   background: transparent;
   overflow: hidden;
 }
-/* line 32, ../../src/scss/mainchat-message-area.scss */
+/* line 33, ../../src/scss/mainchat-message-area.scss */
 .user-link {
   padding-left: 10px;
   text-decoration: none;
   background: transparent;
+  color: var(--userColor);
 }
 
-/* line 37, ../../src/scss/mainchat-message-area.scss */
+/* line 39, ../../src/scss/mainchat-message-area.scss */
 .message-sent {
   margin-bottom: 3px;
-  padding: 10px;
+  padding-top: -5px;
+  padding-left: 20px;
   background: transparent;
   border-bottom: 1px solid rgba(200, 200, 255, 0.15);
+}
+
+/* line 46, ../../src/scss/mainchat-message-area.scss */
+.intro-message {
+  margin: 0;
+  padding-left: 10px;
+  color: white;
+  font-size: .85rem;
+  /*background: rgba(var(--userColor), 0.5);*/
+  border-bottom: 1px solid rgba(200, 200, 255, 0.15);
+}
+/* line 54, ../../src/scss/mainchat-message-area.scss */
+.intro-message > span {
+  color: var(--userColor);
 }
 
 /* line 4, ../../src/scss/send-component.scss */
@@ -246,9 +263,10 @@
   display: block;
   position: absolute;
   opacity: 0;
-  top: calc(100% - 146px);
+  /*top: calc(100% - 146px);*/
+  bottom: 70px;
 }
-/* line 10, ../../src/scss/send-component.scss */
+/* line 11, ../../src/scss/send-component.scss */
 .send-component--grid {
   display: grid;
   width: 100vw;
@@ -257,10 +275,11 @@
   grid-template-rows: 50% 50%;
   grid-template-areas: "message" "send";
 }
-/* line 15, ../../src/scss/send-component.scss */
+/* line 16, ../../src/scss/send-component.scss */
 .sc-message-input {
   display: block;
   width: 100%;
+  height: 100%;
   grid-area: message;
   background: #aabbcc;
   color: #223344;
@@ -270,14 +289,16 @@
   padding-left: 20px;
 }
 
-/* line 26, ../../src/scss/send-component.scss */
+/* line 28, ../../src/scss/send-component.scss */
 .send-button {
   display: block;
   grid-area: send;
   background: #557675;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  padding: 5px;
+  border: none;
 }
 
 /* line 4, ../../src/scss/footer.scss */

@@ -1,14 +1,16 @@
 //Titlebar
+:root{
+   --fadeOutTime : 250;
+   --fadeInTime: 500;
+   --userColor: green;
+}
+
 $titlebarHeight: 70px; //also footer height
 //Colors
 $color1: #aabbcc;
 $color2: #557675;
 $color3: #223344;
 
-:root{
-   --fadeOutTime : 250;
-   --fadeInTime: 500;
-}
 
 // MIXIN's
 @mixin grid($w, $h, $colQUOTES, $rQUOTES) {

@@ -45,18 +45,15 @@ mdlScreenNameInput.placeholder = randomNameSelection();
 document.body.addEventListener("keyup", (e) => {
     
     if (e.keyCode === 13) {
-        if (!mdlMessageInput.value) {
+        if (!mdlMessageInput.value ) {
             alert("Please introduce yourself");
             return;
         } else {
             socket.emit("introduction.chat", {
                 screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
-                message: mdlMessageInput.value
+                intromessage: mdlMessageInput.value
             })
         }
-
-
-
 
         signInModal.classList.add("goAway");
         setTimeout(function() {
@@ -68,7 +65,10 @@ document.body.addEventListener("keyup", (e) => {
             scMessageInput.value="";
             scMessageInput.placeholder="what's on your brain...?";
         }, fadeOutTime)
+
     }
+    // e.target.removeEventListener(e.type, arguments.callee);
+    // delete this.keysPressed[e.key];
 })
 
 mdlJoinChatButton.addEventListener("click", function() {
@@ -78,7 +78,7 @@ mdlJoinChatButton.addEventListener("click", function() {
     } else {
         socket.emit("introduction.chat", {
             screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
-            message: mdlMessageInput.value
+            intromessage: mdlMessageInput.value
         })
 
     }
@@ -97,8 +97,10 @@ mdlJoinChatButton.addEventListener("click", function() {
         scMessageInput.placeholder="say it...";
     }, fadeOutTime)
 
+    console.log(scMessageInput.value);
+
 })
 
-console.log(scMessageInput.value);
 
-export {socket,url,styles,scMessageInput,mdlScreenNameInput,sendButton,signinInfo,mainchatOutputContainer};
+
+export {socket,url,styles,signInModal,scMessageInput,mdlScreenNameInput,sendButton,signinInfo,mainchatOutputContainer};

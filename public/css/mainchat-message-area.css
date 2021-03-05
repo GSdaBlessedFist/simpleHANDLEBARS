@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
-/* line 8, ../../src/scss/variables.scss */
+/* line 2, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
   --fadeInTime: 500;
+  --userColor: green;
 }
 
 /**************KEYFRAMES n such*********************/
-/* line 47, ../../src/scss/variables.scss */
+/* line 49, ../../src/scss/variables.scss */
 .comingIn {
   animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
 }
@@ -21,7 +22,7 @@
     opacity: 1;
   }
 }
-/* line 55, ../../src/scss/variables.scss */
+/* line 57, ../../src/scss/variables.scss */
 .goAway {
   animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
 }
@@ -66,17 +67,33 @@
   background: transparent;
   overflow: hidden;
 }
-/* line 32, ../../src/scss/mainchat-message-area.scss */
+/* line 33, ../../src/scss/mainchat-message-area.scss */
 .user-link {
   padding-left: 10px;
   text-decoration: none;
   background: transparent;
+  color: var(--userColor);
 }
 
-/* line 37, ../../src/scss/mainchat-message-area.scss */
+/* line 39, ../../src/scss/mainchat-message-area.scss */
 .message-sent {
   margin-bottom: 3px;
-  padding: 10px;
+  padding-top: -5px;
+  padding-left: 20px;
   background: transparent;
   border-bottom: 1px solid rgba(200, 200, 255, 0.15);
+}
+
+/* line 46, ../../src/scss/mainchat-message-area.scss */
+.intro-message {
+  margin: 0;
+  padding-left: 10px;
+  color: white;
+  font-size: .85rem;
+  /*background: rgba(var(--userColor), 0.5);*/
+  border-bottom: 1px solid rgba(200, 200, 255, 0.15);
+}
+/* line 54, ../../src/scss/mainchat-message-area.scss */
+.intro-message > span {
+  color: var(--userColor);
 }

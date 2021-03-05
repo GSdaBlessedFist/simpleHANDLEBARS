@@ -1,11 +1,12 @@
-/* line 8, ../../src/scss/variables.scss */
+/* line 2, ../../src/scss/variables.scss */
 :root {
   --fadeOutTime: 250;
   --fadeInTime: 500;
+  --userColor: green;
 }
 
 /**************KEYFRAMES n such*********************/
-/* line 47, ../../src/scss/variables.scss */
+/* line 49, ../../src/scss/variables.scss */
 .comingIn {
   animation: fadein calc(var(--fadeInTime)*1ms) linear forwards;
 }
@@ -18,7 +19,7 @@
     opacity: 1;
   }
 }
-/* line 55, ../../src/scss/variables.scss */
+/* line 57, ../../src/scss/variables.scss */
 .goAway {
   animation: fadeout calc(var(--fadeOutTime)*1ms) linear forwards;
 }
