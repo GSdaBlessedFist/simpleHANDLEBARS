@@ -1,4 +1,4 @@
-import {join} from "./client-sockets.js";
+// import {join} from "./client-sockets.js";
 const url = "http://localhost:4000";
 const socket = io.connect();
 
@@ -23,7 +23,7 @@ const signInModal = document.getElementById("signin-modal"),
 // sc = send-component
 const mainChatSendComponent = document.getElementById("mainchat-send-component"),
       scMessageInput = document.getElementById("sc-message-input"),
-      sendButton = document.getElementById("sc-send-button");
+      sendButton = document.getElementById("send-button");
 
 const styles = getComputedStyle(document.documentElement);
 const fadeOutTime = styles.getPropertyValue('--fadeOutTime');
@@ -63,8 +63,6 @@ document.body.addEventListener("keyup", (e) => {
             mainChatMessageArea.classList.add("comingIn");
             mainchatOutputContainer.classList.add("comingIn");
         }, fadeOutTime)
-
-        //delete this.keysPressed[e.key];
     }
 })
 

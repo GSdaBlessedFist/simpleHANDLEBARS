@@ -215,24 +215,25 @@
   box-shadow: inset 0px -1px 8px -1px #aabbcc;
   color: #aabbcc;
   font-family: "Roboto Slab", serif;
-  font-size: 2.35vw;
+  /*font-size: 2.35vw;*/
+  font-size: clamp(1.5rem, 2.35vw, 2rem);
   text-align: center;
   padding: 5px 0px;
 }
-/* line 27, ../../src/scss/mainchat-message-area.scss */
+/* line 28, ../../src/scss/mainchat-message-area.scss */
 .mainchat--message-area--output-container {
   width: 100%;
   background: transparent;
   overflow: hidden;
 }
-/* line 32, ../../src/scss/mainchat-message-area.scss */
+/* line 33, ../../src/scss/mainchat-message-area.scss */
 .user-link {
   padding-left: 5px;
   text-decoration: none;
   background: transparent;
 }
 
-/* line 37, ../../src/scss/mainchat-message-area.scss */
+/* line 38, ../../src/scss/mainchat-message-area.scss */
 .message-sent {
   padding: 10px;
   background: transparent;
