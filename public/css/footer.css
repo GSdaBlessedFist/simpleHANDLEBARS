@@ -47,6 +47,6 @@
   width: 100%;
   background: #234;
   color: white;
-  font-size: 2.5vw;
+  font-size: clamp(1.5rem, 2.35vw, 2rem);
   font-family: "Montserrat", sans-serif;
 }

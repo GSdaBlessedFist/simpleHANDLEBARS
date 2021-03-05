@@ -8,15 +8,25 @@ socket.on('introducing...',(data)=>{
 	`
 })
 
-const sendMessage = function(){
-	console.log("peroxide")
-	// e.preventDefault();
-}
-
-
-
+sendButton.addEventListener("click",(e)=>{
+	e.preventDefault();
+	if(scMessageInput.length>3){
+		socket.emit('chat.message',{
+			screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+			message:scMessageInput.value
+		})
+	}else{
+		return;
+	}
+})
+socket.on('chat',(data)=>{
+	mainchatOutputContainer.innerHTML +=`
+		<a href="">${data.screenname}</a>
+		<div class="message-sent" >${data.message}</div>
+	`;
+})
 socket.on('typing',(data)=>{
 	p(`${data.screenname} is typing...`);
 })
 
-// export {join};
+// export {sendMessage};

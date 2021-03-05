@@ -1,4 +1,4 @@
-// import {join} from "./client-sockets.js";
+// import {sendMessage} from "./client-sockets.js";
 const url = "http://localhost:4000";
 const socket = io.connect();
 
@@ -62,6 +62,8 @@ document.body.addEventListener("keyup", (e) => {
             mainChatTitleBar.classList.add("comingIn");
             mainChatMessageArea.classList.add("comingIn");
             mainchatOutputContainer.classList.add("comingIn");
+            scMessageInput.value="";
+            scMessageInput.placeholder="what's on your brain...?";
         }, fadeOutTime)
     }
 })
@@ -85,9 +87,12 @@ mdlJoinChatButton.addEventListener("click", function() {
         mainChatTitleBar.classList.add("comingIn");
         mainChatMessageArea.classList.add("comingIn");
         mainchatOutputContainer.classList.add("comingIn");
+        scMessageInput.value="";
+        scMessageInput.placeholder="say it...";
     }, fadeOutTime)
 
 })
 
 console.log(scMessageInput.value);
+
 export {socket,url,styles,scMessageInput,mdlScreenNameInput,sendButton,signinInfo,mainchatOutputContainer};

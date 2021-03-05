@@ -43,14 +43,13 @@ io.on('connection',function(socket){
 	clients++;
 
 	socket.on('introduction.chat',function(data){
-		
 		console.log(data)
 		console.log(chalk.cyan.bold(`${data.screenname} `)+ `has just joined.`+
 		chalk.yellow.bold(`Number of clients: ${clients}`));
-		
-		socket.broadcast.emit('introducing...',data);
-
-		
+		socket.broadcast.emit('introducing...',data);	
+	})
+	socket.on('chat.message',(data)=>{
+		io.emit('chat',data);
 	})
 
 	

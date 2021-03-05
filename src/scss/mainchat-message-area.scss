@@ -20,7 +20,6 @@
 			box-shadow: inset 0px -1px 8px -1px $color1;
 			color: $color1;
 			@include minorFont;
-			/*font-size: 2.35vw;*/
 			font-size: clamp(1.5rem,2.35vw,2rem);
 			text-align: center;
 			padding: 5px 0px;
