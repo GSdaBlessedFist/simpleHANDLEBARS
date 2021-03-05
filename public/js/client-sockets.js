@@ -10,21 +10,25 @@ socket.on('introducing...',(data)=>{
 
 sendButton.addEventListener("click",(e)=>{
 	e.preventDefault();
-	if(scMessageInput.length>3){
-		socket.emit('chat.message',{
+	if(scMessageInput.value.length>3){
+		socket.emit('message.chat',{
 			screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
 			message:scMessageInput.value
 		})
+		alert("Made it here")
 	}else{
-		return;
+		return
 	}
 })
-socket.on('chat',(data)=>{
+
+socket.on('message.chat',(data)=>{
 	mainchatOutputContainer.innerHTML +=`
-		<a href="">${data.screenname}</a>
+		<a href="" class="user-link">${data.screenname}</a>
 		<div class="message-sent" >${data.message}</div>
 	`;
 })
+
+//USE ONLY ON SIDECHATS
 socket.on('typing',(data)=>{
 	p(`${data.screenname} is typing...`);
 })

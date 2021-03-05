@@ -23,7 +23,7 @@ const signInModal = document.getElementById("signin-modal"),
 // sc = send-component
 const mainChatSendComponent = document.getElementById("mainchat-send-component"),
       scMessageInput = document.getElementById("sc-message-input"),
-      sendButton = document.getElementById("send-button");
+      sendButton = document.querySelector(".send-button");
 
 const styles = getComputedStyle(document.documentElement);
 const fadeOutTime = styles.getPropertyValue('--fadeOutTime');
@@ -55,6 +55,9 @@ document.body.addEventListener("keyup", (e) => {
             })
         }
 
+
+
+
         signInModal.classList.add("goAway");
         setTimeout(function() {
             signInModal.classList.add("hide");
@@ -79,6 +82,9 @@ mdlJoinChatButton.addEventListener("click", function() {
         })
 
     }
+
+
+
 
     signInModal.classList.add("goAway");
     setTimeout(function() {

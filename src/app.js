@@ -24,7 +24,7 @@ app.set("view engine", "hbs");
 app.set("views", viewsPath);
 hbs.registerPartials(partialsPath);
 
-const nameofApp = "chatty app";
+const nameofApp = "chatanimity";
 
 
 app.get("",(req,res)=>{
@@ -46,13 +46,23 @@ io.on('connection',function(socket){
 		console.log(data)
 		console.log(chalk.cyan.bold(`${data.screenname} `)+ `has just joined.`+
 		chalk.yellow.bold(`Number of clients: ${clients}`));
-		socket.broadcast.emit('introducing...',data);	
+		socket.broadcast.emit('introducing...',data);
+		io.sockets.emit('message.chat',{
+			screenname : data.screenname,
+			message : data.message
+		});
 	})
-	socket.on('chat.message',(data)=>{
-		io.emit('chat',data);
+	socket.on('message.chat',(data)=>{
+		console.log(data)
+		io.sockets.emit('message.chat',{
+			screenname : data.screenname,
+			message : data.message
+		});
 	})
 
-	
+	// socket.on("chat.message",(data)=>{
+	// 	io.sockets.emit("chat",data);
+	// })
 
 
 	socket.on("typing",(data)=>{

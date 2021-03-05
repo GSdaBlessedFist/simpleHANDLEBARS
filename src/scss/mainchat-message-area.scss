@@ -30,14 +30,16 @@
 			overflow: hidden;
 			@at-root {
 			.user-link {
-				padding-left: 5px;
+				padding-left: 10px;
 				text-decoration: none;
 				background: transparent;
 			}
 			.message-sent{
+				margin-bottom: 3px;
 				padding: 10px;
 				background: transparent;
-				border-bottom: 1px solid $color1;
+				border-bottom: 1px solid rgba(200,200,255,.15);
+
 			}
 		}
 		}

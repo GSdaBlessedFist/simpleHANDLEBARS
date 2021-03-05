@@ -227,16 +227,17 @@
 }
 /* line 32, ../../src/scss/mainchat-message-area.scss */
 .user-link {
-  padding-left: 5px;
+  padding-left: 10px;
   text-decoration: none;
   background: transparent;
 }
 
 /* line 37, ../../src/scss/mainchat-message-area.scss */
 .message-sent {
+  margin-bottom: 3px;
   padding: 10px;
   background: transparent;
-  border-bottom: 1px solid #aabbcc;
+  border-bottom: 1px solid rgba(200, 200, 255, 0.15);
 }
 
 /* line 4, ../../src/scss/send-component.scss */
