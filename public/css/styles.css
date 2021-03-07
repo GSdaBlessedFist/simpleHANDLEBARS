@@ -124,7 +124,7 @@
   position: relative;
   margin: auto;
   width: clamp(380px, 600px, 40%);
-  height: clamp(300px, 480px, 40%);
+  height: clamp(200px, 250px, 40%);
   top: -500px;
   /*calc(($titlebarHeight + 430px)* -1);*/
   background: #223344;
@@ -138,7 +138,7 @@
   width: 95%;
   height: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: 20% 60%;
+  grid-template-rows: 40% 60%;
   grid-template-areas: "intro" "inputs";
   background: #223344;
 }
@@ -148,19 +148,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px 0;
   font-family: "Montserrat", sans-serif;
   font-size: clamp(1.65rem, 3rem, 3.5vw);
   color: #aabbcc;
   background: #223344;
 }
 
-/* line 32, ../../src/scss/signin-modal.scss */
+/* line 33, ../../src/scss/signin-modal.scss */
 .mdl-inputs-section {
   grid-area: inputs;
   background: #223344;
 }
 
-/* line 36, ../../src/scss/signin-modal.scss */
+/* line 37, ../../src/scss/signin-modal.scss */
 .mdl-input {
   display: block;
   width: 65%;
@@ -172,12 +173,12 @@
   font-family: "Merienda", cursive;
 }
 
-/* line 46, ../../src/scss/signin-modal.scss */
+/* line 47, ../../src/scss/signin-modal.scss */
 .mdl-join-button {
   width: 25%;
   position: relative;
-  left: 70%;
-  top: -8px;
+  left: 75%;
+  top: -5px;
   padding: 10px 0;
   background: #223344;
   text-align: center;
@@ -187,7 +188,7 @@
   box-shadow: none;
   transition: all 250ms ease;
 }
-/* line 59, ../../src/scss/signin-modal.scss */
+/* line 60, ../../src/scss/signin-modal.scss */
 .mdl-join-button:hover {
   /*background: darken($color1,35%);*/
   background: #557675;
