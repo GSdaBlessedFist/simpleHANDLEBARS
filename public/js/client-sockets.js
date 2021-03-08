@@ -13,6 +13,7 @@ sendButton.addEventListener("click",(e)=>{
 	e.preventDefault();
 	
 	if(scMessageInput.value.length>3){
+		console.log(scMessageInput.value);
 		socket.emit('message.chat',{
 			screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
 			message:scMessageInput.value
@@ -20,21 +21,6 @@ sendButton.addEventListener("click",(e)=>{
 	}
 	
 })
-
-
-// document.addEventListener("keyup",(event)=>{
-// 	if (event.which == 13 || event.keyCode == 13) {
-//         //code to execute here
-//         return false;
-//     }
-// })
-    
-
-
-
-
-
-
 
 socket.on('chat',(data)=>{
 	mainchatOutputContainer.innerHTML +=`

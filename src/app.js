@@ -47,14 +47,14 @@ io.on('connection',function(socket){
 		console.log(chalk.cyan.bold(`${data.screenname} `)+ `has just joined.`+
 		chalk.yellow.bold(`Number of clients: ${clients}`));
 		socket.broadcast.emit('introducing...',data);
-		// io.sockets.emit('chat',data);
+		
 	})
 
 	socket.on('message.chat',(data)=>{
-		console.log(data)
-		io.sockets.emit('message.chat',{
+		console.log(data,data,data)
+		io.sockets.emit('chat',{
 			screenname: data.screenname,
-			message: data.message
+			message: "data.message"
 		});
 		
 	})
