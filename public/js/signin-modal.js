@@ -61,6 +61,7 @@ document.body.addEventListener("keyup", (e) => {
 
     }
     
+    
 })
 
 mdlJoinChatButton.addEventListener("click", function() {
