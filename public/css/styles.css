@@ -212,7 +212,7 @@
 .mainchat--message-area--titlebar {
   display: block;
   position: relative;
-  top: -3px;
+  top: -6px;
   background: #557675;
   box-shadow: inset 0px -1px 8px -1px #aabbcc;
   color: #aabbcc;
@@ -246,15 +246,19 @@
 
 /* line 46, ../../src/scss/mainchat-message-area.scss */
 .intro-message {
-  margin: 0;
-  padding-left: 10px;
+  margin-bottom: 5px;
+  padding: 10px;
   color: white;
-  font-size: .85rem;
+  font-size: 1rem;
   /*background: rgba(var(--userColor), 0.5);*/
+  /*background: rgba(0,245,0, 0.15);*/
+  background-image: linear-gradient(to right, var(--userColor), transparent 25%);
   border-bottom: 1px solid rgba(200, 200, 255, 0.15);
 }
-/* line 54, ../../src/scss/mainchat-message-area.scss */
+/* line 55, ../../src/scss/mainchat-message-area.scss */
 .intro-message > span {
+  background: transparent;
+  font-size: .85rem;
   color: var(--userColor);
 }
 

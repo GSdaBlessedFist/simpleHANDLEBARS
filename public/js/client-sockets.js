@@ -15,7 +15,7 @@ sendButton.addEventListener("click",(e)=>{
 	if(scMessageInput.value.length>3){
 		socket.emit('message.chat',{
 			screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
-			message:mdlMessageInput.value
+			message:scMessageInput.value
 		})
 	}
 	
