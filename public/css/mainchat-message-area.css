@@ -35,7 +35,20 @@
     opacity: 0;
   }
 }
-/* line 5, ../../src/scss/mainchat-message-area.scss */
+@keyframes message-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* line 11, ../../src/scss/mainchat-message-area.scss */
+.mfin {
+  animation: message-fade-in .5s linear forwards;
+}
+
+/* line 15, ../../src/scss/mainchat-message-area.scss */
 .mainchat--message-area {
   grid-area: messageOutput;
   display: block;
@@ -48,7 +61,7 @@
   /*<----*/
   margin: 0px auto;
 }
-/* line 15, ../../src/scss/mainchat-message-area.scss */
+/* line 25, ../../src/scss/mainchat-message-area.scss */
 .mainchat--message-area--titlebar {
   display: block;
   position: relative;
@@ -61,13 +74,13 @@
   text-align: center;
   padding: 5px 0px;
 }
-/* line 27, ../../src/scss/mainchat-message-area.scss */
+/* line 37, ../../src/scss/mainchat-message-area.scss */
 .mainchat--message-area--output-container {
   width: 100%;
   background: transparent;
   overflow: hidden;
 }
-/* line 33, ../../src/scss/mainchat-message-area.scss */
+/* line 43, ../../src/scss/mainchat-message-area.scss */
 .user-link {
   padding-left: 10px;
   text-decoration: none;
@@ -75,7 +88,7 @@
   color: var(--userColor);
 }
 
-/* line 39, ../../src/scss/mainchat-message-area.scss */
+/* line 49, ../../src/scss/mainchat-message-area.scss */
 .message-sent {
   margin-bottom: 3px;
   padding-top: -5px;
@@ -84,7 +97,7 @@
   border-bottom: 1px solid rgba(200, 200, 255, 0.15);
 }
 
-/* line 46, ../../src/scss/mainchat-message-area.scss */
+/* line 56, ../../src/scss/mainchat-message-area.scss */
 .intro-message {
   margin-bottom: 5px;
   padding: 10px;
@@ -95,7 +108,7 @@
   background-image: linear-gradient(to right, var(--userColor), transparent 25%);
   border-bottom: 1px solid rgba(200, 200, 255, 0.15);
 }
-/* line 55, ../../src/scss/mainchat-message-area.scss */
+/* line 65, ../../src/scss/mainchat-message-area.scss */
 .intro-message > span {
   background: transparent;
   font-size: .85rem;

@@ -42,11 +42,12 @@ io.on('connection',function(socket){
 	console.log("made connection",socket.id)
 	clients++;
 
-	socket.on('introduction.chat',function(data){
+	socket.on('intro',function(data){
 		console.log(data)
 		console.log(chalk.cyan.bold(`${data.screenname} `)+ `has just joined.`+
 		chalk.yellow.bold(`Number of clients: ${clients}`));
-		socket.broadcast.emit('introducing...',data);
+		// socket.broadcast.emit('introducing...',data);
+		
 		
 	})
 
@@ -54,7 +55,7 @@ io.on('connection',function(socket){
 		console.log(data,data,data)
 		io.sockets.emit('chat',{
 			screenname: data.screenname,
-			message: "data.message"
+			message: data.message
 		});
 		
 	})

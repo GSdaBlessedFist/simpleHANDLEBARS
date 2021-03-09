@@ -23,10 +23,16 @@ sendButton.addEventListener("click",(e)=>{
 })
 
 socket.on('chat',(data)=>{
+
 	mainchatOutputContainer.innerHTML +=`
 		<a href="" class="user-link">${data.screenname}</a>
-		<div class="message-sent" >${data.message}</div>
+		<div class="message-sent mfin" >${data.message}</div>
 	`;
+	const messSent = document.querySelectorAll('.message-sent');
+	console.log(messSent.length)
+	for(var i=0;i<= messSent.length;i++){
+		messSent[i].classList.remove('mfin')
+	}
 })
 
 //USE ONLY ON SIDECHATS

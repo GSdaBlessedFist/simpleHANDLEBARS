@@ -44,7 +44,7 @@ mdlScreenNameInput.placeholder = randomNameSelection();
 document.body.addEventListener("keyup", (e) => {
 
     if (e.keyCode === 13) {
-        socket.emit("introduction.chat", {
+        socket.emit("intro", {
             screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder
         })
 
@@ -65,7 +65,7 @@ document.body.addEventListener("keyup", (e) => {
 })
 
 mdlJoinChatButton.addEventListener("click", function() {
-    socket.emit("introduction.chat", {
+    socket.emit("intro", {
         screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder
     })
 
