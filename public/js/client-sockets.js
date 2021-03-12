@@ -41,7 +41,7 @@ socket.on('chat', (data) => {
             e.preventDefault();
 
             registerLink(screenname);
-            window.open(`./${screenname}.html`);
+            window.open(`../users/${screenname}.html`);
         })
 
     })

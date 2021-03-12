@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require("path");
 const hbs = require("hbs");
 const socket = require('socket.io');
-const templatisize = require('./template.js');
+const templatisize = require('../src/template.js');
 const chalk = require('chalk');
 
 var userCount = 0;
@@ -59,16 +59,17 @@ io.on('connection',function(socket){
 			message: data.message
 		});
 	})
-	
+
 	socket.on('register', (data) => {
         let id = data.id;
         let ns = io.of(`/${id}`);
 
-        fs.appendFile(`./public/${id}.html`, templatisize(id), function(err) {
+        fs.appendFile(`./public/users/${id}.html`, templatisize(id,nameofApp), function(err) {
             if (err) throw err;
             console.log(`${id}.html created`);
-            return
+            return;
         });
+
     })
 
 
