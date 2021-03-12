@@ -1,11 +1,15 @@
 //adding "validateMessage,async" to line 23
 const express = require('express');
+const app = express();
+const fs = require('fs');
 const path = require("path");
 const hbs = require("hbs");
 const socket = require('socket.io');
+const templatisize = require('./template.js');
 const chalk = require('chalk');
 
-const app = express();
+var userCount = 0;
+
 const port = process.env.PORT || 4000;
 const server = app.listen(port,function(){
 	console.log(`listening on port ${port}`);
@@ -24,8 +28,7 @@ app.set("view engine", "hbs");
 app.set("views", viewsPath);
 hbs.registerPartials(partialsPath);
 
-const nameofApp = "chatanimity";
-
+const nameofApp = "Chatap";
 
 app.get("",(req,res)=>{
         res.render("index",{
@@ -42,14 +45,12 @@ io.on('connection',function(socket){
 	console.log("made connection",socket.id)
 	clients++;
 
-	socket.on('intro',function(data){
-		console.log(data)
-		console.log(chalk.cyan.bold(`${data.screenname} `)+ `has just joined.`+
-		chalk.yellow.bold(`Number of clients: ${clients}`));
-		// socket.broadcast.emit('introducing...',data);
-		
-		
-	})
+	// socket.on('intro',function(data){
+	// 	console.log(data)
+	// 	console.log(chalk.cyan.bold(`${data.screenname} `)+ `has just joined.`+
+	// 	chalk.yellow.bold(`Number of clients: ${clients}`));
+	// 	// socket.broadcast.emit('introducing...',data);
+	// })
 
 	socket.on('message.chat',(data)=>{
 		console.log(data,data,data)
@@ -57,8 +58,22 @@ io.on('connection',function(socket){
 			screenname: data.screenname,
 			message: data.message
 		});
-		
 	})
+	
+	socket.on('register', (data) => {
+        let id = data.id;
+        let ns = io.of(`/${id}`);
+
+        fs.appendFile(`./public/${id}.html`, templatisize(id), function(err) {
+            if (err) throw err;
+            console.log(`${id}.html created`);
+            return
+        });
+    })
+
+
+
+	
 
 	socket.on("typing",(data)=>{
 		socket.broadcast.emit("typing",`${data.screenname}is typing...`);

@@ -3,11 +3,11 @@ import {socket,url,styles,signInModal,scMessageInput,mdlScreenNameInput,sendButt
 const p = console.log;
 
 
-socket.on('introducing...',(data)=>{
-	mainchatOutputContainer.innerHTML +=`
-		<i><div class="intro-message">${data.screenname}<span> has joined the chat</span></div></i>
-	`
-})
+// socket.on('introducing...',(data)=>{
+// 	mainchatOutputContainer.innerHTML +=`
+// 		<i><div class="intro-message">${data.screenname}<span> has joined the chat</span></div></i>
+// 	`
+// })
 
 sendButton.addEventListener("click",(e)=>{
 	e.preventDefault();
@@ -19,20 +19,33 @@ sendButton.addEventListener("click",(e)=>{
 			message:scMessageInput.value
 		})
 	}
-	
 })
 
-socket.on('chat',(data)=>{
+socket.on('chat', (data) => {
 
-	mainchatOutputContainer.innerHTML +=`
+    mainchatOutputContainer.innerHTML += `
 		<a href="" class="user-link">${data.screenname}</a>
 		<div class="message-sent" >${data.message}</div>
 	`;
-	const messSent = document.querySelectorAll('.message-sent');
-	console.log(messSent.length)
-	// for(var i=0;i<= messSent.length;i++){
-	// 	messSent[i].classList.remove('mfin')
-	// }
+    var links = Array.from(document.getElementsByClassName("user-link"));
+
+    function registerLink(screenname) {
+        socket.emit('register', {
+            id: screenname
+        })
+    }
+
+    links.forEach((link) => {
+        link.addEventListener("click", function(e) {
+            let screenname = link.innerHTML;
+            e.preventDefault();
+
+            registerLink(screenname);
+            window.open(`./${screenname}.html`);
+        })
+
+    })
+
 })
 
 //USE ONLY ON SIDECHATS
