@@ -380,28 +380,26 @@
   display: grid;
   width: 100%;
   height: calc(100% - 220px);
-  grid-template-columns: 99.9% .1%;
-  grid-template-rows: 99.9% .1%;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(1, 1fr);
+  /*@include grid(100%,calc(100% - 220px),"99.9% .1%","99.9% .1%");*/
   /*@include grid(100%,calc(100% - 220px),"50% 50%","99.9% .1%");*/
   /*@include grid(100%,calc(100% - 220px),"50% 50%","50% 50%");*/
-  grid-template-areas: "mainchat sidechatTop" "mainchat sidechatBottom";
+  /*grid-template-areas: "mainchat sidechatTop"
+                       "mainchat sidechatBottom";*/
+  grid-template-areas: "mainchat";
   color: white;
   animation: change 5s ease infinite both;
+  /*&--sidechat_1{
+     grid-area: sidechatTop;
+     background: orange;
+  }
+  &--sidechat_2{
+     grid-area: sidechatBottom;
+     background: purple; 
+  }*/
 }
-/* line 51, ../../src/scss/styles.scss */
+/* line 53, ../../src/scss/styles.scss */
 .main-container--mainchat {
   grid-area: mainchat;
-  /*border: 1px solid white;*/
-}
-/* line 56, ../../src/scss/styles.scss */
-.main-container--sidechat_1 {
-  grid-area: sidechatTop;
-  background: orange;
-  border: 5px solid green;
-}
-/* line 61, ../../src/scss/styles.scss */
-.main-container--sidechat_2 {
-  grid-area: sidechatBottom;
-  background: purple;
-  /*border: 3px solid yellow; */
 }

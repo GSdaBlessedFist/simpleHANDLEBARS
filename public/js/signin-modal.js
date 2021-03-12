@@ -6,9 +6,9 @@ const mainContainer = document.getElementById("main-container"),
     mainChatSection = document.getElementById("main-chat-section"),
     mainChatTitleBar = document.getElementById("mainchat-titlebar"),
     mainChatMessageArea = document.getElementById("mainchat-message-area"),
-    mainchatOutputContainer = document.getElementById("mainchat-output-container"),
-    sideChat_1Section = document.getElementById("side-Chat_1-Section"),
-    sideChat_2Section = document.getElementById("side-Chat_2-Section");
+    mainchatOutputContainer = document.getElementById("mainchat-output-container");
+    // sideChat_1Section = document.getElementById("side-Chat_1-Section"),
+    // sideChat_2Section = document.getElementById("side-Chat_2-Section");
 
 mainChatTitleBar.style.opacity = 0;
 mainChatMessageArea.style.opacity = 0;
