@@ -53,16 +53,16 @@ io.on('connection',function(socket){
 		});
 	})
 
-	socket.on('register', (data) => {
-        let id = data.id;
-        let ns = io.of(`/${id}`);
+	// socket.on('register', (data) => {
+ //        let id = data.id;
+ //        let ns = io.of(`/${id}`);
 
-        fs.appendFile(`./public/users/${id}.html`, templatisize(id,nameofApp), function(err) {
-            if (err) throw err;
-            console.log(`${id}.html created`);
-            return;
-        });
-	})
+ //        fs.appendFile(`./public/users/${id}.html`, templatisize(id,nameofApp), function(err) {
+ //            if (err) throw err;
+ //            console.log(`${id}.html created`);
+ //            return;
+ //        });
+	// })
 
 
 

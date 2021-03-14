@@ -4,6 +4,7 @@
 @import "signin-modal";
 @import "mainchat-message-area";
 @import "send-component";
+@import "sidechat-invite";
 @import "footer";
 
 * {
@@ -12,10 +13,19 @@
    box-sizing: border-box;
    color: white;
    background: darken($color1,65%);
+}
 
+.r {
+   border: 3px red solid;
+}
+.o {
+   border: 1px orange dotted;
+}
+.y {
+   border: 2px yellow solid;
 }
 .b {
-   border: 1px red solid;
+   border: 2px blue solid;
 }
 .hide {
    display: none;

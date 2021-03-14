@@ -35,16 +35,16 @@ socket.on('chat', (data) => {
         })
     }
 
-    links.forEach((link) => {
-        link.addEventListener("click", function(e) {
-            let screenname = link.innerHTML;
-            e.preventDefault();
+    // links.forEach((link) => {
+    //     link.addEventListener("click", function(e) {
+    //         let screenname = link.innerHTML;
+    //         e.preventDefault();
 
-            registerLink(screenname);
-            window.open(`../users/${screenname}.html`);
-        })
+    //         registerLink(screenname);
+    //         window.open(`../users/${screenname}.html`);
+    //     })
 
-    })
+    // })
 
 })
 
