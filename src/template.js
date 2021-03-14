@@ -37,7 +37,10 @@ function templatisize(id,title){
 				<div class="mainchat--message-area b" id="mainchat-message-area">
 					<div class="mainchat--message-area--titlebar" id="mainchat-titlebar">chatting with ${id}</div>
 					<div class="mainchat--message-area--output-container " id="mainchat-output-container">
-						<!-- <a href="#" class="user-link ">{{screenname}}</a> -->
+						<!-- TypieTech:                 -->
+						<!--   This is a message         -->
+						<!-- Lazarus_Lu:                 -->
+						<!--   This is a message as wella-->
 				</div>
 			</div><!-- class="mainchat-message-area" -->
 
