@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../css/styles.css" />
-		<title>Chatting with $$Bunny</title>
+		<title>Chatting with GeorgeAnimalSteel</title>
 		<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
 	</head>
 	<body>
@@ -28,27 +28,23 @@
 			</div>
 	<!------------------------------------------->
 	    <div class="main-container" id="main-container">
-
-
-
-		<div class="main-container--mainchat b" id="main-chat-section">
-
-			
-			<div class="mainchat--message-area b" id="mainchat-message-area">
-				<div class="mainchat--message-area--titlebar" id="mainchat-titlebar">chatting with $$Bunny</div>
-				<div class="mainchat--message-area--output-container " id="mainchat-output-container">
-					<!-- <a href="#" class="user-link ">{{screenname}}</a> -->
+			<div class="main-container--mainchat b" id="main-chat-section">
+				<div class="mainchat--message-area b" id="mainchat-message-area">
+					<div class="mainchat--message-area--titlebar" id="mainchat-titlebar">chatting with GeorgeAnimalSteel</div>
+					<div class="mainchat--message-area--output-container " id="mainchat-output-container">
+						<!-- TypieTech:                 -->
+						<!--   This is a message         -->
+						<!-- Lazarus_Lu:                 -->
+						<!--   This is a message as wella-->
 				</div>
 			</div><!-- class="mainchat-message-area" -->
 
-			<div class="send-component" id="mainchat-send-component" style="opacity:1;">
+			<div class="send-component b" id="mainchat-send-component" style="opacity:1;">
 				<div class="send-component--grid">
 					<form action="#">
 						<input type="text" name="message" class="sc-message-input" id="sc-message-input" placeholder="please type in a message" value="" required autofocus />
-					<input type="submit" class="send-button" id="send-button" value="SEND"/>	
+						<input type="submit" class="send-button" id="send-button" value="SEND"/>	
 					</form>
-					
-					
 				</div>
 			</div><!------------------- class="send-component" -->
 
@@ -58,7 +54,7 @@
 	        </div><!-- class="prime-container" -->
 
 	<script>
-		const socket = io("'/"+$$Bunny+"'");
+		const socket = io("'/"+GeorgeAnimalSteel+"'");
 		
 		socket.on("connect",function(data){
 			socket.emit("join","Hey from client");
