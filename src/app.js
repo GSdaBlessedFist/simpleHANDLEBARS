@@ -39,14 +39,16 @@ app.get("",(req,res)=>{
 // SOCKET SETUP
 var io = socket(server);
 
-var clients = 0;
+var clientNum = 0;
+var currentUsers = [];
 ////////////////////// DEFAULT NAMESPACE ////////////////////
 io.on('connection',function(socket){
 	console.log("made connection",socket.id)
-	clients++;
-
+	clientNum++;
+	currentUsers.push(socket.id);
+	console.log(currentUsers)
 	socket.on('message.chat',(data)=>{
-		console.log(data,data,data)
+		
 		io.sockets.emit('chat',{
 			screenname: data.screenname,
 			message: data.message
@@ -63,9 +65,12 @@ io.on('connection',function(socket){
  //            return;
  //        });
 	// })
-
-
-
+	socket.on('message-invite',(data)=>{
+		console.log(data.userid)
+		io.socket(data.userid).emit('invite',data);
+	})
+		
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^HERE
 
 
 
@@ -78,10 +83,10 @@ io.on('connection',function(socket){
 	})
 
 	socket.on("disconnect",()=>{
-		clients--;
+		clientNum--;
 		let clientStatement="";
-		if(clients>=1){
-			clientStatement = `There are ${clients} people are still connected.` 
+		if(clientNum>=1){
+			clientStatement = `There are ${clientNum} people are still connected.` 
 		}else{
 			clientStatement = `Only 1 person is in here...and that's you.`;
 		}

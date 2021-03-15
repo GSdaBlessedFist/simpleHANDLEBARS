@@ -24,6 +24,8 @@ const mainChatSendComponent = document.getElementById("mainchat-send-component")
     scMessageInput = document.getElementById("sc-message-input"),
     sendButton = document.querySelector(".send-button");
 
+const sidechatInvite= document.getElementById("sidechat-invite");
+
 const styles = getComputedStyle(document.documentElement);
 const fadeOutTime = styles.getPropertyValue('--fadeOutTime');
 
@@ -93,6 +95,7 @@ export {
     signInModal,
     scMessageInput,
     mdlScreenNameInput,
+    sidechatInvite,
     sendButton,
     signinInfo,
     mainchatOutputContainer
