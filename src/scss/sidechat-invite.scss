@@ -23,7 +23,7 @@
 		left:50%;
 		margin-right:25%;
 		width: clamp(200px,300px,35%);
-		height: 150px;
+		height: 175px;
 		padding:  10px;
 		@include siteFont;
 		text-align: right;
@@ -34,18 +34,24 @@
 	}
 	@at-root{
 		.sidechat-button{
-			display: inline;
+			display: flex;
 			position: relative;
-			width: 90%;
+			justify-content: space-evenly;
+			width: clamp(150px,250px,90%);
+			height: clamp(40px,50px,95px);
 			top: 10px;
+			@include lrcenter;
 			&--yes{
 				display: flex;
 				justify-content: center;
+				align-items: center;
+				text-align: center;
 				width: 125px;
+				margin: 5px;
 				background: orange;
-				font-size: 1rem;
-				padding-top: 5px;
-				padding-bottom: 5px;
+				font-size: clamp(.55rem,1rem,1.2rem);
+				padding-top: 10px;
+				padding-bottom: 10px;
 				border: 1px $color1 solid;
 				transition: all .75s ease-out;
 				&:hover{
@@ -53,11 +59,14 @@
 				};
 			}
 			&--no{
-				display:inline;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				text-align: center;
 				width: 125px;
+				margin: 5px;
 				background: orange;
-				font-size: 1rem;
+				font-size: clamp(.55rem,1rem,1.2rem);
 				padding-top: 5px;
 				padding-bottom: 5px;
 				border: 1px $color1 solid;

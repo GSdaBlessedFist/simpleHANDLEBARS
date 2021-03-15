@@ -61,7 +61,7 @@
   left: 50%;
   margin-right: 25%;
   width: clamp(200px, 300px, 35%);
-  height: 150px;
+  height: 175px;
   padding: 10px;
   font-family: "Montserrat", sans-serif;
   text-align: right;
@@ -72,40 +72,51 @@
 }
 /* line 36, ../../src/scss/sidechat-invite.scss */
 .sidechat-button {
-  display: inline;
+  display: flex;
   position: relative;
-  width: 90%;
+  justify-content: space-evenly;
+  width: clamp(150px, 250px, 90%);
+  height: clamp(40px, 50px, 95px);
   top: 10px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
 }
-/* line 41, ../../src/scss/sidechat-invite.scss */
+/* line 44, ../../src/scss/sidechat-invite.scss */
 .sidechat-button--yes {
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 125px;
+  margin: 5px;
   background: orange;
-  font-size: 1rem;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  font-size: clamp(0.55rem, 1rem, 1.2rem);
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: 1px #aabbcc solid;
   transition: all .75s ease-out;
 }
-/* line 51, ../../src/scss/sidechat-invite.scss */
+/* line 57, ../../src/scss/sidechat-invite.scss */
 .sidechat-button--yes:hover {
   background: brown;
 }
-/* line 55, ../../src/scss/sidechat-invite.scss */
+/* line 61, ../../src/scss/sidechat-invite.scss */
 .sidechat-button--no {
-  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 125px;
+  margin: 5px;
   background: orange;
-  font-size: 1rem;
+  font-size: clamp(0.55rem, 1rem, 1.2rem);
   padding-top: 5px;
   padding-bottom: 5px;
   border: 1px #aabbcc solid;
   transition: all .75s ease-out;
 }
-/* line 65, ../../src/scss/sidechat-invite.scss */
+/* line 74, ../../src/scss/sidechat-invite.scss */
 .sidechat-button--no:hover {
   background: brown;
 }
