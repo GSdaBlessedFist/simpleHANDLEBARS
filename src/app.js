@@ -40,15 +40,27 @@ app.get("",(req,res)=>{
 var io = socket(server);
 
 var clientNum = 0;
-var currentUsers = [];
+
 ////////////////////// DEFAULT NAMESPACE ////////////////////
 io.on('connection',function(socket){
+	var currentUsers = [];
 	console.log("made connection",socket.id)
 	clientNum++;
-	currentUsers.push(socket.id);
-	console.log(currentUsers)
+
+	
 	socket.on('message.chat',(data)=>{
+
 		
+
+		function addUser(data){
+			if(currentUsers.includes(data.screenname)){
+				currentUsers.push({user:data.screenname,id:socket.id});
+				console.log(currentUsers + "users")
+			}else{return};
+		}
+		addUser(data);
+		
+
 		io.sockets.emit('chat',{
 			screenname: data.screenname,
 			message: data.message
@@ -66,11 +78,13 @@ io.on('connection',function(socket){
  //        });
 	// })
 	socket.on('message-invite',(data)=>{
-		console.log(data.userid)
-		io.socket(data.userid).emit('invite',data);
+		// search of record in currentUsers
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^HERE		
+		
+		io.to(data.userid).emit('invite',data);
 	})
 		
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^HERE
+
 
 
 

@@ -53,14 +53,17 @@ socket.on('chat', (data) => {
             e.preventDefault();
 
             socket.emit('message-invite',{
+                sender: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+                senderid : socket.id,
                 receiver : screenname,
-                userid : socket.id
+                
             })
         })
     })
 
-    socket.on('invite',(data=>{
-        sidechatInvite.classList.remove('hide');
+    socket.on('invite',((data)=>{
+        console.log("data.receiver");
+        // sidechatInvite.classList.remove('hide');
     }))
 
 })
