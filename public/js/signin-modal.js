@@ -1,6 +1,10 @@
 // import {sendMessage} from "./client-sockets.js";
 const url = "http://localhost:4000";
 const socket = io.connect();
+var userInfo = {
+        screenname: undefined,
+        socketinfo: undefined
+    }
 
 const mainContainer = document.getElementById("main-container"),
     mainChatSection = document.getElementById("main-chat-section"),
@@ -60,9 +64,14 @@ document.body.addEventListener("keyup", (e) => {
             scMessageInput.value = "";
             scMessageInput.placeholder = "what's on your brain...?";
         }, fadeOutTime)
-
+        const userid = socket.id;
+        console.log(socket.id)
     }
-    
+
+        userInfo = {
+            screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+            socketinfo: socket.id
+        }
     
 })
 
@@ -95,6 +104,7 @@ export {
     signInModal,
     scMessageInput,
     mdlScreenNameInput,
+    userInfo,
     sidechatInvite,
     sendButton,
     signinInfo,

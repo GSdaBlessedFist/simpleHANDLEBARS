@@ -1,5 +1,5 @@
 // client socket emits n such
-import {socket,url,styles,signInModal,scMessageInput,mdlScreenNameInput,sidechatInvite,sendButton,signinInfo,mainchatOutputContainer} from "./signin-modal.js";
+import {socket,url,styles,signInModal,scMessageInput,mdlScreenNameInput,userInfo,sidechatInvite,sendButton,signinInfo,mainchatOutputContainer} from "./signin-modal.js";
 const p = console.log;
 
 
@@ -51,18 +51,20 @@ socket.on('chat', (data) => {
         link.addEventListener("click", function(e) {
             let screenname = link.innerHTML;
             e.preventDefault();
-
+            console.log(userInfo)//<-----here
+            socket.emit('getid')
             socket.emit('message-invite',{
                 sender: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
-                senderid : socket.id,
+                senderid : socket.id,               
                 receiver : screenname,
-                
+                receiverid: userInfo.socketinfo
             })
         })
     })
 
     socket.on('invite',((data)=>{
-        console.log("data.receiver");
+        // console.log("data.receiver");
+        console.log(`${data.sender} would like to chat with you.`);
         // sidechatInvite.classList.remove('hide');
     }))
 

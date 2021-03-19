@@ -51,14 +51,11 @@ io.on('connection',function(socket){
 	socket.on('message.chat',(data)=>{
 
 		
-
-		function addUser(data){
-			if(currentUsers.includes(data.screenname)){
-				currentUsers.push({user:data.screenname,id:socket.id});
-				console.log(currentUsers + "users")
-			}else{return};
-		}
-		addUser(data);
+		currentUsers.push({user:data.screenname,id:socket.id});
+		
+		currentUsers.forEach(function(user){
+			console.log(this.user)
+		})
 		
 
 		io.sockets.emit('chat',{
@@ -80,8 +77,7 @@ io.on('connection',function(socket){
 	socket.on('message-invite',(data)=>{
 		// search of record in currentUsers
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^HERE		
-		
-		io.to(data.userid).emit('invite',data);
+		io.to(data.receiverid).emit('invite',data);
 	})
 		
 
