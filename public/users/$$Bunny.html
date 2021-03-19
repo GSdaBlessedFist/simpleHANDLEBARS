@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../css/styles.css" />
-		<title>Chatting with juxtaV</title>
+		<title>Chatting with $$Bunny</title>
 		<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
 	</head>
 	<body>
@@ -30,7 +30,7 @@
 	    <div class="main-container" id="main-container">
 			<div class="main-container--mainchat b" id="main-chat-section">
 				<div class="mainchat--message-area b" id="mainchat-message-area">
-					<div class="mainchat--message-area--titlebar" id="mainchat-titlebar">chatting with juxtaV</div>
+					<div class="mainchat--message-area--titlebar" id="mainchat-titlebar">chatting with $$Bunny</div>
 					<div class="mainchat--message-area--output-container " id="mainchat-output-container">
 						<!-- TypieTech:                 -->
 						<!--   This is a message         -->
@@ -54,7 +54,7 @@
 	        </div><!-- class="prime-container" -->
 
 	<script>
-		const socket = io("'/"+juxtaV+"'");
+		const socket = io("'/"+$$Bunny+"'");
 		
 		socket.on("connect",function(data){
 			socket.emit("join","Hey from client");

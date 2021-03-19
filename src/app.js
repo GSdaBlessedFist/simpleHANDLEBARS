@@ -32,10 +32,14 @@ const nameofApp = "Chatap";
 
 app.get("",(req,res)=>{
         res.render("index",{
-                title: nameofApp
+                title: nameofApp,
+                clientname: clientName
         })
 })
 
+var clientName = ""
+//    ^
+//    |
 // SOCKET SETUP
 var io = socket(server);
 
@@ -49,6 +53,7 @@ io.on('connection',function(socket){
 	socket.on('add-client',(data)=>{
 		// avoid duplicate entries  <--------------------------------
 		currentUsers.push(data)
+
 		// console.log(currentUsers)
 	})
 	socket.on('message.chat',(data)=>{
@@ -63,16 +68,16 @@ io.on('connection',function(socket){
 		});
 	})
 
-	// socket.on('register', (data) => {
- //        let id = data.id;
- //        let ns = io.of(`/${id}`);
+	socket.on('register', (data) => {
+        let id = data.id;
+        let ns = io.of(`/${id}`);
 
- //        fs.appendFile(`./public/users/${id}.html`, templatisize(id,nameofApp), function(err) {
- //            if (err) throw err;
- //            console.log(`${id}.html created`);
- //            return;
- //        });
-	// })
+        fs.appendFile(`./public/users/${id}.html`, templatisize(id,nameofApp), function(err) {
+            if (err) throw err;
+            console.log(`${id}.html created`);
+            return;
+        });
+	})
 	socket.on('message-invite',(data)=>{
 		//.sender,.senderid,.receiver
 		function matchUserToSocket(){
@@ -82,7 +87,7 @@ io.on('connection',function(socket){
 			})
 			return found;
 		}
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^HERE		
+
 		io.to(matchUserToSocket().socketinfo).emit('invite',data);
 	})
 		
