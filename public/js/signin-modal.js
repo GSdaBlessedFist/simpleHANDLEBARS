@@ -50,8 +50,9 @@ mdlScreenNameInput.placeholder = randomNameSelection();
 document.body.addEventListener("keyup", (e) => {
 
     if (e.keyCode === 13) {
-        socket.emit("intro", {
-            screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder
+        socket.emit("add-client", {
+            screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+            socketinfo: socket.id
         })
 
         signInModal.classList.add("goAway");
@@ -64,21 +65,15 @@ document.body.addEventListener("keyup", (e) => {
             scMessageInput.value = "";
             scMessageInput.placeholder = "what's on your brain...?";
         }, fadeOutTime)
-        const userid = socket.id;
-        console.log(socket.id)
     }
-
-        userInfo = {
-            screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
-            socketinfo: socket.id
-        }
     
 })
 
 mdlJoinChatButton.addEventListener("click", function() {
-    socket.emit("intro", {
-        screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder
-    })
+    socket.emit("add-client", {
+            screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+            socketinfo: socket.id
+        })
 
     signInModal.classList.add("goAway");
     setTimeout(function() {

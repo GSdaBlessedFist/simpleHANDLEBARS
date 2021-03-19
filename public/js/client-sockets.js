@@ -13,7 +13,6 @@ sendButton.addEventListener("click",(e)=>{
 	e.preventDefault();
 	
 	if(scMessageInput.value.length>3){
-		console.log(scMessageInput.value);
 		socket.emit('message.chat',{
 			screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
 			message:scMessageInput.value
@@ -51,19 +50,17 @@ socket.on('chat', (data) => {
         link.addEventListener("click", function(e) {
             let screenname = link.innerHTML;
             e.preventDefault();
-            console.log(userInfo)//<-----here
+            
             socket.emit('getid')
             socket.emit('message-invite',{
                 sender: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
                 senderid : socket.id,               
-                receiver : screenname,
-                receiverid: userInfo.socketinfo
+                receiver : screenname
             })
         })
     })
 
     socket.on('invite',((data)=>{
-        // console.log("data.receiver");
         console.log(`${data.sender} would like to chat with you.`);
         // sidechatInvite.classList.remove('hide');
     }))
