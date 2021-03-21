@@ -78,11 +78,14 @@ function templatisize(id,title){
 		})
 
 		socket.on('chat', (data) => {
-
-    	mainchatOutputContainer.innerHTML += `
-        	<a href="#" class="user-link">${data.sender}</a>
+			mainchatOutputContainer.innerHTML += `
+    		<a href="#" class="user-link">${data.sender}</a>
         	<div class="message-sent" >${data.message}</div>
-    	`;
+    	`; 
+		})
+
+    	       	
+    	
 	</script>			
 	</body>
 </html>
