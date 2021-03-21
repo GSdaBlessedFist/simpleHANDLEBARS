@@ -31,10 +31,10 @@ hbs.registerPartials(partialsPath);
 const nameofApp = "Chatap";
 
 app.get("",(req,res)=>{
-        res.render("index",{
-                title: nameofApp,
-                clientname: clientName
-        })
+    res.render("index",{
+            title: nameofApp,
+            clientname: clientName
+    })
 })
 
 var clientName = ""
@@ -52,15 +52,11 @@ io.on('connection',function(socket){
 
 	socket.on('add-client',(data)=>{
 		// avoid duplicate entries  <--------------------------------
-		currentUsers.push(data)
-
-		// console.log(currentUsers)
+		currentUsers.push(data);
 	})
+
 	socket.on('message.chat',(data)=>{
-	// currentUsers.push({user:data.screenname,id:socket.id});
-		currentUsers.forEach(function(user){
-			// console.log(this.user)
-		})
+		currentUsers.forEach(function(user){})
 		
 		io.sockets.emit('chat',{
 			screenname: data.screenname,
@@ -77,6 +73,17 @@ io.on('connection',function(socket){
             console.log(`${id}.html created`);
             return;
         });
+////////trying to get recipient chat sending out///////////////////////
+        socket.on('message.chat',(data)=>{
+		currentUsers.forEach(function(user){})
+		
+		// ns.sockets.emit('chat',{
+		ns.emit('chat',{
+			screenname: data.sender,
+			message: data.message
+		});
+	})
+////////////////////////////////////////////////        
 	})
 	socket.on('message-invite',(data)=>{
 		//.sender,.senderid,.receiver
@@ -91,8 +98,9 @@ io.on('connection',function(socket){
 		io.to(matchUserToSocket().socketinfo).emit('invite',data);
 	})
 		
-
-
+	socket.on('invite-acceptance',(data)=>{
+		socket.emit('accept-join',data);
+	})
 
 
 
