@@ -11,6 +11,7 @@ function templatisize(id,title){
 		<link rel="stylesheet" href="../css/styles.css" />
 		<title>Chatting with ${id}</title>
 		<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+		<script src="./template-script" defer></script>		
 	</head>
 	<body>
 		<div class="prime-container">
@@ -58,35 +59,7 @@ function templatisize(id,title){
 
 	        </div><!-- class="prime-container" -->
 
-	<script>
-		const socket = io("'/"+${id}+"'");
-		console.log("HERE")
-		socket.on("connect",function(data){
-			socket.emit("join","Hey from client");
-					
-		})
-		
-		sendButton.addEventListener("click",(e)=>{
-			e.preventDefault();
-	
-			if(scMessageInput.value.length>3){
-				socket.emit('message.chat',{
-					screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
-					message:scMessageInput.value
-				})
-			}
-		})
-
-		socket.on('chat', (data) => {
-			mainchatOutputContainer.innerHTML += `
-    		<a href="#" class="user-link">${data.sender}</a>
-        	<div class="message-sent" >${data.message}</div>
-    	`; 
-		})
-
-    	       	
-    	
-	</script>			
+			
 	</body>
 </html>
 `

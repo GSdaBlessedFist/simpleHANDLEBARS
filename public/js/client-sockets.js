@@ -85,7 +85,8 @@ socket.on('invite', ((data) => {
         registerLink(data.sender);
         document.querySelector('#sidechat-invite').classList.add('hide');
         socket.emit('invite-acceptance', {
-            reciever: screenname
+            reciever: data.sender  
+            //  ^^^^^
         })
         window.open(`../users/${data.sender}.html`);
     })
@@ -94,7 +95,8 @@ socket.on('invite', ((data) => {
     })
 }))
 socket.on('accept-join',(data)=>{
-    // window.open
+    // window.open(`../users/${data.sender}.html`);
+    console.log(data.screenname)
 })
 
 //USE ONLY ON SIDECHATS

@@ -99,7 +99,8 @@ io.on('connection',function(socket){
 	})
 		
 	socket.on('invite-acceptance',(data)=>{
-		socket.emit('accept-join',data);
+		console.log(data)
+		socket.emit('accept-join',{screenname:data.sender})
 	})
 
 
