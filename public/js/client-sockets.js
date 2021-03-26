@@ -55,7 +55,9 @@ socket.on('chat', (data) => {
     })
 })
 socket.on('invite', ((data) => {
-    console.log(`${data.sender} would like to chat with you.`);
+    var initatorOfInvite = data.sender;
+    var receiverOfInvite = data.receiver;
+    console.log(`${initatorOfInvite} would like to chat with you.`);
     // sidechatInvite.classList.remove('hide');
     mainchatOutputContainer.innerHTML += `
             <!----------------------- SIDECHAT INVITE ----------------------->
@@ -86,7 +88,8 @@ socket.on('invite', ((data) => {
 
         document.querySelector('#sidechat-invite').classList.add('hide');
         socket.emit('invite-acceptance', {
-            reciever: data.sender  
+            initatorOfInvite: initatorOfInvite,
+            receiverOfInvite: receiverOfInvite
             //  ^^^^^
         })
         console.log(data.sender )
@@ -98,7 +101,7 @@ socket.on('invite', ((data) => {
 }))
 socket.on('accept-join',(data)=>{
 
-    window.open(`../users/${data.screenname}.html`);
+    //window.open(`../users/${data.screenname}.html`);
     
 })
 

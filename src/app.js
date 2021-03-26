@@ -99,7 +99,7 @@ io.on('connection',function(socket){
 	})
 		
 	socket.on('invite-acceptance',(data)=>{
-		console.log(data.reciever )
+		console.log(`${data.receiverOfInvite} has accepted a sidechat invite from ${data.initatorOfInvite}` )
 		socket.emit('accept-join',{screenname:data.reciever})
 	})
 
