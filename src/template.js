@@ -1,7 +1,6 @@
-//template.js
 
 
-function templatisize(id,title){
+function templatisize(id,receiver,title){
 	
 	return `
 <html lang="en">
@@ -9,9 +8,9 @@ function templatisize(id,title){
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../css/styles.css" />
-		<title>Chatting with ${id}</title>
+		<title> ${id} > ${receiver}</title>
 		<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
-		<script src="./template-script" defer></script>		
+		
 	</head>
 	<body>
 		<div class="prime-container">
@@ -59,7 +58,16 @@ function templatisize(id,title){
 
 	        </div><!-- class="prime-container" -->
 
-			
+<!---------------------------------------------------------->		
+<!---------------------------------------------------------->		
+<!---------------------------------------------------------->		
+<!---------------------------------------------------------->		
+<!---------------------------------------------------------->		
+<!---------------------------------------------------------->		
+<!---------------------------------------------------------->		
+
+		
+	<script src="../src/template-script.js"></script>	
 	</body>
 </html>
 `

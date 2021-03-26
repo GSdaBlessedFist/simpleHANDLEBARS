@@ -1,7 +1,6 @@
 @import "variables";
 @import "font";
-
-.sidechat-invite{
+@mixin sidechatBasics{
 	display: block;
 	position: absolute;
 	top: 0px;
@@ -32,6 +31,9 @@
          color: white;
          background: $color3;
 	}
+}
+.sidechat-invite{
+	@include sidechatBasics;
 	@at-root{
 		.sidechat-button{
 			display: flex;
@@ -77,4 +79,21 @@
 			}
 		}
 	}
+}
+.sidechat-accept{
+	@include sidechatBasics;
+	@at-root {
+		.sidechat-button{
+			display: flex;
+			position: relative;
+			justify-content: space-evenly;
+			width: clamp(150px,250px,90%);
+			height: clamp(40px,50px,95px);
+			top: 10px;
+			@include lrcenter;
+			&--joinsidechat{
+				background: red;
+			}
+	}
+}
 }

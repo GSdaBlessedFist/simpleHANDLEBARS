@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require("path");
 const hbs = require("hbs");
 const socket = require('socket.io');
-const templatisize = require('../src/template.js');
+const templatisize = require('./template.js');
 const chalk = require('chalk');
 
 var userCount = 0;
@@ -66,9 +66,10 @@ io.on('connection',function(socket){
 
 	socket.on('register', (data) => {
         let id = data.id;
+        let receiver = data.receiver;
         let ns = io.of(`/${id}`);
 
-        fs.appendFile(`./public/users/${id}.html`, templatisize(id,nameofApp), function(err) {
+        fs.appendFile(`./public/users/${id}.html`, templatisize(id,receiver,nameofApp), function(err) {
             if (err) throw err;
             console.log(`${id}.html created`);
             return;
@@ -112,7 +113,14 @@ io.on('connection',function(socket){
 		
 	socket.on('invite-acceptance',(data)=>{
 		console.log(`${data.receiverOfInvite} has accepted a sidechat invite from ${data.senderOfInvite}` )
-		socket.emit('accept-join',{
+		function matchUserToSocket(){
+			let targetUser = data.senderOfInvite;
+			let found = currentUsers.find((user)=>{
+				return user.screenname === targetUser;
+			})
+			return found;
+		}
+		io.to(matchUserToSocket().socketinfo).emit('accept-join',{
 			receiverOfInvite: data.receiverOfInvite,
 			senderOfInvite: data.senderOfInvite
 		})

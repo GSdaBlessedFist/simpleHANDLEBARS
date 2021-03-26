@@ -319,7 +319,7 @@
   border: none;
 }
 
-/* line 4, ../../src/scss/sidechat-invite.scss */
+/* line 35, ../../src/scss/sidechat-invite.scss */
 .sidechat-invite {
   display: block;
   position: absolute;
@@ -327,7 +327,7 @@
   width: 100%;
   height: 100%;
 }
-/* line 10, ../../src/scss/sidechat-invite.scss */
+/* line 9, ../../src/scss/sidechat-invite.scss */
 .sidechat-invite--shadow-layer {
   display: inline;
   position: absolute;
@@ -337,7 +337,7 @@
   font-size: 3em;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 19, ../../src/scss/sidechat-invite.scss */
+/* line 18, ../../src/scss/sidechat-invite.scss */
 .sidechat-invite--window {
   display: block;
   position: relative;
@@ -354,7 +354,7 @@
   color: white;
   background: #223344;
 }
-/* line 36, ../../src/scss/sidechat-invite.scss */
+/* line 38, ../../src/scss/sidechat-invite.scss */
 .sidechat-button {
   display: flex;
   position: relative;
@@ -366,7 +366,7 @@
   left: 50%;
   transform: translate(-50%);
 }
-/* line 44, ../../src/scss/sidechat-invite.scss */
+/* line 46, ../../src/scss/sidechat-invite.scss */
 .sidechat-button--yes {
   display: flex;
   justify-content: center;
@@ -381,11 +381,11 @@
   border: 1px #aabbcc solid;
   transition: all .75s ease-out;
 }
-/* line 57, ../../src/scss/sidechat-invite.scss */
+/* line 59, ../../src/scss/sidechat-invite.scss */
 .sidechat-button--yes:hover {
   background: brown;
 }
-/* line 61, ../../src/scss/sidechat-invite.scss */
+/* line 63, ../../src/scss/sidechat-invite.scss */
 .sidechat-button--no {
   display: flex;
   justify-content: center;
@@ -400,9 +400,61 @@
   border: 1px #aabbcc solid;
   transition: all .75s ease-out;
 }
-/* line 74, ../../src/scss/sidechat-invite.scss */
+/* line 76, ../../src/scss/sidechat-invite.scss */
 .sidechat-button--no:hover {
   background: brown;
+}
+
+/* line 83, ../../src/scss/sidechat-invite.scss */
+.sidechat-accept {
+  display: block;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+/* line 9, ../../src/scss/sidechat-invite.scss */
+.sidechat-accept--shadow-layer {
+  display: inline;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 3em;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 18, ../../src/scss/sidechat-invite.scss */
+.sidechat-accept--window {
+  display: block;
+  position: relative;
+  top: 30%;
+  left: 50%;
+  margin-right: 25%;
+  width: clamp(200px, 300px, 35%);
+  height: 175px;
+  padding: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-align: right;
+  line-height: 95%;
+  font-size: clamp(1.25rem, 1.75rem, 2.5vw);
+  color: white;
+  background: #223344;
+}
+/* line 86, ../../src/scss/sidechat-invite.scss */
+.sidechat-button {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  width: clamp(150px, 250px, 90%);
+  height: clamp(40px, 50px, 95px);
+  top: 10px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+/* line 94, ../../src/scss/sidechat-invite.scss */
+.sidechat-button--joinsidechat {
+  background: red;
 }
 
 /* line 4, ../../src/scss/footer.scss */
