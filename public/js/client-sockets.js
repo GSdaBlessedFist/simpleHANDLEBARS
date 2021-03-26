@@ -58,8 +58,27 @@ socket.on('invite', ((data) => {
     var senderOfInvite = data.sender;
     var receiverOfInvite = data.receiver;
     console.log(`${senderOfInvite} would like to chat with you.`);
-    // sidechatInvite.classList.remove('hide');
-    mainchatOutputContainer.innerHTML += `
+    
+    // mainchatOutputContainer.innerHTML += `
+    //         <!----------------------- SIDECHAT INVITE ----------------------->
+    //     <div class="sidechat-invite" id="sidechat-invite">
+    //         <div class="sidechat-invite--shadow-layer"></div>
+    //         <div class="sidechat-invite--window ">
+    //             Would you like to chat with ${data.sender}?
+    //             <div class="sidechat-button ">
+    //                 <div class="sidechat-button--yes" id="yes">random yes</div>
+    //                 <div class="sidechat-button--no" id="no">random no</div>
+    //             </div>
+                
+    //         </div>
+
+    //     </div>
+    //     `
+
+    // @Parameters: sidechat-invite ||
+    function notify(type){
+        if(type==="sidechat-invite"){
+            return mainchatOutputContainer.innerHTML += `
             <!----------------------- SIDECHAT INVITE ----------------------->
         <div class="sidechat-invite" id="sidechat-invite">
             <div class="sidechat-invite--shadow-layer"></div>
@@ -74,13 +93,32 @@ socket.on('invite', ((data) => {
 
         </div>
         `
+    }else{
+       return mainchatOutputContainer.innerHTML += `
+            <!----------------------- SIDECHAT INVITE ----------------------->
+        <div class="sidechat-invite" id="sidechat-invite">
+            <div class="sidechat-invite--shadow-layer"></div>
+            <div class="sidechat-invite--window ">
+                Would you like to chat with ${data.sender}?
+                <div class="sidechat-button ">
+                    <div class="sidechat-button--yes" id="yes">random yes</div>
+                    <div class="sidechat-button--no" id="no">random no</div>
+                </div>
+                
+            </div>
+
+        </div>
+        ` 
+    }
+        
+    }
     let yes = document.getElementById("yes");
     let no = document.getElementById("no");
 
     yes.addEventListener("click", () => {
         function registerLink(screenname) {
             socket.emit('register', {
-                // id: screenname
+                // id: senderOfInvite
                 id: data.sender
             })
         }
@@ -101,8 +139,9 @@ socket.on('invite', ((data) => {
     })
 }))
 socket.on('accept-join',(data)=>{
-    console.log("accepted:" + data.senderOfInvite);
-    window.open(`../users/${data.senderOfInvite}.html`);
+    console.log(data.senderOfInvite +" has accepted...press the button");
+
+    // window.open(`../users/${data.senderOfInvite}.html`);
     
 })
 
