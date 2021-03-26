@@ -85,9 +85,6 @@ mdlJoinChatButton.addEventListener("click", function() {
         scMessageInput.value = "";
         scMessageInput.placeholder = "say it...";
     }, fadeOutTime)
-
-    console.log(scMessageInput.value);
-
 })
 
 
