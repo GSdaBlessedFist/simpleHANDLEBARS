@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require("path");
 const hbs = require("hbs");
 const socket = require('socket.io');
-const templatisize = require('./template.js');
+// const templatisize = require('./template.js');
 const chalk = require('chalk');
 
 var userCount = 0;
