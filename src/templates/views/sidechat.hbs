@@ -62,6 +62,47 @@
 <!---------------------------------------------------------->		
 
 		
-	<script src="../js/template-script.js"></script>	
+	<script type="module">
+		import {
+		    url,
+		    styles,
+		    signInModal,
+		    scMessageInput,
+		    mdlScreenNameInput,
+		    userInfo,
+		    sidechatInvite,
+		    sendButton,
+		    signinInfo,
+		    mainchatOutputContainer
+		} from "./js/signin-modal.js";
+		const p = console.log;
+
+		const socket = io(`/{{senderOfInvite}}`);
+
+		p("HERE")
+		socket.on("connect", function(data) {
+    		socket.emit("join", "Hey from client");
+
+		})
+
+		sendButton.addEventListener("click", (e) => {
+    		e.preventDefault();
+
+    		if (scMessageInput.value.length > 3) {
+        		socket.emit('message.chat', {
+            		screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+            		message: scMessageInput.value
+        		})
+    		}
+		})
+
+		socket.on('chat', (data) => {
+		    mainchatOutputContainer.innerHTML += `
+		    	<a href="#" class="user-link">${data.sender}</a>
+		        <div class="message-sent" >${data.message}</div>
+		    `;
+		})
+
+	</script>	
 	</body>
 </html>
