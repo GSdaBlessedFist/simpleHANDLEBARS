@@ -113,7 +113,8 @@ socket.on('invite', ((data) => {
             //  ^^^^^
         })
         console.log("sender: ".toUpperCase() +data.sender +" & receiver:".toUpperCase()+data.receiver)
-        window.open(`../users/${data.sender}.html`);
+        // window.open(`../users/${data.sender}.html`);
+        window.open('./sidechat');
         console.log("sidechat page created");
     })
     no.addEventListener("click", () => {
@@ -145,7 +146,8 @@ socket.on('accept-join',(data)=>{
     const joinsidechat = document.querySelector('#joinsidechat');
     joinsidechat.addEventListener("click",function(){
         document.querySelector("#sidechat-accept").classList.add('hide');
-        window.open(`../users/${data.senderOfInvite}.html`);
+        // window.open(`../users/${data.senderOfInvite}.html`);
+        window.open('./sidechat');
     })
     //
 

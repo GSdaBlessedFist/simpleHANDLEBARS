@@ -1,21 +1,17 @@
 
-
-function templatisize(id,receiver,title){
-	
-	return `
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../css/styles.css" />
-		<title> ${id} > ${receiver}</title>
+		<title> Lazarus_Lu > $$Bunny</title>
 		<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
 		
 	</head>
 	<body>
 		<div class="prime-container">
 	        <div class="title-bar">
-				<div class="title-bar--site-title "><div>${title}</div></div>
+				<div class="title-bar--site-title "><div>Chatap</div></div>
 			    <div class="title-bar--darkmode-button"><a href="#">D</a></div>
 			    <div class="title-bar--spacer"></div>
 			    <div class="title-bar--spacer"></div>
@@ -35,7 +31,7 @@ function templatisize(id,receiver,title){
 	    <div class="main-container" id="main-container">
 			<div class="main-container--mainchat b" id="main-chat-section">
 				<div class="mainchat--message-area b" id="mainchat-message-area">
-					<div class="mainchat--message-area--titlebar" id="mainchat-titlebar">chatting with ${id}</div>
+					<div class="mainchat--message-area--titlebar" id="mainchat-titlebar">chatting with Lazarus_Lu</div>
 					<div class="mainchat--message-area--output-container " id="mainchat-output-container">
 						<!-- TypieTech:                 -->
 						<!--   This is a message         -->
@@ -70,6 +66,3 @@ function templatisize(id,receiver,title){
 	<script src="../js/template-script.js"></script>	
 	</body>
 </html>
-`
-}
-module.exports = templatisize;

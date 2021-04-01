@@ -65,15 +65,27 @@ io.on('connection',function(socket){
 	})
 
 	socket.on('register', (data) => {
-        let id = data.id;
-        let receiver = data.receiver;
-        let ns = io.of(`/${id}`);
+        let senderOfInvite = data.id;
+        let receiverOfInvite = data.receiver;
+        let ns = io.of(`/${senderOfInvite}`);
 
-        fs.appendFile(`./public/users/${id}.html`, templatisize(id,receiver,nameofApp), function(err) {
-            if (err) throw err;
-            console.log(`${id}.html created`);
-            return;
-        });
+        // fs.appendFile(`./public/users/${senderOfInvite}.html`, templatisize(senderOfInvite,receiverOfInvite,nameofApp), function(err) {
+        //     if (err) throw err;
+        //     console.log(`${isenderOfInvite}.html created`);
+        //     return;
+        // });
+        console.log(senderOfInvite, receiverOfInvite)
+        
+        app.get('/sidechat',(req, res)=>{
+        	res.render('sidechat',{
+        		senderOfInvite,
+        		receiverOfInvite,
+        		title: nameofApp
+       	})
+    })
+
+
+
 ////////trying to get recipient chat sending out///////////////////////
         socket.on('message.chat',(data)=>{
 		currentUsers.forEach(function(user){})

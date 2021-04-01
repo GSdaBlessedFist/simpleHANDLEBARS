@@ -1,6 +1,5 @@
-const socket = io("'/" + $ {
-    id
-} + "'");
+const socket = io(`/${data.id}`);
+
 console.log("HERE")
 socket.on("connect", function(data) {
     socket.emit("join", "Hey from client");
