@@ -13,7 +13,7 @@ import {
     mainchatOutputContainer
 } from "./signin-modal.js";
 const p = console.log;
-
+// p(screenname)
 
 // socket.on('introducing...',(data)=>{
 //  mainchatOutputContainer.innerHTML +=`
@@ -94,11 +94,13 @@ socket.on('invite', ((data) => {
     let no = document.getElementById("no");
 
     yes.addEventListener("click", () => {
+        alert(socket.id)
         function registerLink(screenname) {
             socket.emit('register', {
                 // id: senderOfInvite
-                id: data.sender,
-                receiver: data.receiver
+                senderOfInvite,//<--- id
+                senderOfInviteId: socket.id,//<------
+                receiverOfInvite
             })
         }
         registerLink(data.sender);

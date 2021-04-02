@@ -55,6 +55,9 @@ document.body.addEventListener("keyup", (e) => {
             socketinfo: socket.id
         })
 
+        let screenname = mdlScreenNameInput.value || mdlScreenNameInput.placeholder;
+
+        console.log(screenname + "THERE IT IS")
         signInModal.classList.add("goAway");
         setTimeout(function() {
             signInModal.classList.add("hide");
@@ -65,6 +68,7 @@ document.body.addEventListener("keyup", (e) => {
             scMessageInput.value = "";
             scMessageInput.placeholder = "what's on your brain...?";
         }, fadeOutTime)
+        
     }
     
 })
@@ -74,6 +78,8 @@ mdlJoinChatButton.addEventListener("click", function() {
             screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
             socketinfo: socket.id
         })
+
+    let screenname = mdlScreenNameInput.value || mdlScreenNameInput.placeholder;
 
     signInModal.classList.add("goAway");
     setTimeout(function() {
@@ -85,6 +91,7 @@ mdlJoinChatButton.addEventListener("click", function() {
         scMessageInput.value = "";
         scMessageInput.placeholder = "say it...";
     }, fadeOutTime)
+    return screenname;
 })
 
 

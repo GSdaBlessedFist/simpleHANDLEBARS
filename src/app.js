@@ -28,6 +28,9 @@ app.set("view engine", "hbs");
 app.set("views", viewsPath);
 hbs.registerPartials(partialsPath);
 
+hbs.registerHelper("Color",function(){
+       			return "red";
+       		})
 const nameofApp = "Chatap";
 
 app.get("",(req,res)=>{
@@ -53,6 +56,8 @@ io.on('connection',function(socket){
 	socket.on('add-client',(data)=>{
 		// avoid duplicate entries  <--------------------------------
 		currentUsers.push(data);
+		console.log("Introducing..."+data.screenname)
+		console.log(currentUsers)
 	})
 
 	socket.on('message.chat',(data)=>{
@@ -65,8 +70,9 @@ io.on('connection',function(socket){
 	})
 
 	socket.on('register', (data) => {
-        let senderOfInvite = data.id;
-        let receiverOfInvite = data.receiver;
+        let senderOfInvite = data.senderOfInvite;
+        let receiverOfInvite = data.receiverOfInvite;
+        let senderOfInviteId = data.senderOfInviteId;
         let ns = io.of(`/${senderOfInvite}`);
 
         // fs.appendFile(`./public/users/${senderOfInvite}.html`, templatisize(senderOfInvite,receiverOfInvite,nameofApp), function(err) {
@@ -74,14 +80,24 @@ io.on('connection',function(socket){
         //     console.log(`${isenderOfInvite}.html created`);
         //     return;
         // });
-        console.log(senderOfInvite, receiverOfInvite)
+        console.log(senderOfInvite,senderOfInviteId,receiverOfInvite)
+        
+
         
         app.get('/sidechat',(req, res)=>{
         	res.render('sidechat',{
         		senderOfInvite,
+        		senderOfInviteId ,
         		receiverOfInvite,
+        		// receiverOfInviteId: ,
         		title: nameofApp
-       	})
+       		})
+
+       		
+       		// function chattingWith(){
+        	// 	console.log("What about here")
+        	// }
+       		// chattingWith();
     })
 
 
@@ -124,6 +140,7 @@ io.on('connection',function(socket){
 	})
 		
 	socket.on('invite-acceptance',(data)=>{
+		console.log(currentUsers)
 		console.log(`${data.receiverOfInvite} has accepted a sidechat invite from ${data.senderOfInvite}` )
 		function matchUserToSocket(){
 			let targetUser = data.senderOfInvite;
