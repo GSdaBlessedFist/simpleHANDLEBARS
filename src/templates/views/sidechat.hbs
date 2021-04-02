@@ -5,7 +5,10 @@
 		<link rel="stylesheet" href="../css/styles.css" />
 		<title> {{senderOfInvite}} > {{receiverOfInvite}}</title>
 		<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
-		
+		<script>
+			const mdlScreenNameInput = "{{senderOfInvite}}" ;
+			console.log(mdlScreenNameInput + "is here tonight")
+		</script>
 	</head>
 	<body>
 		<div class="prime-container">
@@ -62,27 +65,27 @@
 <!---------------------------------------------------------->		
 
 		
-	<script type="module">
-		import {
-		    url,
-		    styles,
-		    signInModal,
-		    scMessageInput,
-		    userInfo,
-		    sidechatInvite,
-		    sendButton,
-		    signinInfo,
-		    mainchatOutputContainer
-		} from "./js/signin-modal.js";
+	<script>
+		
 		const p = console.log;
-
-		const socket = io(`/{{senderOfInvite}}`);
-
 		p("HERE")
+
+		////////SOCKET STUFF////////////
+		const socket = io(`/{{senderOfInvite}}`);
 		socket.on("connect", function(data) {
     		socket.emit("join", "Hey from client");
 
 		})
+		////////////////////////////////////////////////////////
+		const mainContainer = document.getElementById("main-container"),
+		      mainChatSection = document.getElementById("main-chat-section"),
+		      mainChatTitleBar = document.getElementById("mainchat-titlebar"),
+		      mainChatMessageArea = document.getElementById("mainchat-message-area"),
+		      mainchatOutputContainer = document.getElementById("mainchat-output-container");
+
+	    const mainChatSendComponent = document.getElementById("mainchat-send-component"),
+		      scMessageInput = document.getElementById("sc-message-input"),
+		      sendButton = document.querySelector(".send-button");
 
 		sendButton.addEventListener("click", (e) => {
     		e.preventDefault();
