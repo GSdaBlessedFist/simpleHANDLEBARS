@@ -24,10 +24,13 @@ const p = console.log;
 sendButton.addEventListener("click", (e) => {
     e.preventDefault();
 
+    
+
     if (scMessageInput.value.length > 3) {
         socket.emit('message.chat', {
             screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
-            message: scMessageInput.value
+            message: scMessageInput.value,
+            action: "a message was sent"
         })
     }
 })

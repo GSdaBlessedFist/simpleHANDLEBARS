@@ -60,8 +60,9 @@ io.on('connection',function(socket){
 		console.log(currentUsers)
 	})
 
-	socket.on('message.chat',(data)=>{
-		currentUsers.forEach(function(user){})
+	socket.on('message.chat',(data)=>{//<---
+		console.log(data)
+		// currentUsers.forEach(function(user){})
 		
 		io.sockets.emit('chat',{
 			screenname: data.screenname,
@@ -92,26 +93,23 @@ io.on('connection',function(socket){
         		// receiverOfInviteId: ,
         		title: nameofApp
        		})
-
-       		
-       		// function chattingWith(){
-        	// 	console.log("What about here")
-        	// }
-       		// chattingWith();
+        
+	        ns.on('message.chat',(data)=>{
+	        	console.log(data)
+			// currentUsers.forEach(function(user){})
+			
+			// ns.sockets.emit('chat',{
+			// ns.emit('chat',{
+			// 	screenname: data.sender,
+			// 	message: data.message
+			// });
+		})
     })
 
 
 
 ////////trying to get recipient chat sending out///////////////////////
-        socket.on('message.chat',(data)=>{
-		currentUsers.forEach(function(user){})
-		
-		// ns.sockets.emit('chat',{
-		ns.emit('chat',{
-			screenname: data.sender,
-			message: data.message
-		});
-	})
+        
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 /////////////////////////////////////////////
