@@ -75,14 +75,13 @@ io.on('connection',function(socket){
         let receiverOfInvite = data.receiverOfInvite;
         let senderOfInviteId = data.senderOfInviteId;
         let ns = io.of(`/${senderOfInvite}`);
-
         // fs.appendFile(`./public/users/${senderOfInvite}.html`, templatisize(senderOfInvite,receiverOfInvite,nameofApp), function(err) {
         //     if (err) throw err;
         //     console.log(`${isenderOfInvite}.html created`);
         //     return;
         // });
         console.log(senderOfInvite,senderOfInviteId,receiverOfInvite)
-        
+        console.log("newly created namespace: " + ns.name)
 
         
         app.get('/sidechat',(req, res)=>{
@@ -93,9 +92,24 @@ io.on('connection',function(socket){
         		// receiverOfInviteId: ,
         		title: nameofApp
        		})
-        
-	        ns.on('message.chat',(data)=>{
-	        	console.log(data)
+        	        
+			
+			ns.on('connection',function(socket){
+				socket.on('message.chat',(data)=>{
+					// console.log(data.namespace + "<---")	
+					console.log(data)
+
+					io.sockets.emit('chat',{
+			screenname: data.screenname,
+			message: data.message
+		});
+				})
+				
+			})
+
+
+	  //       ns.on('message.chat',(data)=>{
+	  //       	console.log(data.namespace + "<---")
 			// currentUsers.forEach(function(user){})
 			
 			// ns.sockets.emit('chat',{
@@ -103,8 +117,8 @@ io.on('connection',function(socket){
 			// 	screenname: data.sender,
 			// 	message: data.message
 			// });
-		})
-    })
+			// })
+    	})
 
 
 

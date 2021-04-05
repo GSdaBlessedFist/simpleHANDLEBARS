@@ -35,7 +35,7 @@ const fadeOutTime = styles.getPropertyValue('--fadeOutTime');
 
 const randomDefaultScreenNames = ["TypieTech", "Cesars_Salad", "Lazarus_Lu",
     "Salazar_One", "$$Bunny", "Grimmace2020",
-    "Plot_Lover", "Kill'em_with_wine-ness"
+    "Plot_Lover", "Kill_em_with_wine-ness"
 ];
 
 const randomNameSelection = function() {

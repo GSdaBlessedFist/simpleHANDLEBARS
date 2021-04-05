@@ -85,7 +85,7 @@
 
 		sendButton.addEventListener("click", (e) => {
     		e.preventDefault();
-
+    		console.log("Send Button Clicked:" + socket.nsp)
     		if (scMessageInput.value.length > 3) {
         		socket.emit('message.chat', {
             		screenname: mdlScreenNameInput,
