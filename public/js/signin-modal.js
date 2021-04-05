@@ -57,7 +57,7 @@ document.body.addEventListener("keyup", (e) => {
 
         let screenname = mdlScreenNameInput.value || mdlScreenNameInput.placeholder;
 
-        console.log(screenname + "THERE IT IS")
+        // console.log(screenname + "THERE IT IS")
         signInModal.classList.add("goAway");
         setTimeout(function() {
             signInModal.classList.add("hide");
