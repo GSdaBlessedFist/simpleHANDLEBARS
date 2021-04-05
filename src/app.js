@@ -56,7 +56,7 @@ io.on('connection',function(socket){
 	socket.on('add-client',(data)=>{
 		// avoid duplicate entries  <--------------------------------
 		currentUsers.push(data);
-		console.log("Introducing..."+data.screenname)
+		console.log(chalk.bgCyan.bold("Introducing..."+data.screenname))
 		console.log(currentUsers)
 	})
 
@@ -80,8 +80,8 @@ io.on('connection',function(socket){
         //     console.log(`${isenderOfInvite}.html created`);
         //     return;
         // });
-        console.log(senderOfInvite,senderOfInviteId,receiverOfInvite)
-        console.log("newly created namespace: " + ns.name)
+        // console.log(senderOfInvite,senderOfInviteId,receiverOfInvite)
+        console.log(chalk.white.bold("newly created namespace: ") + chalk.white.italic(ns.name))
 
         
         app.get('/sidechat',(req, res)=>{
@@ -96,28 +96,21 @@ io.on('connection',function(socket){
 			
 			ns.on('connection',function(socket){
 				socket.on('message.chat',(data)=>{
-					// console.log(data.namespace + "<---")	
-					console.log(data)
+					
+					console.log(chalk.inverse.bold("message sent: ")+ chalk.white.italic(data.message) ) //<---RIGHT HERE
 
-					io.sockets.emit('chat',{
-			screenname: data.screenname,
-			message: data.message
-		});
+					// io.sockets.emit('chat',{
+					// 	screenname: data.screenname,
+					// 	message: data.message
+					// });
+					io.emit('chat',{
+						screenname: data.screenname,
+						message: data.message
+					});
 				})
-				
 			})
 
-
-	  //       ns.on('message.chat',(data)=>{
-	  //       	console.log(data.namespace + "<---")
-			// currentUsers.forEach(function(user){})
-			
-			// ns.sockets.emit('chat',{
-			// ns.emit('chat',{
-			// 	screenname: data.sender,
-			// 	message: data.message
-			// });
-			// })
+			///////////////////////////////////
     	})
 
 
@@ -192,8 +185,12 @@ io.on('connection',function(socket){
 		let clientStatement="";
 		if(clientNum>=1){
 			clientStatement = `There are ${clientNum} people are still connected.` 
-		}else{
+		}else if(clientNum==1){
 			clientStatement = `Only 1 person is in here...and that's you.`;
+		}else{
+			currentUsers = [];
+			clientStatement = "nobody chatting right now";
+			console.log(clientStatement + " and the user array is emptied.")
 		}
 		io.sockets.emit("broadcast",{
 			numberOfClients: clientStatement
