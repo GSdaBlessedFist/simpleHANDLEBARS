@@ -10,7 +10,7 @@ const chalk = require('chalk');
 
 var userCount = 0;
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 const server = app.listen(port,function(){
 	console.log(`listening on port ${port}`);
 })
@@ -56,7 +56,7 @@ io.on('connection',function(socket){
 	socket.on('add-client',(data)=>{
 		// avoid duplicate entries  <--------------------------------
 		currentUsers.push(data);
-		console.log(chalk.bgCyan.bold("Introducing..."+data.screenname))
+		console.log(chalk.bgCyan.black.bold("Introducing..."+data.screenname))
 		console.log(currentUsers)
 	})
 
@@ -97,16 +97,22 @@ io.on('connection',function(socket){
 			ns.on('connection',function(socket){
 				socket.on('message.chat',(data)=>{
 					
-					console.log(chalk.inverse.bold("message sent: ")+ chalk.white.italic(data.message) ) //<---RIGHT HERE
-
-					// io.sockets.emit('chat',{
+					console.log(chalk.inverse.bold.white.italic(data.screenname)+" sent a message: "+ chalk.white.italic(data.message) ) //<---RIGHT HERE
+					console.log(data.socketId)
+					// socket.broadcast.to(data.socketId).emit('chat',{
 					// 	screenname: data.screenname,
 					// 	message: data.message
 					// });
-					io.emit('chat',{
+
+					io.of(data.namespace).emit('chat',{
 						screenname: data.screenname,
 						message: data.message
 					});
+
+					// io.emit('chat',{
+					// 	screenname: data.screenname,
+					// 	message: data.message
+					// });
 				})
 			})
 
