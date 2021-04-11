@@ -3,10 +3,13 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../css/styles.css" />
-		<title> {{senderOfInvite}} > {{receiverOfInvite}}</title>
+		<title> {{senderOfInvite}} > {{receiverOfInviteId}}</title>
 		<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
 		<script>
 			const mdlScreenNameInput = "{{senderOfInvite}}";
+			function whichOne(){
+					
+			}
 
 			console.log(mdlScreenNameInput + " is here tonight")
 		</script>
@@ -65,7 +68,6 @@
 <!---------------------------------------------------------->		
 <!---------------------------------------------------------->		
 
-		stackoverflow.
 	<script>
 		
 		const p = console.log;
@@ -99,8 +101,11 @@
 		////////SOCKET STUFF////////////
 		
 		socket.on('chat', (data) => {
+			
+			console.log((data))
 		    mainchatOutputContainer.innerHTML += `
 		    	<a href="#" class="user-link">${data.screenname}</a>
+		    	
 		        <div class="message-sent" >${data.message}</div>
 		    `;
 		})

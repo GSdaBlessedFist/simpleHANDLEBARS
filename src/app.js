@@ -10,7 +10,7 @@ const chalk = require('chalk');
 
 var userCount = 0;
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 const server = app.listen(port,function(){
 	console.log(`listening on port ${port}`);
 })
@@ -89,25 +89,26 @@ io.on('connection',function(socket){
         		senderOfInvite,
         		senderOfInviteId ,
         		receiverOfInvite,
-        		// receiverOfInviteId: ,
+        		receiverOfInviteId:socket.id,
         		title: nameofApp
        		})
         	        
 			
 			ns.on('connection',function(socket){
 				socket.on('message.chat',(data)=>{
-					
-					console.log(chalk.inverse.bold.white.italic(data.screenname)+" sent a message: "+ chalk.white.italic(data.message) ) //<---RIGHT HERE
+					console.log(data)
+					// console.log(chalk.inverse.bold.white.italic(data.screenname)+" sent a message: "+ chalk.white.italic(data.message) ) //<---RIGHT HERE
 					console.log(data.socketId)
 					// socket.broadcast.to(data.socketId).emit('chat',{
 					// 	screenname: data.screenname,
 					// 	message: data.message
 					// });
 
-					io.of(data.namespace).emit('chat',{
-						screenname: data.screenname,
-						message: data.message
-					});
+					// io.of(data.namespace).emit('chat',{
+					// 	screenname: data.screenname,
+					// 	message: data.message,
+					// 	socketId:socket.id
+					// });
 
 					// io.emit('chat',{
 					// 	screenname: data.screenname,

@@ -43,6 +43,12 @@ const randomNameSelection = function() {
 }
 
 var signinInfo = {};
+
+const noSpaces = function(str){
+  let x = str.replace(/ /g,"_");
+  return x;
+}
+
 mdlScreenNameInput.placeholder = randomNameSelection();
 // signinInfo.screenname = randomNameSelection() || mdlScreenNameInput.value;
 // signinInfo.message = mdlMessageInput.value || "Testing purposes only as requirement will be needed";
@@ -51,11 +57,11 @@ document.body.addEventListener("keyup", (e) => {
 
     if (e.keyCode === 13) {
         socket.emit("add-client", {
-            screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+            screenname: noSpaces(mdlScreenNameInput.value) || mdlScreenNameInput.placeholder,
             socketinfo: socket.id
         })
 
-        let screenname = mdlScreenNameInput.value || mdlScreenNameInput.placeholder;
+        let screenname = noSpaces(mdlScreenNameInput.value) || mdlScreenNameInput.placeholder;
 
         // console.log(screenname + "THERE IT IS")
         signInModal.classList.add("goAway");
@@ -75,11 +81,11 @@ document.body.addEventListener("keyup", (e) => {
 
 mdlJoinChatButton.addEventListener("click", function() {
     socket.emit("add-client", {
-            screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+            screenname: noSpaces(mdlScreenNameInput.value) || mdlScreenNameInput.placeholder,
             socketinfo: socket.id
         })
 
-    let screenname = mdlScreenNameInput.value || mdlScreenNameInput.placeholder;
+    let screenname = noSpaces(mdlScreenNameInput.value) || mdlScreenNameInput.placeholder;
 
     signInModal.classList.add("goAway");
     setTimeout(function() {
