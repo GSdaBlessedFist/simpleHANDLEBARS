@@ -72,7 +72,7 @@
 		
 		const p = console.log;
 		p("HERE");
-		const socket = io(`/{{senderOfInvite}}`);
+		const socket = io(`sidechat/{{senderOfInvite}}`);
 		p(socket.nsp)
 		////////////////////////////////////////////////////////
 		const mainContainer = document.getElementById("main-container"),
@@ -100,7 +100,7 @@
 
 		////////SOCKET STUFF////////////
 		
-		socket.on('chat', (data) => {
+		socket.on('sidechat.chat', (data) => {
 			
 			console.log((data))
 		    mainchatOutputContainer.innerHTML += `

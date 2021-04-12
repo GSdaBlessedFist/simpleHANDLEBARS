@@ -6,6 +6,7 @@ import {
     signInModal,
     scMessageInput,
     mdlScreenNameInput,
+    noSpaces,
     userInfo,
     sidechatInvite,
     sendButton,
@@ -28,7 +29,7 @@ sendButton.addEventListener("click", (e) => {
 
     if (scMessageInput.value.length > 3) {
         socket.emit('message.chat', {
-            screenname: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+            screenname: noSpaces(mdlScreenNameInput.value) || mdlScreenNameInput.placeholder,
             message: scMessageInput.value,
             action: "a message was sent"
         })
@@ -50,7 +51,7 @@ socket.on('chat', (data) => {
 
             socket.emit('getid')
             socket.emit('message-invite', {
-                sender: mdlScreenNameInput.value || mdlScreenNameInput.placeholder,
+                sender: noSpaces(mdlScreenNameInput.value) || mdlScreenNameInput.placeholder,
                 senderid: socket.id,
                 receiver: screenname
             })
@@ -119,8 +120,8 @@ socket.on('invite', ((data) => {
         })
         console.log("sender: ".toUpperCase() +data.sender +" & receiver:".toUpperCase()+data.receiver)
         // window.open(`../users/${data.sender}.html`);
-        window.open('./sidechat');
-        console.log("sidechat page created");
+        window.open(`sidechat/${senderOfInvite}`);
+        console.log(`sidechat/${senderOfInvite} page created`);
     })
     no.addEventListener("click", () => {
         alert('no')
@@ -130,7 +131,7 @@ socket.on('invite', ((data) => {
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 socket.on('accept-join',(data)=>{
-
+    
     console.log(data.receiverOfInvite + " has accepted your invitation.");
 
     mainchatOutputContainer.innerHTML += `
@@ -150,9 +151,12 @@ socket.on('accept-join',(data)=>{
     `
     const joinsidechat = document.querySelector('#joinsidechat');
     joinsidechat.addEventListener("click",function(){
+        // console.log(data.receiverOfInvite)
         document.querySelector("#sidechat-accept").classList.add('hide');
+        // alert(receiverOfInvite)
+
         // window.open(`../users/${data.senderOfInvite}.html`);
-        window.open('./sidechat');
+        window.open(`sidechat/${data.senderOfInvite}`);
     })
     //
 

@@ -45,7 +45,7 @@ const randomNameSelection = function() {
 var signinInfo = {};
 
 const noSpaces = function(str){
-  let x = str.replace(/ /g,"_");
+  let x = str.replace(/ /g,"_").trim();
   return x;
 }
 
@@ -109,6 +109,7 @@ export {
     signInModal,
     scMessageInput,
     mdlScreenNameInput,
+    noSpaces,
     userInfo,
     sidechatInvite,
     sendButton,

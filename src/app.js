@@ -84,7 +84,7 @@ io.on('connection',function(socket){
         console.log(chalk.white.bold("newly created namespace: ") + chalk.white.italic(ns.name))
 
         
-        app.get('/sidechat',(req, res)=>{
+        app.get(`/sidechat/${senderOfInvite}`,(req, res)=>{
         	res.render('sidechat',{
         		senderOfInvite,
         		senderOfInviteId ,
@@ -104,11 +104,11 @@ io.on('connection',function(socket){
 					// 	message: data.message
 					// });
 
-					// io.of(data.namespace).emit('chat',{
-					// 	screenname: data.screenname,
-					// 	message: data.message,
-					// 	socketId:socket.id
-					// });
+					io.of(data.namespace).emit('sidechat.chat',{
+						screenname: data.screenname,
+						message: data.message,
+						socketId:socket.id
+					});
 
 					// io.emit('chat',{
 					// 	screenname: data.screenname,
