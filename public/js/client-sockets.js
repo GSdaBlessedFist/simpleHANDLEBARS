@@ -98,7 +98,7 @@ socket.on('invite', ((data) => {
     let no = document.getElementById("no");
 
     yes.addEventListener("click", () => {
-        alert(socket.id)
+        alert(`this is the recipient's id: ${socket.id}`)
         function registerLink(screenname) {
             socket.emit('register', {
                 // id: senderOfInvite
@@ -128,12 +128,13 @@ socket.on('invite', ((data) => {
     })
 }))
 //////////////////////////////////////////////// 
-/////////////////////////////////////////////
+/////////////////////////////////////////////SESSIONSTORAGE ISSUEvvvvvvvv
 /////////////////////////////////////////////
 socket.on('accept-join',(data)=>{
     
     console.log(data.receiverOfInvite + " has accepted your invitation.");
-
+    
+    
     mainchatOutputContainer.innerHTML += `
             <!----------------------- SIDECHAT INVITE ACCEPTANCE----------------------->
         <div class="sidechat-accept" id="sidechat-accept">

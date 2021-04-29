@@ -82,7 +82,7 @@ io.on('connection',function(socket){
         // });
         // console.log(senderOfInvite,senderOfInviteId,receiverOfInvite)
         console.log(chalk.white.bold("newly created namespace: ") + chalk.white.italic(ns.name))
-
+        console.log(`These are the current users logged in: ${currenUsers}`);
         
         app.get(`/sidechat/${senderOfInvite}`,(req, res)=>{
         	res.render('sidechat',{
@@ -91,7 +91,10 @@ io.on('connection',function(socket){
         		receiverOfInvite,
         		receiverOfInviteId:socket.id,
         		title: nameofApp
-       		})
+        	})
+        
+        	console.log("KNIFE")
+        
         	        
 			
 			ns.on('connection',function(socket){
